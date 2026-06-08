@@ -145,11 +145,10 @@ void Vtb_if___024root___nba_sequent__TOP__0(Vtb_if___024root* vlSelf) {
     // Body
     if (VL_UNLIKELY((((~ (IData)(vlSymsp->TOP____024unit.__VmonitorOff)) 
                       & (1U == vlSymsp->TOP____024unit.__VmonitorNum))))) {
-        VL_WRITEF_NX("%t: clk 100000, rst %1b, PCSrc %1b, pc_pp %1b, pc_br %5b, pc_pp %5b, instruction %32b%10#\n",0,
+        VL_WRITEF_NX("%t: clk %1b, rst %1b, PCSrc %1b, pc_br %5b, pc_pp %5b, instruction %32b\n",0,
                      64,VL_TIME_UNITED_Q(1),-12,1,(IData)(vlSelfRef.tb_if__DOT__clk),
                      1,vlSelfRef.tb_if__DOT__rst,1,
                      (IData)(vlSelfRef.tb_if__DOT__PCSrc),
-                     32,((IData)(4U) + vlSelfRef.tb_if__DOT__if_00__DOT__pc),
                      32,vlSelfRef.tb_if__DOT__pc_br,
                      32,((IData)(4U) + vlSelfRef.tb_if__DOT__if_00__DOT__pc),
                      32,((IData)(vlSelfRef.tb_if__DOT__rst)

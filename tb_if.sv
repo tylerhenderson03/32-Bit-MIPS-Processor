@@ -28,7 +28,7 @@ module tb_if();
     initial begin
         $dumpfile("tb_if.vcd");
         $dumpvars(1, tb_if);
-        $monitor("%t: clk %1b, rst %1b, PCSrc %1b, pc_pp %1b, pc_br %5b, pc_pp %5b, instruction %32b", $time, , clk, rst, PCSrc, pc_pp, pc_br, pc_pp, instruction);
+        $monitor("%t: clk %1b, rst %1b, PCSrc %1b, pc_br %5b, pc_pp %5b, instruction %32b", $time, clk, rst, PCSrc, pc_br, pc_pp, instruction);
     end
 
 
