@@ -9,8 +9,8 @@ module if_stage(input [WIDTH-1:0] if_in,
                 output wire [32-1:0] s_extend_out,
                 output wire [4:0] rd_out, rt_out
                 );
-
-    reg [WIDTH-1:0] register_file [32-1:0]; // 32 registers, each are 32(DEPTH)-bits wide
+    // 32 registers, each are 32(DEPTH)-bits wide
+    reg [WIDTH-1:0] register_file [32-1:0]; 
 
     assign s_extend_out = {16'b0, if_in[15:0]};
     assign rd_out = if_in[15:11];
