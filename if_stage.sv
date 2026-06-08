@@ -9,7 +9,7 @@ module if_stage #(parameter WIDTH)
                 output wire [WIDTH-1:0] inst_mem_out);
 
     // program counter
-    reg [$clog2(WIDTH-1):0] pc;
+    reg [WIDTH-1:0] pc;
 
     // need Instruction Memory
     reg [WIDTH-1:0] instruction_memory [32-1:0]; // for 32 instructions, can adjust
@@ -22,18 +22,18 @@ module if_stage #(parameter WIDTH)
 
     always_ff @(posedge clk or posedge rst) begin
         // condition ? value_if_true : value_if_false
-        if(rst)   pc <= 32'b0;
+        if(rst)   pc <= '0;
         else        pc <= PCSrc ? pc_br : (pc + 4);
     end
 
     always_comb  begin
         // could keep this, or change to be an ALU which ONLY adds by 4
-        assign pc_pp = (pc + 4);
+        pc_pp = (pc + 4);
         if(rst) begin
-            assign inst_mem_out = 32'b0;
+            inst_mem_out = 32'b0;
         end
         else begin 
-            assign inst_mem_out = instruction_memory[pc];
+            inst_mem_out = instruction_memory[pc];
         end
     end
 
