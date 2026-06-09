@@ -32,9 +32,19 @@ VlCoroutine Vtb_if___024root___eval_initial__TOP__Vtiming__0(Vtb_if___024root* v
                                          nullptr, "tb_if.sv", 
                                          21);
     vlSelfRef.tb_if__DOT__rst = 0U;
-    co_await vlSelfRef.__VdlySched.delay(0x0000000000000064ULL, 
+    co_await vlSelfRef.__VdlySched.delay(0x000000000000003cULL, 
                                          nullptr, "tb_if.sv", 
                                          22);
+    vlSelfRef.tb_if__DOT__PCSrc = 1U;
+    vlSelfRef.tb_if__DOT__pc_br = 5U;
+    co_await vlSelfRef.__VdlySched.delay(0x000000000000000aULL, 
+                                         nullptr, "tb_if.sv", 
+                                         23);
+    vlSelfRef.tb_if__DOT__PCSrc = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0x000000000000001eULL, 
+                                         nullptr, "tb_if.sv", 
+                                         24);
+    vlSelfRef.tb_if__DOT__pc_br = 0U;
     co_await vlSelfRef.__VdlySched.delay(0x0000000000000014ULL, 
                                          nullptr, "tb_if.sv", 
                                          25);

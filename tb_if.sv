@@ -18,10 +18,10 @@ module tb_if();
     always #(CLK_PERIOD/2) clk = ~clk;
     initial begin
         clk = 0; rst = 1; PCSrc = 0; pc_br = '0;
-        #(CLK_PERIOD) rst = 0; // initial reset sequence
-        #(10*CLK_PERIOD);
-        
-        
+        #(1*CLK_PERIOD) rst = 0; // initial reset sequence
+        #(6*CLK_PERIOD) PCSrc = 1; pc_br = 32'd5;
+        #(1*CLK_PERIOD) PCSrc = 0;
+        #(3*CLK_PERIOD) pc_br = '0;
         #(2*CLK_PERIOD) $finish;
     end
 
