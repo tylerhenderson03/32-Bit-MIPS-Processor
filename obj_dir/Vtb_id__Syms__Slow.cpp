@@ -11,12 +11,12 @@ Vtb_id__Syms::Vtb_id__Syms(VerilatedContext* contextp, const char* namep, Vtb_id
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(256);
+    Verilated::stackCheck(270);
     // Setup sub module instances
     TOP____024unit.ctor(this, "$unit");
     // Configure time unit / time precision
-    _vm_contextp__->timeunit(-12);
-    _vm_contextp__->timeprecision(-12);
+    _vm_contextp__->timeunit(-9);
+    _vm_contextp__->timeprecision(-9);
     // Setup each module's pointers to their submodules
     TOP.__PVT____024unit = &TOP____024unit;
     // Setup each module's pointer back to symbol table (for public functions)

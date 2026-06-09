@@ -1,6 +1,6 @@
+`timescale 1ns/1ns
+
 // will contain PC Logic, Instruction Memory reading
-
-
 module if_stage #(parameter WIDTH)
                 (input clk, rst,
                 input PCSrc,
@@ -22,7 +22,7 @@ module if_stage #(parameter WIDTH)
 
     always_ff @(posedge clk or posedge rst) begin
         // condition ? value_if_true : value_if_false
-        if(rst)   pc <= '0;
+        if(rst)     pc <= '0;
         else        pc <= PCSrc ? pc_br : (pc + 4);
     end
 

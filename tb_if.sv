@@ -1,6 +1,6 @@
+`timescale 1ns/1ns
+
 // instruction fetch (IF) stage testbench
-
-
 module tb_if();
         
     parameter WIDTH = 32;
