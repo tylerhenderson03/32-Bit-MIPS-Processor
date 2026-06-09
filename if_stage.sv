@@ -37,6 +37,4 @@ module if_stage #(parameter WIDTH)
         end
     end
 
-
-
 endmodule: if_stage
