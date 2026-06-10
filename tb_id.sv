@@ -49,15 +49,19 @@ module tb_id();
 
         // test sign-extension unit to confirm 32 bit output with upper 16 bits all zeros
         #(CLK_PERIOD) if_out = 32'b000100_00000_00000_1111111111111111; // branch
+        pc_incr_in = 15;
 
         // test read and write data to ensure correct registers are read with the pre-instantiation of register file to integers 0-31
         #(2*CLK_PERIOD) if_out =  32'b100011_00011_00101_0000000000000000; // load word
+        pc_incr_in = 7;
 
         // test register writeback to check write register/data functionality
             // read data from written registers on next clock cycle
         #(2*CLK_PERIOD) if_out = 32'b100011_01010_01011_0000000000000000;
         #(2*CLK_PERIOD) RegWrite = 1; wr_reg = 10; wr_data = 32'hFFFF_FFFF; if_out = 32'b100011_01010_01011_0000000000000000;
         #(2*CLK_PERIOD) RegWrite = 0; wr_reg = '0; wr_data = '0;
+        pc_incr_in = 1234132;
+        
         #(2*CLK_PERIOD) if_out = 32'b100011_01010_01011_0000000000000000;
 
         // check rd_out and rt_out match if_out[15:11] and if_out[20:16] respectively

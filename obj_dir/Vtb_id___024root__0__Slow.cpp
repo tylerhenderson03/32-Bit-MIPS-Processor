@@ -4,11 +4,14 @@
 
 #include "Vtb_id__pch.h"
 
+VL_ATTR_COLD void Vtb_id___024root___eval_static__TOP(Vtb_id___024root* vlSelf);
+
 VL_ATTR_COLD void Vtb_id___024root___eval_static(Vtb_id___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_id___024root___eval_static\n"); );
     Vtb_id__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    Vtb_id___024root___eval_static__TOP(vlSelf);
     vlSelfRef.__VactTriggered[0U] = (1ULL | vlSelfRef.__VactTriggered[0U]);
     vlSelfRef.__VactTriggered[0U] = (2ULL | vlSelfRef.__VactTriggered[0U]);
     vlSelfRef.__VactTriggered[0U] = (4ULL | vlSelfRef.__VactTriggered[0U]);
@@ -70,6 +73,15 @@ VL_ATTR_COLD void Vtb_id___024root___eval_static(Vtb_id___024root* vlSelf) {
             = vlSelfRef.__VactTriggered[vlSelfRef.__Vi];
         vlSelfRef.__Vi = ((IData)(1U) + vlSelfRef.__Vi);
     } while ((0U >= vlSelfRef.__Vi));
+}
+
+VL_ATTR_COLD void Vtb_id___024root___eval_static__TOP(Vtb_id___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_id___024root___eval_static__TOP\n"); );
+    Vtb_id__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
+    vlSelf->tb_id__DOT__id_00__DOT__unnamedblk1__DOT__j = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8088947715983664448ull);
 }
 
 VL_ATTR_COLD void Vtb_id___024root___eval_initial__TOP(Vtb_id___024root* vlSelf) {
@@ -244,13 +256,16 @@ VL_ATTR_COLD void Vtb_id___024root___dump_triggers__act(const VlUnpacked<QData/*
         VL_DBG_MSGS("         '" + tag + "' region trigger index 14 is active: @( tb_id.wr_reg)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 0x0000000fU)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 15 is active: @(posedge tb_id.RegWrite)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 15 is active: @(posedge tb_id.if_out)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 0x00000010U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 16 is active: @(posedge tb_id.rst)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 16 is active: @(posedge tb_id.RegWrite)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 0x00000011U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 17 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 17 is active: @(posedge tb_id.rst)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 0x00000012U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 18 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG

@@ -48,6 +48,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_id___024root final {
     IData/*31:0*/ tb_id__DOT__rd_data_one;
     IData/*31:0*/ tb_id__DOT__rd_data_two;
     IData/*31:0*/ tb_id__DOT__id_00__DOT__i;
+    IData/*31:0*/ tb_id__DOT__id_00__DOT__unnamedblk1__DOT__j;
     IData/*31:0*/ __Vtrigprevexpr___TOP__tb_id__DOT__if_out__0;
     IData/*31:0*/ __Vtrigprevexpr___TOP__tb_id__DOT__pc_incr_in__0;
     IData/*31:0*/ __Vtrigprevexpr___TOP__tb_id__DOT__rd_data_one__0;

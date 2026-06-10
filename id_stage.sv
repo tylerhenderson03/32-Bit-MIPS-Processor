@@ -13,7 +13,7 @@ module id_stage #(parameter WIDTH) (input rst,
                 output [2:0] mem_ctrl,
                 output [1:0] wb_ctrl,
                 output wire [WIDTH-1:0] pc_incr_out,
-                output wire [WIDTH-1:0] sgn_extend_out,
+                output reg [WIDTH-1:0] sgn_extend_out,
                 output reg [WIDTH-1:0] rd_data_one, rd_data_two,
                 output wire [5-1:0] rd_out, rt_out
                 );
@@ -29,7 +29,14 @@ module id_stage #(parameter WIDTH) (input rst,
     */
 
 // instruction [15:0] extended to be 32 bits
-    assign sgn_extend_out = {16'd0, if_out[15:0]};
+    always_ff @(posedge if_out) begin
+        integer j;
+        for(j = 16; j < 32; j++) begin
+            sgn_extend_out[j] <= if_out[15];
+        end
+    end
+    assign sgn_extend_out[15:0] = if_out[15:0];
+
 
 // instruction [20:16] shifted into EX stage
     assign rd_out = if_out[15:11];
@@ -46,7 +53,7 @@ module id_stage #(parameter WIDTH) (input rst,
     always_ff @(posedge RegWrite or posedge rst) begin
         if(rst) begin
             for(i = 0; i < 31; i++) begin
-                register_file[i] <= i*2;
+                register_file[i] <= i;
             end
         end
         else if(RegWrite) begin
@@ -62,7 +69,6 @@ module id_stage #(parameter WIDTH) (input rst,
         assign l_word = (if_out[31:26] == 35);
         assign s_word = (if_out[31:26] == 43);
         assign br = (if_out[31:26] == 4);
-        
     end
     */
 
@@ -79,7 +85,7 @@ module id_stage #(parameter WIDTH) (input rst,
     [2] - Branch
 */
 
-/* "wb_ctrl" is 2 bits
+/* "wb_ctrl" is 2 bits:
     [0] - MemToReg
     [1] - PCSrc/RegWrite
 */
