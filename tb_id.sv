@@ -1,8 +1,5 @@
 `timescale 1ns/1ns
-
 // instruction decode (ID) testbench
-
-
 module tb_id();
 // declare parameters
     parameter WIDTH = 32;
