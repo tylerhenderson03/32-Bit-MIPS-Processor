@@ -9,8 +9,8 @@ module mem_stage #(parameter WIDTH) (
     input reg [4:0] reg_dst_mux,
 
     output wire branch_flag,
-    output logic [1:0] wb_ctrl_out,
     output logic [WIDTH-1:0] mem_read_data, branch_addr, alu_result_out,
+    output logic [1:0] wb_ctrl_out,
     output wire [4:0] wr_reg_dest_out
     );
 

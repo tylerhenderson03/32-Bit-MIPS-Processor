@@ -1,8 +1,8 @@
 `timescale 1ns/1ns
 
 // Register Write-Back
-module wb_stage(
-    input reg [WIDTH-1:0]mem_read_data, alu_result_out,
+module wb_stage #(parameter WIDTH) (
+    input reg [WIDTH-1:0] mem_read_data, alu_result_out,
     input reg [1:0] wb_ctrl,
     input reg [4:0] wr_reg_dest_in,
 
@@ -10,6 +10,11 @@ module wb_stage(
     output wire [WIDTH-1:0] wr_data,
     output logic RegWrite
     );
+
+/* "wb_ctrl" is 2 bits:
+    [0] - MemToReg
+    [1] - PCSrc/RegWrite
+*/
 
 // pass-through
     assign wr_reg_dest_out = wr_reg_dest_in;

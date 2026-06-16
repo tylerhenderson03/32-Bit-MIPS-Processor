@@ -5,6 +5,7 @@
 module id_stage #(parameter WIDTH) (input rst,
                 input [WIDTH-1:0] if_out,
                 input [WIDTH-1:0] pc_incr_in,
+                
                 input [5-1:0] wr_reg,
                 input [WIDTH-1:0] wr_data,
                 input RegWrite,
