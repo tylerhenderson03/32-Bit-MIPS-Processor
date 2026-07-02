@@ -16,11 +16,12 @@ module id_stage #(parameter WIDTH) (input rst,
                 output wire [WIDTH-1:0] pc_incr_out,
                 output reg [WIDTH-1:0] sgn_extend_out,
                 output reg [WIDTH-1:0] rd_data_one, rd_data_two,
-                output wire [5-1:0] rd_out, rt_out
+                output wire [5-1:0] rd_out, rt_out,
+                output wire [WIDTH-1:0] reg_file_debug [0:32-1]
                 );
 // 32 general purpose registers, each are 32(WIDTH)-bits wide
-    reg [WIDTH-1:0] register_file [32-1:0]; 
-    integer i;
+    reg [WIDTH-1:0] register_file [32-1:0];
+    integer i; 
     /*
     initial begin
         for(i = 0; i < 31; i++) begin
@@ -28,6 +29,8 @@ module id_stage #(parameter WIDTH) (input rst,
         end
     end
     */
+
+// instantiate hazard detection unit
 
 // instruction [15:0] extended to be 32 bits
     always_ff @(posedge if_out) begin
@@ -37,6 +40,9 @@ module id_stage #(parameter WIDTH) (input rst,
         end
     end
     assign sgn_extend_out[15:0] = if_out[15:0];
+
+
+    assign reg_file_debug = register_file;
 
 
 // instruction [20:16] shifted into EX stage
@@ -112,6 +118,11 @@ module id_stage #(parameter WIDTH) (input rst,
                 ex_ctrl[3:0] = 4'bX010;
                 mem_ctrl[2:0] = 3'b100;
                 wb_ctrl[1:0] = 2'b0X;
+            end
+            default: begin
+                ex_ctrl[3:0] = 4'b0000;
+                mem_ctrl[2:0] = 3'b000;
+                wb_ctrl[1:0] = 2'b00;
             end
         endcase
     end

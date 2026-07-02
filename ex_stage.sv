@@ -25,6 +25,9 @@ module ex_stage #(parameter WIDTH) (
     assign mem_ctrl_out = mem_ctrl_in;
     assign wb_ctrl_out = wb_ctrl_in;
 
+// instantiate forwarding unit here
+    //fwd_unit (.WIDTH(WIDTH)) forward_exStage_00 ();
+
 /* "ex_ctrl" is 3 bits:
     [0] - ALUSrc
     [1] - ALUOp0
@@ -47,6 +50,7 @@ module ex_stage #(parameter WIDTH) (
                 else if(sgn_extend_out[5:0] == 6'b100100) alu_ctrl = 4'b0000;
                 else if(sgn_extend_out[5:0] == 6'b100101) alu_ctrl = 4'b0001;
                 else if(sgn_extend_out[5:0] == 6'b101010) alu_ctrl = 4'b0111;
+                else alu_ctrl = '0;
             end
             //2'b11: begin
             //end

@@ -1,6 +1,7 @@
 `timescale 1ns/1ns
 module top #(parameter WIDTH = 32) (
     input wire clk, rst,
+    input [WIDTH-1:0] if_instruction_memory[0:31], // for 32 instructions
 
 // IF outputs
     output wire [WIDTH-1:0] if_pc_pp, if_inst,
@@ -12,6 +13,7 @@ module top #(parameter WIDTH = 32) (
     output wire [2:0] id_memCtrl,
     output wire [1:0] id_wbCtrl,
     output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo,
+    output wire [WIDTH-1:0] reg_file_debug [0:32-1],
 // ID/EX pipeline registers
     output reg [4:0] id_ex_regT, id_ex_regD,
     output reg [3:0] id_ex_exCtrl,
@@ -101,6 +103,7 @@ module top #(parameter WIDTH = 32) (
 // module instantiations
     if_stage #(.WIDTH(WIDTH)) if_top (
         .clk(clk), .rst(rst),
+        .instruction_memory(if_instruction_memory),
         .PCSrc(mem_branchFlag),
         .pc_br(mem_branchAddr),
         .pc_pp(if_pc_pp),
@@ -119,7 +122,8 @@ module top #(parameter WIDTH = 32) (
         .pc_incr_out(id_pcIncr),
         .sgn_extend_out(id_sgnExt),
         .rd_data_one(id_rdDataOne), .rd_data_two(id_rdDataTwo),
-        .rd_out(id_regD), .rt_out(id_regT)
+        .rd_out(id_regD), .rt_out(id_regT),
+        .reg_file_debug(reg_file_debug)
     );
     ex_stage #(.WIDTH(WIDTH)) ex_top (
         .ex_ctrl(id_ex_exCtrl),
