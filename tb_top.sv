@@ -14,11 +14,18 @@ module tb_top();
   initial begin
   // add instructions below to be executed by the CPU core, include comment for context
     instruction_memory[0] = 32'b000000_00011_00010_00001_00000_100000; // add r1, r2, r3
-    instruction_memory[1] = 32'b100011_10100_10000_00000_00000_000100; // lw r16, 4(r20)
-    instruction_memory[2] = 32'b101011_10100_10000_00000_00000_000100; // sw r16, 4(r20)
-    instruction_memory[3] = 32'b000100_00001_00101_00000_00000_000111; // beq r1, r5, 7
-    instruction_memory[4] = 32'b000100_00001_01111_00000_00000_000111; // beq r1, r15, 7
-    for(i = 5; i < NUM_INSTRUCTIONS; i++) begin
+    instruction_memory[1] = 32'b000000_01111_00000_00010_00000_100000; // add r2, r0, r15
+    instruction_memory[2] = 32'b000100_00001_00011_00000_00000_000000; // beq r1, r3, 0
+    instruction_memory[3] = 32'b000000_00011_00010_00011_00000_100000; // add r3, r2, r3 uses old r2 value, new is in ex stage
+    instruction_memory[4] = 32'b000000_00011_00110_00100_00000_100000; // add r4, r2, r6 uses old r2 value, new is in mem
+    instruction_memory[5] = 32'b000000_00101_00010_00101_00000_100000; // add r5, r2, r5 should use new r2 value, r2 is W.B.
+    instruction_memory[6] = 32'b000100_00001_00011_00000_00000_000000; // beq r1, r3, 0
+    /*
+    instruction_memory[1] = 32'b100011_10100_10000_00000_00000_000100; // lw r16, 4(20)
+    instruction_memory[2] = 32'b101011_10100_10000_00000_00000_000100; // sw r16, 4(20)
+    instruction_memory[3] = 32'b000100_00001_01111_00000_00000_000000; // beq r1, r15, 0
+    */
+    for(i = 7; i < NUM_INSTRUCTIONS; i++) begin
       instruction_memory[i] = '0; // load the rest of instruction memory with nop's
     end
   end
@@ -106,7 +113,7 @@ top #(.WIDTH(WIDTH)) top_00 (
     // observe waveform during this period with sample instruction set
     // (instantiate inst. mem. through IF stage)
 
-    #(10*CLK_PERIOD) $finish;
+    #(20*CLK_PERIOD) $finish;
 
   end
 

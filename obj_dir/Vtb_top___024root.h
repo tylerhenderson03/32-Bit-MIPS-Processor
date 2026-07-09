@@ -43,9 +43,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top___024root final {
         CData/*4:0*/ tb_top__DOT__mem_wb_regDst;
         CData/*0:0*/ tb_top__DOT__wb_regWrite;
         CData/*3:0*/ tb_top__DOT__top_00__DOT__ex_top__DOT__alu_ctrl;
-        CData/*0:0*/ __VdlySet__tb_top__DOT__top_00__DOT__id_top__DOT__register_file__v0;
-        CData/*4:0*/ __VdlyDim0__tb_top__DOT__top_00__DOT__id_top__DOT__register_file__v31;
-        CData/*0:0*/ __VdlySet__tb_top__DOT__top_00__DOT__id_top__DOT__register_file__v31;
+        CData/*0:0*/ __VdlySet__tb_top__DOT__reg_file_debug__v0;
+        CData/*4:0*/ __VdlyDim0__tb_top__DOT__reg_file_debug__v32;
+        CData/*0:0*/ __VdlySet__tb_top__DOT__reg_file_debug__v32;
         CData/*4:0*/ __VdlyDim0__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0;
         CData/*0:0*/ __VdlySet__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0;
         CData/*0:0*/ __VstlFirstIteration;
@@ -100,12 +100,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top___024root final {
         IData/*31:0*/ tb_top__DOT__wb_regData;
         IData/*31:0*/ tb_top__DOT__top_00__DOT__if_top__DOT__pc;
         IData/*31:0*/ tb_top__DOT__top_00__DOT__id_top__DOT__i;
-        IData/*31:0*/ tb_top__DOT__top_00__DOT__id_top__DOT__unnamedblk1__DOT__j;
         IData/*31:0*/ tb_top__DOT__top_00__DOT__ex_top__DOT__alu_00__DOT__in_b;
-        IData/*31:0*/ __Vdly__tb_top__DOT__top_00__DOT__if_top__DOT__pc;
-        IData/*31:0*/ __Vdly__tb_top__DOT__id_sgnExt;
-        IData/*31:0*/ __VdlyMask__tb_top__DOT__id_sgnExt;
-        IData/*31:0*/ __VdlyVal__tb_top__DOT__top_00__DOT__id_top__DOT__register_file__v31;
+        IData/*31:0*/ __Vdly__tb_top__DOT__ex_mem_pcAdd;
+        IData/*31:0*/ __VdlyVal__tb_top__DOT__reg_file_debug__v32;
         IData/*31:0*/ __VdlyVal__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0;
         IData/*31:0*/ __Vtrigprevexpr___TOP__tb_top__DOT__ex_aluResult__0;
         IData/*31:0*/ __Vtrigprevexpr___TOP__tb_top__DOT__ex_mem_aluResult__0;
@@ -136,7 +133,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top___024root final {
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__if_instruction_memory;
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__reg_file_debug;
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__if_top__DOT__instruction_memory;
-        VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__id_top__DOT__reg_file_debug;
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__id_top__DOT__register_file;
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory;
         VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;

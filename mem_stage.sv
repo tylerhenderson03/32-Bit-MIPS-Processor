@@ -5,7 +5,7 @@ module mem_stage #(parameter WIDTH) (
     input clk, rst,
     /* verilator lint_on UNUSEDSIGNAL */
     input logic zero_flag,
-    input reg [2:0] mem_ctrl,
+    input reg [3:0] mem_ctrl,
     input reg [1:0] wb_ctrl_in,
     input reg [WIDTH-1:0] alu_result, rd_data_two_out, pc_slt_add,
     input reg [4:0] reg_dst_mux,
@@ -20,7 +20,8 @@ data_mem #(.WIDTH(WIDTH)) dmem_00 (.clk(clk), .rd_en(mem_ctrl[0]), .wr_en(mem_ct
 
     assign wb_ctrl_out = wb_ctrl_in;
 
-    assign branch_flag = mem_ctrl[2] & zero_flag;
+    // mem_ctrl[2] signifies a branch instruction, mem_ctrl[3] is for a NE, ~mem_ctrl[3] for EQ
+    assign branch_flag = mem_ctrl[2] && (zero_flag || (mem_ctrl[3] && ~zero_flag)); 
 
     assign wr_reg_dest_out = reg_dst_mux;
 
@@ -31,6 +32,7 @@ data_mem #(.WIDTH(WIDTH)) dmem_00 (.clk(clk), .rd_en(mem_ctrl[0]), .wr_en(mem_ct
     [0] - MemRead
     [1] - MemWrite
     [2] - Branch
+    [3] - bneSel
 */
 
 endmodule: mem_stage

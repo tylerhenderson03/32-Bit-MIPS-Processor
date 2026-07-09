@@ -13,7 +13,7 @@ module wb_stage #(parameter WIDTH) (
 
 /* "wb_ctrl" is 2 bits:
     [0] - MemToReg
-    [1] - PCSrc/RegWrite
+    [1] - RegWrite
 */
 
 // pass-through
@@ -23,7 +23,7 @@ module wb_stage #(parameter WIDTH) (
     assign RegWrite = wb_ctrl[1];
 
 // data to be written back to register file
-    assign wr_data = wb_ctrl[0] ? alu_result_out : mem_read_data;
+    assign wr_data = wb_ctrl[0] ? mem_read_data : alu_result_out;
 
 
 

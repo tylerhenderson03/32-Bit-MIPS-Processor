@@ -14,8 +14,9 @@ module if_stage #(parameter WIDTH)
     reg [WIDTH-1:0] pc;
 
     always_ff @(posedge clk or posedge rst) begin
-        if(rst)     pc <= '0;
-        else        pc <= PCSrc ? pc_br : pc_pp; // condition ? value_if_true : value_if_false
+        if(rst)     pc <= '0; // add else if PCWrite then pc gets current pc to preserve current instruction on a stall
+        else        pc <= PCSrc ? pc_br : pc_pp;
+            // condition ? value_if_true : value_if_false
     end
 
     assign pc_pp        = pc + 4;

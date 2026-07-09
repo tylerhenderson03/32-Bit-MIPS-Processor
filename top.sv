@@ -9,26 +9,26 @@ module top #(parameter WIDTH = 32) (
     output reg [WIDTH-1:0] if_id_pcIncr, if_id_inst,
 // ID outputs
     output wire [4:0] id_regT, id_regD,
-    output wire [3:0] id_exCtrl,
-    output wire [2:0] id_memCtrl,
+    output wire [4:0] id_exCtrl,
+    output wire [3:0] id_memCtrl,
     output wire [1:0] id_wbCtrl,
     output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo,
     output wire [WIDTH-1:0] reg_file_debug [0:32-1],
 // ID/EX pipeline registers
     output reg [4:0] id_ex_regT, id_ex_regD,
-    output reg [3:0] id_ex_exCtrl,
-    output reg [2:0] id_ex_memCtrl,
+    output reg [4:0] id_ex_exCtrl,
+    output reg [3:0] id_ex_memCtrl,
     output reg [1:0] id_ex_wbCtrl,
     output reg [WIDTH-1:0] id_ex_pcIncr, id_ex_sgnExt, id_ex_rdDataOne, id_ex_rdDataTwo,
 // EX outputs
     output wire [4:0] ex_regDst,
-    output wire [2:0] ex_memCtrl,
+    output wire [3:0] ex_memCtrl,
     output wire [1:0] ex_wbCtrl,
     output wire ex_zeroFlag,
     output wire [WIDTH-1:0] ex_aluResult, ex_rdDataTwo, ex_pcAdd,
 // EX/MEM pipeline registers
     output reg [4:0] ex_mem_regDst,
-    output reg [2:0] ex_mem_memCtrl,
+    output reg [3:0] ex_mem_memCtrl,
     output reg [1:0] ex_mem_wbCtrl,
     output reg ex_mem_zeroFlag,
     output reg [WIDTH-1:0] ex_mem_aluResult, ex_mem_rdDataTwo, ex_mem_pcAdd,
@@ -52,7 +52,11 @@ module top #(parameter WIDTH = 32) (
     always_ff @(posedge clk or posedge rst) begin
         if(rst) begin
             if_id_pcIncr <= '0;
-            if_id_inst   <= '0;
+            if_id_inst   <= 'X;
+        /* end else if(if_id_write) begin // in the event of a stall, preserve previous instruction state in this stage of processor
+            if_id_pcIncr <= if_id_pcIncr;
+            if_id_inst   <= if_id_inst;
+        */
         end else begin
             if_id_pcIncr <= if_pc_pp;
             if_id_inst   <= if_inst;
@@ -110,6 +114,7 @@ module top #(parameter WIDTH = 32) (
         .inst_mem_out(if_inst)
     );
     id_stage #(.WIDTH(WIDTH)) id_top (
+        .clk(clk),
         .rst(rst),
         .if_out(if_id_inst),
         .pc_incr_in(if_id_pcIncr),
@@ -123,7 +128,7 @@ module top #(parameter WIDTH = 32) (
         .sgn_extend_out(id_sgnExt),
         .rd_data_one(id_rdDataOne), .rd_data_two(id_rdDataTwo),
         .rd_out(id_regD), .rt_out(id_regT),
-        .reg_file_debug(reg_file_debug)
+        .register_file(reg_file_debug)
     );
     ex_stage #(.WIDTH(WIDTH)) ex_top (
         .ex_ctrl(id_ex_exCtrl),
