@@ -9,14 +9,15 @@ module top #(parameter WIDTH = 32) (
     output reg [WIDTH-1:0] if_id_pcIncr, if_id_inst,
 // ID outputs
     output wire [4:0] id_regT, id_regD,
-    output wire [4:0] id_exCtrl,
+    output wire [3:0] id_exCtrl,
     output wire [3:0] id_memCtrl,
     output wire [1:0] id_wbCtrl,
     output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo,
     output wire [WIDTH-1:0] reg_file_debug [0:32-1],
+    output logic id_stallIF,
 // ID/EX pipeline registers
     output reg [4:0] id_ex_regT, id_ex_regD,
-    output reg [4:0] id_ex_exCtrl,
+    output reg [3:0] id_ex_exCtrl,
     output reg [3:0] id_ex_memCtrl,
     output reg [1:0] id_ex_wbCtrl,
     output reg [WIDTH-1:0] id_ex_pcIncr, id_ex_sgnExt, id_ex_rdDataOne, id_ex_rdDataTwo,
@@ -25,6 +26,7 @@ module top #(parameter WIDTH = 32) (
     output wire [3:0] ex_memCtrl,
     output wire [1:0] ex_wbCtrl,
     output wire ex_zeroFlag,
+    output wire ex_overflowFlag,
     output wire [WIDTH-1:0] ex_aluResult, ex_rdDataTwo, ex_pcAdd,
 // EX/MEM pipeline registers
     output reg [4:0] ex_mem_regDst,
@@ -53,7 +55,7 @@ module top #(parameter WIDTH = 32) (
         if(rst) begin
             if_id_pcIncr <= '0;
             if_id_inst   <= 'X;
-        /* end else if(if_id_write) begin // in the event of a stall, preserve previous instruction state in this stage of processor
+        /* end else if(if_id_write || id_stallIF) begin // in the event of a stall, preserve previous instruction state in this stage of processor
             if_id_pcIncr <= if_id_pcIncr;
             if_id_inst   <= if_id_inst;
         */
@@ -128,7 +130,8 @@ module top #(parameter WIDTH = 32) (
         .sgn_extend_out(id_sgnExt),
         .rd_data_one(id_rdDataOne), .rd_data_two(id_rdDataTwo),
         .rd_out(id_regD), .rt_out(id_regT),
-        .register_file(reg_file_debug)
+        .register_file(reg_file_debug),
+        .stallIF(id_stallIF)
     );
     ex_stage #(.WIDTH(WIDTH)) ex_top (
         .ex_ctrl(id_ex_exCtrl),
@@ -145,6 +148,7 @@ module top #(parameter WIDTH = 32) (
         .alu_result(ex_aluResult),
         .rd_data_two_out(ex_rdDataTwo),
         .zero_flag(ex_zeroFlag),
+        .overflow_flag(ex_overflowFlag),
         .reg_dst_mux(ex_regDst)
     );
     mem_stage #(.WIDTH(WIDTH)) mem_top (

@@ -19,16 +19,17 @@ module id_stage #(parameter WIDTH) (
                 output reg [WIDTH-1:0] sgn_extend_out, // contains function code in lower 7 bits. passed to ALU
                 output reg [WIDTH-1:0] rd_data_one, rd_data_two,
                 output wire [5-1:0] rd_out, rt_out,
-                output reg [WIDTH-1:0] register_file [0:32-1]
+                output reg [WIDTH-1:0] register_file [0:32-1],
+                output logic stallIF
                 );
+
 // instantiate hazard detection unit
 
 
-    logic bneSel;
 
 // instruction [15:0] extended based on select bit
     logic signExtSel; //regular sign extension on FALSE, or default 16'd0 sign extension if TRUE
-    assign sgn_extend_out = signExtSel ? {{16{if_out[15]}}, if_out[15:0]} : {16{1'b0}, if_out[15:0]};
+    always_comb sgn_extend_out = signExtSel ? {{16{if_out[15]}}, if_out[15:0]} : {{16{1'b0}}, if_out[15:0]};
 
 // truncations to pass-through
     assign rd_out[4:0] = if_out[15:11]; // instruction [20:16] shifted into EX stage
@@ -77,65 +78,83 @@ module id_stage #(parameter WIDTH) (
 // control unit logic - combinational
     always_comb begin
         case(if_out[31:26])
-            5'd0: begin // add, addu, and (r)
+            6'd0: begin // add, addu, and (r)
                 ex_ctrl[3:0] = 4'b1100; // XXX0 - selects from register
-                mem_ctrl[3:0] = 3'b0000;
+                mem_ctrl[3:0] = 4'b0000;
                 wb_ctrl[1:0] = 2'b10;
                 signExtSel = 1;
+                stallIF = 0;
             end
-            5'd8: begin // addi (i) change ALU control signals to account for overflow flag
+            6'd8: begin // addi (i) change ALU control signals to account for overflow flag
                 ex_ctrl[3:0] = 4'b0001; // X001 - alu does addition and selects from immediate
-                mem_ctrl[3:0] = 3'b0000;
+                mem_ctrl[3:0] = 4'b0000;
                 wb_ctrl[1:0] = 2'b10;
                 signExtSel = 1; // 
+                stallIF = 0;
             end
-            5'd9: begin // addiu (i) change ALU control signals for no overflow
+            6'd9: begin // addiu (i) change ALU control signals for no overflow
                 ex_ctrl[3:0] = 4'b0001; // X00X - alu does addition, ... immediate
-                mem_ctrl[3:0] = 3'b0000;
+                mem_ctrl[3:0] = 4'b0000;
                 wb_ctrl[1:0] = 2'b10;
                 signExtSel = 1;
+                stallIF = 0;
             end
-            5'hc: begin // andi (i)
-                ex_ctrl[4:0] = 4'b0111; // X11X - hardcoded AND option, ... immediate
-                mem_ctrl[3:0] = 3'b0000;
+            6'hc: begin // andi (i)
+                ex_ctrl[3:0] = 4'b0111; // X11X - hardcoded AND option, ... immediate
+                mem_ctrl[3:0] = 4'b0000;
                 wb_ctrl[1:0] = 2'b10;
                 signExtSel = 0; // use zero extension 
+                stallIF = 0;
             end
-            5'h4: begin // branch on equal 
+            6'h4: begin // branch on equal 
                 ex_ctrl[3:0] = 4'bX010; // X is for no destination register, 01 is for sub
-                mem_ctrl[3:0] = 3'b0100;
+                mem_ctrl[3:0] = 4'b0100;
                 wb_ctrl[1:0] = 2'b0X;
                 signExtSel = 1;
+                stallIF = 0;
             end
-            5'h5: begin // branch on not equal
+            6'h5: begin // branch on not equal
                 ex_ctrl[3:0] = 4'bX010; // X100 - selects from register, 01 is for sub, X is for no destination register
-                mem_ctrl[3:0] = 3'b1100; // MSB is set for branch flag calculation in MEM
+                mem_ctrl[3:0] = 4'b1100; // MSB is set for branch flag calculation in MEM
                 wb_ctrl[1:0] = 2'b10;
                 signExtSel = 1; // use standard extension
+                stallIF = 0;
             end
-            5'h2: begin // jump instruction
+            6'h2: begin // jump instruction
+                ex_ctrl[3:0] = 4'b0000; // edit these
+                mem_ctrl[3:0] = 4'b0000;
+                wb_ctrl[1:0] = 2'b00;
+                signExtSel = 1;
+                stallIF = 1;
+            end
+            6'h3: begin // jump and link
+                ex_ctrl[3:0] = 4'b0000; // edit these
+                mem_ctrl[3:0] = 4'b0000;
+                wb_ctrl[1:0] = 2'b00;
+                signExtSel = 1;
+                stallIF = 1;
+            end
 
-            end
-            5'h3: begin // jump and link
-
-            end
-            5'd35: begin // load word
+            6'd35: begin // load word
                 ex_ctrl[3:0] = 4'b0001;
-                mem_ctrl[3:0] = 3'b0010;
+                mem_ctrl[3:0] = 4'b0010;
                 wb_ctrl[1:0] = 2'b11;
                 signExtSel = 1;
+                stallIF = 0;
             end
-            5'd43: begin // store word
+            6'd43: begin // store word
                 ex_ctrl[3:0] = 4'bX001;
-                mem_ctrl[3:0] = 3'b0001;
+                mem_ctrl[3:0] = 4'b0001;
                 wb_ctrl[1:0] = 2'b0X;
                 signExtSel = 1;
+                stallIF = 0;
             end
             default: begin
                 ex_ctrl[3:0] = 4'b0000;
-                mem_ctrl[3:0] = 3'b0000;
+                mem_ctrl[3:0] = 4'b0000;
                 wb_ctrl[1:0] = 2'b00;
                 signExtSel = 1;
+                stallIF = 0;
             end
         endcase
     end

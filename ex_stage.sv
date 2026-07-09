@@ -11,30 +11,30 @@ module ex_stage #(parameter WIDTH) (
     output wire [3:0] mem_ctrl_out,
     output wire [1:0] wb_ctrl_out,
     output wire [WIDTH-1:0] pc_slt_add, alu_result, rd_data_two_out,
-    output wire zero_flag,
+    output wire zero_flag, overflow_flag,
     output reg [4:0] reg_dst_mux
     );
 // arithmetic operations
-localparam ALU_ADD  = 4'b0010;
-localparam ALU_ADDU = 4'b0011;
-localparam ALU_SUB  = 4'b0110;
-localparam ALU_SUBU = 4'b1001;
-localparam ALU_MUL = 4'b1111;
+    localparam ALU_ADD  = 4'b0010;
+    localparam ALU_ADDU = 4'b0011;
+    localparam ALU_SUB  = 4'b0110;
+    localparam ALU_SUBU = 4'b1001;
+    localparam ALU_MUL = 4'b1111;
 
 // bitwise, logical operators
-localparam ALU_AND  = 4'b0000;
-localparam ALU_OR   = 4'b0001;
-localparam ALU_NOR  = 4'b1100;
-localparam ALU_XOR  = 4';
+    localparam ALU_AND  = 4'b0000;
+    localparam ALU_OR   = 4'b0001;
+    localparam ALU_NOR  = 4'b1100;
+    //localparam ALU_XOR  = 4';
 
 // comparison operators
-localparam ALU_SLT  = 4'b0111;
-localparam ALU_SLTU = 4'b1001;
+    localparam ALU_SLT  = 4'b0111;
+    //localparam ALU_SLTU = 4'b1001;
 
 // logical shifts
-localparam ALU_SLL  = 4';
-localparam ALU_SRL  = 4';
-localparam ALU_SRA  = 4';
+    //localparam ALU_SLL  = 4';
+    //localparam ALU_SRL  = 4';
+    //localparam ALU_SRA  = 4';
 
 // branch address arithmetic
     assign pc_slt_add = pc_incr_in + {sgn_extend_out[29:0], 2'b00};
@@ -74,7 +74,7 @@ localparam ALU_SRA  = 4';
                 else if(sgn_extend_out[5:0] == 6'b101010) alu_ctrl = ALU_SLT;
                 else if(sgn_extend_out[5:0] == 6'b100001) alu_ctrl = ALU_ADDU;
                 else if(sgn_extend_out[5:0] == 6'b100011) alu_ctrl = ALU_SUBU;
-                //else if(sgn_extend_out[5:0] == 6'b100011) alu_ctrl = ALU_SUBU;
+                else if(sgn_extend_out[5:0] == 6'b010010) alu_ctrl = ALU_MUL;
                 //else if(sgn_extend_out[5:0] == 6') alu_ctrl = ;
                 else if(sgn_extend_out[5:0] == 6'h27) alu_ctrl = ALU_NOR;
                 else alu_ctrl = '0;
@@ -87,7 +87,7 @@ localparam ALU_SRA  = 4';
     end
 
 // ALU declaration
-    alu #(.WIDTH(WIDTH)) alu_00 (.in_a(rd_data_one), .in_b(ex_ctrl[0] ? sgn_extend_out : rd_data_two_in), .alu_opcode(alu_ctrl), .zero_flag(zero_flag), .alu_result(alu_result));
+    alu #(.WIDTH(WIDTH)) alu_00 (.in_a(rd_data_one), .in_b(ex_ctrl[0] ? sgn_extend_out : rd_data_two_in), .alu_opcode(alu_ctrl), .zero_flag(zero_flag), .overflow_flag(overflow_flag), .alu_result(alu_result));
 
 
 

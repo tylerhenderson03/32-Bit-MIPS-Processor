@@ -29,6 +29,7 @@ module tb_top();
       instruction_memory[i] = '0; // load the rest of instruction memory with nop's
     end
   end
+  /* verilator lint_off UNUSEDSIGNAL */
 // IF outputs
   wire [WIDTH-1:0] if_pc_pp, if_inst;
 // IF/ID pipeline registers
@@ -36,27 +37,28 @@ module tb_top();
 // ID outputs
   wire [4:0] id_regT, id_regD;
   wire [3:0] id_exCtrl;
-  wire [2:0] id_memCtrl;
+  wire [3:0] id_memCtrl;
   wire [1:0] id_wbCtrl;
   wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo;
-  /* verilator lint_off UNUSEDSIGNAL */
   wire [WIDTH-1:0] reg_file_debug [0:32-1];
-  /* verilator lint_on UNUSEDSIGNAL */
+  wire id_stallIF;
+  //wire if_id_write;
 // ID/EX pipeline registers
   wire [4:0] id_ex_regT, id_ex_regD;
   wire [3:0] id_ex_exCtrl;
-  wire [2:0] id_ex_memCtrl;
+  wire [3:0] id_ex_memCtrl;
   wire [1:0] id_ex_wbCtrl;
   wire [WIDTH-1:0] id_ex_pcIncr, id_ex_sgnExt, id_ex_rdDataOne, id_ex_rdDataTwo;
 // EX outputs
   wire [4:0] ex_regDst;
-  wire [2:0] ex_memCtrl;
+  wire [3:0] ex_memCtrl;
   wire [1:0] ex_wbCtrl;
   wire ex_zeroFlag;
+  wire ex_overflowFlag;
   wire [WIDTH-1:0] ex_aluResult, ex_rdDataTwo, ex_pcAdd;
 // EX/MEM pipeline registers
   wire [4:0] ex_mem_regDst;
-  wire [2:0] ex_mem_memCtrl;
+  wire [3:0] ex_mem_memCtrl;
   wire [1:0] ex_mem_wbCtrl;
   wire ex_mem_zeroFlag;
   wire [WIDTH-1:0] ex_mem_aluResult, ex_mem_rdDataTwo, ex_mem_pcAdd;
@@ -74,6 +76,7 @@ module tb_top();
   wire wb_regWrite;
   wire [4:0] wb_regDst;
   wire [WIDTH-1:0] wb_regData;
+  /* verilator lint_on UNUSEDSIGNAL */
 
 // module instantiation 
 top #(.WIDTH(WIDTH)) top_00 (
@@ -84,13 +87,14 @@ top #(.WIDTH(WIDTH)) top_00 (
   .id_exCtrl(id_exCtrl), .id_memCtrl(id_memCtrl), .id_wbCtrl(id_wbCtrl),
   .id_pcIncr(id_pcIncr), .id_sgnExt(id_sgnExt),
   .id_rdDataOne(id_rdDataOne), .id_rdDataTwo(id_rdDataTwo),
+  .id_stallIF(id_stallIF),
   .id_ex_regT(id_ex_regT), .id_ex_regD(id_ex_regD),
   .id_ex_exCtrl(id_ex_exCtrl), .id_ex_memCtrl(id_ex_memCtrl), .id_ex_wbCtrl(id_ex_wbCtrl),
   .id_ex_pcIncr(id_ex_pcIncr), .id_ex_sgnExt(id_ex_sgnExt),
   .id_ex_rdDataOne(id_ex_rdDataOne), .id_ex_rdDataTwo(id_ex_rdDataTwo),
   .reg_file_debug(reg_file_debug),
   .ex_regDst(ex_regDst), .ex_memCtrl(ex_memCtrl), .ex_wbCtrl(ex_wbCtrl),
-  .ex_zeroFlag(ex_zeroFlag),
+  .ex_zeroFlag(ex_zeroFlag), .ex_overflowFlag(ex_overflowFlag),
   .ex_aluResult(ex_aluResult), .ex_rdDataTwo(ex_rdDataTwo), .ex_pcAdd(ex_pcAdd),
   .ex_mem_regDst(ex_mem_regDst), .ex_mem_memCtrl(ex_mem_memCtrl), .ex_mem_wbCtrl(ex_mem_wbCtrl),
   .ex_mem_zeroFlag(ex_mem_zeroFlag),
