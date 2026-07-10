@@ -2,14 +2,14 @@
 // ALU
 // Forwarding unit logic
 module ex_stage #(parameter WIDTH) (
-    input reg [3:0] ex_ctrl,
+    input reg [4:0] ex_ctrl, shamt_out,
     input reg [3:0] mem_ctrl_in,
-    input reg [1:0] wb_ctrl_in,
+    input reg [3:0] wb_ctrl_in,
     input reg [WIDTH-1:0] pc_incr_in, sgn_extend_out, rd_data_one, rd_data_two_in,
     input reg [4:0] rd_out, rt_out,
 
     output wire [3:0] mem_ctrl_out,
-    output wire [1:0] wb_ctrl_out,
+    output wire [3:0] wb_ctrl_out,
     output wire [WIDTH-1:0] pc_slt_add, alu_result, rd_data_two_out,
     output wire zero_flag, overflow_flag,
     output reg [4:0] reg_dst_mux
@@ -29,12 +29,12 @@ module ex_stage #(parameter WIDTH) (
 
 // comparison operators
     localparam ALU_SLT  = 4'b0111;
-    //localparam ALU_SLTU = 4'b1001;
+    localparam ALU_SLTU = 4'b1001;
 
 // logical shifts
-    //localparam ALU_SLL  = 4';
-    //localparam ALU_SRL  = 4';
-    //localparam ALU_SRA  = 4';
+    localparam ALU_SLL  = 4'b1110;
+    localparam ALU_SRL  = 4'b1011;
+
 
 // branch address arithmetic
     assign pc_slt_add = pc_incr_in + {sgn_extend_out[29:0], 2'b00};
@@ -59,35 +59,50 @@ module ex_stage #(parameter WIDTH) (
     reg [3:0] alu_ctrl;
 // ALU Control Logic
     always_comb begin
-        case({ex_ctrl[2], ex_ctrl[1]})
-            2'b00: begin // i-type - load word, store word
+        case({ex_ctrl[4], ex_ctrl[2], ex_ctrl[1]})
+            3'b000: begin // i-type - load word, store word
                 alu_ctrl = ALU_ADD;
             end
-            2'b01: begin // i-type - branch
+            3'b001: begin // i-type - branch
                 alu_ctrl = ALU_SUB;
             end
-            2'b10: begin // r-type, has funct (function code) in lower 6 bits
+            3'b010: begin // r-type, has funct (function code) in lower 6 bits
                 if(sgn_extend_out[5:0] == 6'b100000) alu_ctrl = ALU_ADD;
                 else if(sgn_extend_out[5:0] == 6'b100010) alu_ctrl = ALU_SUB;
                 else if(sgn_extend_out[5:0] == 6'b100100) alu_ctrl = ALU_AND;
-                else if(sgn_extend_out[5:0] == 6'b100101) alu_ctrl = ALU_OR;
                 else if(sgn_extend_out[5:0] == 6'b101010) alu_ctrl = ALU_SLT;
                 else if(sgn_extend_out[5:0] == 6'b100001) alu_ctrl = ALU_ADDU;
                 else if(sgn_extend_out[5:0] == 6'b100011) alu_ctrl = ALU_SUBU;
                 else if(sgn_extend_out[5:0] == 6'b010010) alu_ctrl = ALU_MUL;
-                //else if(sgn_extend_out[5:0] == 6') alu_ctrl = ;
                 else if(sgn_extend_out[5:0] == 6'h27) alu_ctrl = ALU_NOR;
+                else if(sgn_extend_out[5:0] == 6'h25) alu_ctrl = ALU_OR;
+                else if(sgn_extend_out[5:0] == 6'h2a) alu_ctrl = ALU_SLT;
+                else if(sgn_extend_out[5:0] == 6'h2b) alu_ctrl = ALU_SLTU;
+                else if(sgn_extend_out[5:0] == 6'h00) alu_ctrl = ALU_SLL;
+                else if(sgn_extend_out[5:0] == 6'h02) alu_ctrl = ALU_SRL;
+                //else if(sgn_extend_out[5:0] == 6'h) alu_ctrl = ;
+                //else if(sgn_extend_out[5:0] == 6'h) alu_ctrl = ;
+
                 else alu_ctrl = '0;
             end
-            2'b11: begin
+            3'b011: begin
                 alu_ctrl = ALU_AND;
+            end
+            3'b100: begin
+                alu_ctrl = ALU_OR;
+            end
+            3'b101: begin
+                alu_ctrl = ALU_SLT;
+            end
+            3'b110: begin
+                alu_ctrl = ALU_SLTU;
             end
             default: alu_ctrl = '0;
         endcase
     end
 
 // ALU declaration
-    alu #(.WIDTH(WIDTH)) alu_00 (.in_a(rd_data_one), .in_b(ex_ctrl[0] ? sgn_extend_out : rd_data_two_in), .alu_opcode(alu_ctrl), .zero_flag(zero_flag), .overflow_flag(overflow_flag), .alu_result(alu_result));
+    alu #(.WIDTH(WIDTH)) alu_00 (.in_a(rd_data_one), .in_b(ex_ctrl[0] ? sgn_extend_out : rd_data_two_in), .alu_opcode(alu_ctrl), .zero_flag(zero_flag), .overflow_flag(overflow_flag), .alu_result(alu_result), .shamt_out(shamt_out));
 
 
 

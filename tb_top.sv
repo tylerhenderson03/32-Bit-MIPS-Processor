@@ -36,40 +36,43 @@ module tb_top();
   wire [WIDTH-1:0] if_id_pcIncr, if_id_inst;
 // ID outputs
   wire [4:0] id_regT, id_regD;
-  wire [3:0] id_exCtrl;
+  wire [4:0] id_exCtrl;
   wire [3:0] id_memCtrl;
-  wire [1:0] id_wbCtrl;
+  wire [3:0] id_wbCtrl;
   wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo;
   wire [WIDTH-1:0] reg_file_debug [0:32-1];
   wire id_stallIF;
+  wire id_PCJmp;
+  wire [WIDTH-1:0] id_jump_addr;
+  wire [4:0] id_shamt_out;
   //wire if_id_write;
 // ID/EX pipeline registers
-  wire [4:0] id_ex_regT, id_ex_regD;
-  wire [3:0] id_ex_exCtrl;
+  wire [4:0] id_ex_regT, id_ex_regD, id_ex_shamt_out;
+  wire [4:0] id_ex_exCtrl;
   wire [3:0] id_ex_memCtrl;
-  wire [1:0] id_ex_wbCtrl;
+  wire [3:0] id_ex_wbCtrl;
   wire [WIDTH-1:0] id_ex_pcIncr, id_ex_sgnExt, id_ex_rdDataOne, id_ex_rdDataTwo;
 // EX outputs
   wire [4:0] ex_regDst;
   wire [3:0] ex_memCtrl;
-  wire [1:0] ex_wbCtrl;
+  wire [3:0] ex_wbCtrl;
   wire ex_zeroFlag;
   wire ex_overflowFlag;
   wire [WIDTH-1:0] ex_aluResult, ex_rdDataTwo, ex_pcAdd;
 // EX/MEM pipeline registers
   wire [4:0] ex_mem_regDst;
   wire [3:0] ex_mem_memCtrl;
-  wire [1:0] ex_mem_wbCtrl;
+  wire [3:0] ex_mem_wbCtrl;
   wire ex_mem_zeroFlag;
   wire [WIDTH-1:0] ex_mem_aluResult, ex_mem_rdDataTwo, ex_mem_pcAdd;
 // MEM outputs
   wire mem_branchFlag;
   wire [WIDTH-1:0] mem_branchAddr;
-  wire [1:0] mem_wbCtrl;
+  wire [3:0] mem_wbCtrl;
   wire [4:0] mem_regDst;
   wire [WIDTH-1:0] mem_memReadData, mem_aluResult;
 // MEM/WB pipeline registers
-  wire [1:0] mem_wb_wbCtrl;
+  wire [3:0] mem_wb_wbCtrl;
   wire [4:0] mem_wb_regDst;
   wire [WIDTH-1:0] mem_wb_memReadData, mem_wb_aluResult;
 // WB outputs 
@@ -85,14 +88,14 @@ top #(.WIDTH(WIDTH)) top_00 (
   .if_id_pcIncr(if_id_pcIncr), .if_id_inst(if_id_inst),
   .id_regT(id_regT), .id_regD(id_regD),
   .id_exCtrl(id_exCtrl), .id_memCtrl(id_memCtrl), .id_wbCtrl(id_wbCtrl),
-  .id_pcIncr(id_pcIncr), .id_sgnExt(id_sgnExt),
-  .id_rdDataOne(id_rdDataOne), .id_rdDataTwo(id_rdDataTwo),
-  .id_stallIF(id_stallIF),
+  .id_pcIncr(id_pcIncr), .id_sgnExt(id_sgnExt), .id_PCJmp(id_PCJmp),
+  .id_rdDataOne(id_rdDataOne), .id_rdDataTwo(id_rdDataTwo), .jump_addr(id_jump_addr),
+  .id_stallIF(id_stallIF), .id_shamt_out(id_shamt_out),
   .id_ex_regT(id_ex_regT), .id_ex_regD(id_ex_regD),
   .id_ex_exCtrl(id_ex_exCtrl), .id_ex_memCtrl(id_ex_memCtrl), .id_ex_wbCtrl(id_ex_wbCtrl),
   .id_ex_pcIncr(id_ex_pcIncr), .id_ex_sgnExt(id_ex_sgnExt),
   .id_ex_rdDataOne(id_ex_rdDataOne), .id_ex_rdDataTwo(id_ex_rdDataTwo),
-  .reg_file_debug(reg_file_debug),
+  .reg_file_debug(reg_file_debug), .id_ex_shamt_out(id_ex_shamt_out),
   .ex_regDst(ex_regDst), .ex_memCtrl(ex_memCtrl), .ex_wbCtrl(ex_wbCtrl),
   .ex_zeroFlag(ex_zeroFlag), .ex_overflowFlag(ex_overflowFlag),
   .ex_aluResult(ex_aluResult), .ex_rdDataTwo(ex_rdDataTwo), .ex_pcAdd(ex_pcAdd),

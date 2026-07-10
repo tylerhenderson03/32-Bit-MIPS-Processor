@@ -3,7 +3,7 @@
 // performs addition (CLA), subtraction, multiplication(?), LT/GT, EQ/NE
 module alu #(parameter WIDTH) (input [WIDTH-1:0] in_a, in_b,
             input [3:0] alu_opcode,
-
+            input [4:0] shamt_out,
             output logic zero_flag, overflow_flag,
             output logic [WIDTH-1:0] alu_result
             );
@@ -20,7 +20,7 @@ module alu #(parameter WIDTH) (input [WIDTH-1:0] in_a, in_b,
             end
             4'b0001: begin // OR
                 result_extended = 0;
-                alu_result = in_a | in_b;
+                alu_result = (in_a | in_b);
                 overflow_flag = 0;
             end
             4'b0010: begin // ADD (signed)
@@ -43,14 +43,29 @@ module alu #(parameter WIDTH) (input [WIDTH-1:0] in_a, in_b,
                 alu_result    = in_a - in_b;
                 overflow_flag = 0;
             end
-            4'b0111: begin // set-on-less-than
-                result_extended = 0;
-                alu_result = {{31{1'b0}}, in_a < in_b}; // in_a is data at regRs, in_b is regRt, result should be a 0 or 1 written back to destination register
-                overflow_flag = 0;
-            end
             4'b1100: begin // NOR
                 result_extended = 0;
                 alu_result = ~(in_a | in_b); 
+                overflow_flag = 0;
+            end
+            4'b0111: begin // SLT (signed)
+                result_extended = 0;
+                alu_result = ($signed(in_a) < $signed(in_b)) ? 32'd1 : 32'd0;
+                overflow_flag = 0;
+            end
+            4'b1101: begin // SLTU (unsigned)
+                result_extended = 0;
+                alu_result = (in_a < in_b) ? 32'd1 : 32'd0;
+                overflow_flag = 0;
+            end
+            4'b1110: begin // SLL (logical shift left)
+                result_extended = 0;
+                alu_result = in_b << shamt_out;
+                overflow_flag = 0;
+            end
+            4'b1011: begin // SRL (logical shift right)
+                result_extended = 0;
+                alu_result = in_b >> shamt_out;
                 overflow_flag = 0;
             end
             4'b1111: begin // MUL

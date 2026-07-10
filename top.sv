@@ -8,40 +8,40 @@ module top #(parameter WIDTH = 32) (
 // IF/ID pipeline registers
     output reg [WIDTH-1:0] if_id_pcIncr, if_id_inst,
 // ID outputs
-    output wire [4:0] id_regT, id_regD,
-    output wire [3:0] id_exCtrl,
+    output wire [4:0] id_regT, id_regD, id_shamt_out,
+    output wire [4:0] id_exCtrl,
     output wire [3:0] id_memCtrl,
-    output wire [1:0] id_wbCtrl,
-    output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo,
+    output wire [3:0] id_wbCtrl,
+    output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo, jump_addr,
     output wire [WIDTH-1:0] reg_file_debug [0:32-1],
-    output logic id_stallIF,
+    output logic id_stallIF, id_PCJmp,
 // ID/EX pipeline registers
-    output reg [4:0] id_ex_regT, id_ex_regD,
-    output reg [3:0] id_ex_exCtrl,
+    output reg [4:0] id_ex_regT, id_ex_regD, id_ex_shamt_out,
+    output reg [4:0] id_ex_exCtrl,
     output reg [3:0] id_ex_memCtrl,
-    output reg [1:0] id_ex_wbCtrl,
+    output reg [3:0] id_ex_wbCtrl,
     output reg [WIDTH-1:0] id_ex_pcIncr, id_ex_sgnExt, id_ex_rdDataOne, id_ex_rdDataTwo,
 // EX outputs
     output wire [4:0] ex_regDst,
     output wire [3:0] ex_memCtrl,
-    output wire [1:0] ex_wbCtrl,
+    output wire [3:0] ex_wbCtrl,
     output wire ex_zeroFlag,
     output wire ex_overflowFlag,
     output wire [WIDTH-1:0] ex_aluResult, ex_rdDataTwo, ex_pcAdd,
 // EX/MEM pipeline registers
     output reg [4:0] ex_mem_regDst,
     output reg [3:0] ex_mem_memCtrl,
-    output reg [1:0] ex_mem_wbCtrl,
+    output reg [3:0] ex_mem_wbCtrl,
     output reg ex_mem_zeroFlag,
     output reg [WIDTH-1:0] ex_mem_aluResult, ex_mem_rdDataTwo, ex_mem_pcAdd,
 // MEM outputs
     output wire mem_branchFlag,
     output wire [WIDTH-1:0] mem_branchAddr,
-    output wire [1:0] mem_wbCtrl,
+    output wire [3:0] mem_wbCtrl,
     output wire [4:0] mem_regDst,
     output wire [WIDTH-1:0] mem_memReadData, mem_aluResult,
 // MEM/WB pipeline registers
-    output reg [1:0] mem_wb_wbCtrl,
+    output reg [3:0] mem_wb_wbCtrl,
     output reg [4:0] mem_wb_regDst,
     output reg [WIDTH-1:0] mem_wb_memReadData, mem_wb_aluResult,
 // WB outputs
@@ -55,7 +55,7 @@ module top #(parameter WIDTH = 32) (
         if(rst) begin
             if_id_pcIncr <= '0;
             if_id_inst   <= 'X;
-        /* end else if(if_id_write || id_stallIF) begin // in the event of a stall, preserve previous instruction state in this stage of processor
+        /* end else if(if_id_write) begin // in the event of a stall, preserve previous instruction state in this stage of processor
             if_id_pcIncr <= if_id_pcIncr;
             if_id_inst   <= if_id_inst;
         */
@@ -72,12 +72,14 @@ module top #(parameter WIDTH = 32) (
             id_ex_exCtrl    <= '0; id_ex_memCtrl   <= '0; id_ex_wbCtrl    <= '0;
             id_ex_pcIncr    <= '0; id_ex_sgnExt    <= '0;
             id_ex_rdDataOne <= '0; id_ex_rdDataTwo <= '0;
+            id_ex_shamt_out <= '0;
         end else begin
             id_ex_regT      <= id_regT;     id_ex_regD      <= id_regD;
             id_ex_exCtrl    <= id_exCtrl;   id_ex_memCtrl   <= id_memCtrl;
             id_ex_wbCtrl    <= id_wbCtrl;   id_ex_pcIncr    <= id_pcIncr;
             id_ex_sgnExt    <= id_sgnExt;   id_ex_rdDataOne <= id_rdDataOne;
             id_ex_rdDataTwo <= id_rdDataTwo;
+            id_ex_shamt_out <= id_shamt_out;
         end
     end
 
@@ -112,8 +114,10 @@ module top #(parameter WIDTH = 32) (
         .instruction_memory(if_instruction_memory),
         .PCSrc(mem_branchFlag),
         .pc_br(mem_branchAddr),
+        .jump_addr(jump_addr),
         .pc_pp(if_pc_pp),
-        .inst_mem_out(if_inst)
+        .inst_mem_out(if_inst),
+        .PCJmp(id_PCJmp)
     );
     id_stage #(.WIDTH(WIDTH)) id_top (
         .clk(clk),
@@ -128,10 +132,13 @@ module top #(parameter WIDTH = 32) (
         .wb_ctrl(id_wbCtrl),
         .pc_incr_out(id_pcIncr),
         .sgn_extend_out(id_sgnExt),
+        .jump_addr(jump_addr),
         .rd_data_one(id_rdDataOne), .rd_data_two(id_rdDataTwo),
         .rd_out(id_regD), .rt_out(id_regT),
         .register_file(reg_file_debug),
-        .stallIF(id_stallIF)
+        .stallIF(id_stallIF),
+        .PCJmp(id_PCJmp),
+        .shamt_out(id_shamt_out)
     );
     ex_stage #(.WIDTH(WIDTH)) ex_top (
         .ex_ctrl(id_ex_exCtrl),
@@ -149,7 +156,8 @@ module top #(parameter WIDTH = 32) (
         .rd_data_two_out(ex_rdDataTwo),
         .zero_flag(ex_zeroFlag),
         .overflow_flag(ex_overflowFlag),
-        .reg_dst_mux(ex_regDst)
+        .reg_dst_mux(ex_regDst),
+        .shamt_out(id_ex_shamt_out)
     );
     mem_stage #(.WIDTH(WIDTH)) mem_top (
         .clk(clk), .rst(rst),
