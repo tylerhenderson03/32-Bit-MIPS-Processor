@@ -273,17 +273,35 @@ $timescale 1ns $end
     $var wire 4 '# ALU_ADDU [3:0] $end
     $var wire 4 (# ALU_SUB [3:0] $end
     $var wire 4 )# ALU_SUBU [3:0] $end
-    $var wire 4 *# ALU_MUL [3:0] $end
-    $var wire 4 +# ALU_AND [3:0] $end
-    $var wire 4 ,# ALU_OR [3:0] $end
-    $var wire 4 -# ALU_NOR [3:0] $end
-    $var wire 4 .# ALU_SLT [3:0] $end
-    $var wire 4 )# ALU_SLTU [3:0] $end
-    $var wire 4 /# ALU_SLL [3:0] $end
-    $var wire 4 0# ALU_SRL [3:0] $end
+    $var wire 4 *# ALU_MULT [3:0] $end
+    $var wire 4 +# ALU_MULTU [3:0] $end
+    $var wire 4 ,# ALU_DIV [3:0] $end
+    $var wire 4 -# ALU_DIVU [3:0] $end
+    $var wire 4 .# ALU_AND [3:0] $end
+    $var wire 4 /# ALU_OR [3:0] $end
+    $var wire 4 0# ALU_NOR [3:0] $end
+    $var wire 4 1# ALU_SLT [3:0] $end
+    $var wire 4 2# ALU_SLTU [3:0] $end
+    $var wire 4 3# ALU_SLL [3:0] $end
+    $var wire 4 4# ALU_SRL [3:0] $end
     $var wire 4 M! alu_ctrl [3:0] $end
     $scope module alu_00 $end
      $var wire 32 $# WIDTH [31:0] $end
+     $var wire 4 &# ALU_ADD [3:0] $end
+     $var wire 4 '# ALU_ADDU [3:0] $end
+     $var wire 4 (# ALU_SUB [3:0] $end
+     $var wire 4 )# ALU_SUBU [3:0] $end
+     $var wire 4 *# ALU_MULT [3:0] $end
+     $var wire 4 +# ALU_MULTU [3:0] $end
+     $var wire 4 ,# ALU_DIV [3:0] $end
+     $var wire 4 -# ALU_DIVU [3:0] $end
+     $var wire 4 .# ALU_AND [3:0] $end
+     $var wire 4 /# ALU_OR [3:0] $end
+     $var wire 4 0# ALU_NOR [3:0] $end
+     $var wire 4 1# ALU_SLT [3:0] $end
+     $var wire 4 2# ALU_SLTU [3:0] $end
+     $var wire 4 4# ALU_SRL [3:0] $end
+     $var wire 4 3# ALU_SLL [3:0] $end
      $var wire 32 8! in_a [31:0] $end
      $var wire 32 N! in_b [31:0] $end
      $var wire 4 M! alu_opcode [3:0] $end
@@ -760,14 +778,18 @@ b00000000000000000000000000001010 %#
 b0010 &#
 b0011 '#
 b0110 (#
-b1001 )#
+b1000 )#
 b1111 *#
-b0000 +#
-b0001 ,#
-b1100 -#
-b0111 .#
-b1110 /#
-b1011 0#
+b1101 +#
+b0101 ,#
+b0100 -#
+b0000 .#
+b0001 /#
+b1100 0#
+b0111 1#
+b1001 2#
+b1110 3#
+b1011 4#
 #5
 1y"
 #10
