@@ -96,10 +96,6 @@ module ex_stage (
 					alu_ctrl = ALU_SRL;
 				else if (sgn_extend_out[5:0] == 6'h19)
 					alu_ctrl = ALU_MULTU;
-				else if (sgn_extend_out[5:0] == 6'h1a)
-					alu_ctrl = ALU_DIV;
-				else if (sgn_extend_out[5:0] == 6'h1b)
-					alu_ctrl = ALU_DIVU;
 				else
 					alu_ctrl = 1'sb0;
 			3'b011: alu_ctrl = ALU_AND;

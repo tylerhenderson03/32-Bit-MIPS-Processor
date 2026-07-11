@@ -1,0 +1,19 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.25.09.d
+-RUNMODE
+/nfs/stak/users/johnstom/ECE499_W26/Innovus_Example_499/rtl/counter_4b.v
+/nfs/stak/users/johnstom/ECE499_W26/Innovus_Example_499/simulation/tb_counter.v
+-CDSLIB
+./xcelium.d/run.lnx8664.25.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.25.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.25.09.d/xllibs
+-ALLOWUNBOUND

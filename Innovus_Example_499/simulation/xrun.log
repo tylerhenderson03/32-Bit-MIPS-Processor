@@ -1,0 +1,52 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Feb 19, 2026 at 08:46:39 PST
+xrun
+	/nfs/stak/users/johnstom/ECE499_W26/Innovus_Example_499/rtl/counter_4b.v
+	/nfs/stak/users/johnstom/ECE499_W26/Innovus_Example_499/simulation/tb_counter.v
+	-access +rwc
+	-gui
+file: /nfs/stak/users/johnstom/ECE499_W26/Innovus_Example_499/rtl/counter_4b.v
+	module worklib.counter_4b:v
+		errors: 0, warnings: 0
+file: /nfs/stak/users/johnstom/ECE499_W26/Innovus_Example_499/simulation/tb_counter.v
+	module worklib.tb_counter:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		worklib.tb_counter:v (module)
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.counter_4b:v <0x3a051a9c>
+			streams:   3, words:   706
+		worklib.tb_counter:v <0x49d71112>
+			streams:   5, words:  1964
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           4       4
+		Scalar wires:        3       -
+		Vectored wires:      1       -
+		Always blocks:       2       2
+		Initial blocks:      1       1
+		Cont. assignments:   1       1
+		Pseudo assignments:  3       -
+	Writing initial simulation snapshot: worklib.tb_counter:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to Verisium Debug/SimVision...
+xcelium> 
+xcelium> source /usr/local/apps/cadence/XCELIUM/current/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_counter.clk tb_counter.count tb_counter.en tb_counter.rst
+Created probe 1
+xcelium> run
+Simulation complete via $finish(1) at time 1025 NS + 0
+./tb_counter.v:16 #1000 $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	25.09-s003: Exiting on Feb 19, 2026 at 08:47:01 PST  (total: 00:00:22)

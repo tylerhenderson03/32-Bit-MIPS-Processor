@@ -1,0 +1,123 @@
+\# Program start time:     UTC 2025.02.02 21:02:48.113
+\# Local time: PST (UTC-08:00) 2025.02.02 13:02:48.113
+\o Program:		@(#)$CDS: virtuoso version IC23.1-64b 08/08/2023 23:11 (cpgbld15) $
+\o Hierarchy:		/nfs/guille/a2/rh80apps/cadence/ic/ic-23.10.010/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC23.1-64b.ISR1.30  (64-bit addresses)
+\# Command line:	/usr/local/apps/cadence/ic/ic-23.10.010/tools.lnx86/dfII/bin/64bit/virtuoso
+\# Host name (type):	analogsim2.engr.oregonstate.edu (x86_64)
+\# Operating system:	Linux 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Jul 31 15:28:35 UTC 2024
+\# Linux /etc/issue:	\S
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	:1.0 (2048x1152)
+\# Available geometry:			TL(0:31) BR(2047:1120)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12011000)
+\# X resource pool:	base 0x3600000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        701 MB
+\# Available memory:	     22,890 MB
+\# System memory:	     84,294 MB
+\# Maximum memory size:	     83,756 MB
+\# Max mem available:	     23,053 MB
+\# Initial memory used:	        163 MB
+\#        process size:	      1,474 MB
+\# Thread usage limits (effective/default):	maxthreads 255084/255084 maxload 32.00/32.00
+\# Qt version:		5.15.9
+\# Window Manager:	Xfwm4
+\# User Name:		johnstom
+\o Working Directory:	analogsim2.engr.oregonstate.edu:/nfs/stak/users/johnstom/ECE499/cadence/pnr_setup/Counter_Template_CW_2025
+\# Process Id:		1241124
+\o 
+\o COPYRIGHT (C) 1992-2023  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2023  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\w *WARNING* envSetVal: Can't set the value of variable 'netTraceNumShapesLimitForRefresh',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'weGuidedRouteGatherAtBend',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'viaUseParamAuto',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envCyclicStringToIndex: could not find variable 'viaModeCreate'
+\w 	in tool[.partition] 'layout'
+\w *WARNING* envSetVal: Can't set the value of variable 'viaModeCreate',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'useRevampedForms',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'viaAutoViaUseMinAreaEnclosure',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'envelopeNumTracks',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'autoVia',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: value for float variable 'targetWidth' in tool[.partition] 'layout'
+\w 	is below minimum range value 0.005
+\w *WARNING* envCyclicStringToIndex: could not find variable 'weCWSpacingMode'
+\w 	in tool[.partition] 'layout'
+\w *WARNING* envSetVal: Can't set the value of variable 'weCWSpacingMode',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'autoReshape',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'envelopeAdditionalNumTracks',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envCyclicStringToIndex: could not find variable '_flipOrient'
+\w 	in tool[.partition] 'layout'
+\w *WARNING* envSetVal: Can't set the value of variable '_flipOrient',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\w *WARNING* envSetVal: Can't set the value of variable 'weGuidedRouteTopologyMode',
+\w 	in tool[.partition] 'layout' - it has not been registered.
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\# Available memory:         22,700 MB at UTC 2025.02.02 21:02:58.079
+\# Memory report: Maximum memory size now 22,937 MB at UTC 2025.02.02 21:02:58.079
+\# Thread usage report: 15 active threads, active load 1.40 at UTC 2025.02.02 21:02:58.079
+\o Loading wireEdit.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading layers.cxt 
+\o Loading drv.cxt 
+\o Loading ams.cxt 
+\o Loading adexlDM.cxt 
+\o Loading cpf.cxt 
+\o Loading cli.cxt 
+\# Memory report: using         263 MB, process size 1,641 MB at UTC 2025.02.02 21:03:04.374
+\o Loading lp.cxt 
+\o Loading sipLayout.cxt 
+\# [13:02:48.356755] Configured Lic search path (23.02-s002): /nfs/guille/a1/authcodes/cadence/license.dat:7188@linlic.engr.oregonstate.edu:/usr/local/apps/cadence/ic/ic-23.10.010/share/license/license.dat
+\o Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.06s.
+\p > 
+\o 2025/02/02 13:03:10 System is not a supported distribution
+\o 2025/02/02 13:03:10 An error occurred. We don't recognize OS 
+\o 2025/02/02 13:03:10 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+\o 2025/02/02 13:03:10 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+\o 2025/02/02 13:03:10 System is not a supported distribution
+\o 2025/02/02 13:03:10 An error occurred. We don't recognize OS 
+\o 2025/02/02 13:03:10 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+\o 2025/02/02 13:03:10 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+\o Loading tilp.cxt 
+\o Loading validator.cxt 
+\o Loading vrf.cxt 
+\o Loading multiTechPlugin.cxt 
+\o Loading exportDie.cxt 
+\# Loading perfDiag...
+\# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
+\o The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 1241124' to open it when Virtuoso freezes.
+\o Loading diagCenter.cxt 
+\# (PerfDiag): Use backtrace from GLIBC.

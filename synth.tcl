@@ -30,6 +30,16 @@ foreach f [glob converted/*.v] {
 # -------------------------------------------------------
     synth -top top
 
+# map to sky130 standard cells
+    dfflibmap -liberty Innovus_Example_499/sky130_ss_1.62_125_nldm.lib
+    abc -liberty Innovus_Example_499/sky130_ss_1.62_125_nldm.lib
+
+# clean up
+    opt_clean -purge
+
+# write gate-level netlist
+    write_verilog -noattr -noexpr reports/netlist.v
+
 # -------------------------------------------------------
 # 3. Reports
 # -------------------------------------------------------
