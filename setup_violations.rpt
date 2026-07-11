@@ -1,0 +1,621 @@
+Warning 503: run_sta.tcl line 1, report_checks -group_count is deprecated. Use -group_path_count instead.
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11478_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09489_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11478_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11478_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11479_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09490_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11479_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11479_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11480_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09491_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11480_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11480_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11481_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09492_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11481_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11481_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11482_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09493_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11482_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11482_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11511_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09522_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11511_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11511_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11512_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09523_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11512_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11512_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11513_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09524_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11513_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11513_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11514_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09525_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11514_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11514_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: id_top/_11542_ (recovery check against rising-edge clock clk')
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v rst (in)
+   0.04    2.04 ^ id_top/_09553_/Y (CLKINVX1)
+   0.00    2.04 ^ id_top/_11542_/SN (DFFSX1)
+           2.04   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+  -0.15    4.85   clock uncertainty
+   0.00    4.85   clock reconvergence pessimism
+           4.85 ^ id_top/_11542_/CK (DFFSX1)
+   0.30    5.15   library recovery time
+           5.15   data required time
+---------------------------------------------------------
+           5.15   data required time
+          -2.04   data arrival time
+---------------------------------------------------------
+           3.10   slack (MET)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1595_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1623_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1627_/Y (AOI221X1)
+   0.29   59.38 ^ if_top/_1635_/Y (NOR2X1)
+   1.03   60.41 v if_top/_1650_/Y (AOI211X1)
+   0.00   60.41 v _1595_/D (DFFRX1)
+          60.41   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1595_/CK (DFFRX1)
+  -0.24    9.61   library setup time
+           9.61   data required time
+---------------------------------------------------------
+           9.61   data required time
+         -60.41   data arrival time
+---------------------------------------------------------
+         -50.80   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1605_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1351_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1355_/Y (AOI221X1)
+   0.35   59.46 ^ if_top/_1356_/Y (OAI21X1)
+   1.01   60.46 v if_top/_1357_/Y (AOI21X1)
+   0.00   60.46 v _1605_/D (DFFRX1)
+          60.46   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1605_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.46   data arrival time
+---------------------------------------------------------
+         -50.80   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1583_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1996_/Y (AOI222X1)
+   1.41   59.10 v if_top/_2000_/Y (AOI221X1)
+   0.35   59.46 ^ if_top/_2001_/Y (OAI21X1)
+   1.01   60.46 v if_top/_2002_/Y (AOI21X1)
+   0.00   60.46 v _1583_/D (DFFRX1)
+          60.46   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1583_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.46   data arrival time
+---------------------------------------------------------
+         -50.80   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1581_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_2042_/Y (AOI222X1)
+   1.41   59.10 v if_top/_2046_/Y (AOI221X1)
+   0.35   59.45 ^ if_top/_2047_/Y (OAI21X1)
+   1.00   60.45 v if_top/_2062_/Y (AOI21X1)
+   0.00   60.45 v _1581_/D (DFFRX1)
+          60.45   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1581_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.45   data arrival time
+---------------------------------------------------------
+         -50.78   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1597_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1570_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1574_/Y (AOI221X1)
+   0.35   59.45 ^ if_top/_1575_/Y (OAI21X1)
+   1.00   60.45 v if_top/_1591_/Y (AOI21X1)
+   0.00   60.45 v _1597_/D (DFFRX1)
+          60.45   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1597_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.45   data arrival time
+---------------------------------------------------------
+         -50.78   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1601_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1450_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1454_/Y (AOI221X1)
+   0.35   59.45 ^ if_top/_1455_/Y (OAI21X1)
+   1.00   60.45 v if_top/_1470_/Y (AOI21X1)
+   0.00   60.45 v _1601_/D (DFFRX1)
+          60.45   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1601_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.45   data arrival time
+---------------------------------------------------------
+         -50.78   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1596_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1593_/Y (AOI222X1)
+   1.40   59.09 v if_top/_1597_/Y (AOI221X1)
+   0.35   59.44 ^ if_top/_1605_/Y (OAI21X1)
+   0.98   60.42 v if_top/_1621_/Y (AOI21X1)
+   0.00   60.42 v _1596_/D (DFFRX1)
+          60.42   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1596_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.42   data arrival time
+---------------------------------------------------------
+         -50.76   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1593_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1695_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1699_/Y (AOI221X1)
+   0.45   59.55 ^ if_top/_1708_/Y (AOI211X1)
+   0.87   60.41 v if_top/_1709_/Y (NOR3X1)
+   0.00   60.41 v _1593_/D (DFFRX1)
+          60.41   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1593_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.41   data arrival time
+---------------------------------------------------------
+         -50.74   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1603_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1384_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1388_/Y (AOI221X1)
+   0.44   59.54 ^ if_top/_1410_/Y (AOI211X1)
+   0.87   60.41 v if_top/_1412_/Y (NOR3X1)
+   0.00   60.41 v _1603_/D (DFFRX1)
+          60.41   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1603_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.41   data arrival time
+---------------------------------------------------------
+         -50.74   slack (VIOLATED)
+
+
+Startpoint: if_top/_2155_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1604_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2155_/CK (DFFRX1)
+   6.43    6.43 ^ if_top/_2155_/Q (DFFRX1)
+  45.15   51.58 v if_top/_1126_/Y (NOR2X1)
+   6.11   57.69 ^ if_top/_1369_/Y (AOI222X1)
+   1.41   59.10 v if_top/_1373_/Y (AOI221X1)
+   0.38   59.48 ^ if_top/_1381_/Y (NOR3X1)
+   0.90   60.38 v if_top/_1382_/Y (NOR3X1)
+   0.00   60.38 v _1604_/D (DFFRX1)
+          60.38   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.15    9.85   clock uncertainty
+   0.00    9.85   clock reconvergence pessimism
+           9.85 ^ _1604_/CK (DFFRX1)
+  -0.18    9.67   library setup time
+           9.67   data required time
+---------------------------------------------------------
+           9.67   data required time
+         -60.38   data arrival time
+---------------------------------------------------------
+         -50.71   slack (VIOLATED)
+
+

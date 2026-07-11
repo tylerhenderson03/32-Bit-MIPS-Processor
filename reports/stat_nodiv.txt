@@ -1,115 +1,176 @@
 
-10. Printing statistics.
+15. Printing statistics.
 
 === $paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu ===
 
         +----------Local Count, excluding submodules.
         | 
-     5073 wires
-     5173 wire bits
-        8 public wires
-      108 public wire bits
+     4546 wires
+     4646 wire bits
+        7 public wires
+      107 public wire bits
         7 ports
       107 port bits
-     5099 cells
-       37   $_ANDNOT_
-      998   $_AND_
-      251   $_MUX_
-     2124   $_NAND_
-       32   $_NOR_
-       10   $_NOT_
-       86   $_ORNOT_
-      134   $_OR_
-      355   $_XNOR_
-     1072   $_XOR_
+     4573 cells
+      188   AND2X1
+       70   AND3X2
+       48   AND4X1
+       16   AOI211X1
+      337   AOI21X1
+       19   AOI221X1
+       19   AOI222X1
+      101   AOI22X1
+      178   CLKINVX1
+      159   CLKMX2X2
+      772   CLKXOR2X1
+        9   MX4X1
+      689   NAND2X1
+      156   NAND3X1
+       16   NAND4X1
+      590   NOR2X1
+       80   NOR3X1
+        3   NOR4X1
+       61   OAI211X1
+      291   OAI21X1
+       12   OAI221X1
+        1   OAI222X1
+       48   OAI22X1
+      264   OR2X1
+      102   OR3X1
+       11   OR4X1
+      333   XNOR2X1
 
 === $paramod\data_mem\WIDTH=s32'00000000000000000000000000100000 ===
 
         +----------Local Count, excluding submodules.
         | 
-     2362 wires
-     3447 wire bits
+     2712 wires
+     3797 wire bits
        38 public wires
      1123 public wire bits
         6 ports
        99 port bits
-     3380 cells
-        8   $_ANDNOT_
-      778   $_AND_
-     1024   $_DFFE_PP_
-     1568   $_NAND_
-        2   $_NOR_
-
-=== $paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 ===
-
-        +----------Local Count, excluding submodules.
-        | 
-     2276 wires
-     3547 wire bits
-       12 public wires
-     1252 public wire bits
-        9 ports
-     1156 port bits
-     2389 cells
-       39   $_ANDNOT_
-      608   $_AND_
-        2   $_DFFE_PP0P_
-       30   $_DFF_PP0_
-      307   $_MUX_
-      906   $_NAND_
-       89   $_NOR_
-        1   $_NOT_
-      263   $_ORNOT_
-      115   $_OR_
-        1   $_XNOR_
-       28   $_XOR_
-
-=== $paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 ===
-
-        +----------Local Count, excluding submodules.
-        | 
-     6440 wires
-     7799 wire bits
-       24 public wires
-     1383 public wire bits
-       21 ports
-     1318 port bits
-     7556 cells
-      127   $_ANDNOT_
-      974   $_AND_
-      944   $_DFFE_NP0P_
-       80   $_DFFE_NP1P_
-     1618   $_MUX_
-     2609   $_NAND_
-      160   $_NOR_
-       17   $_NOT_
-      615   $_ORNOT_
-      411   $_OR_
-        1   $_XNOR_
+     2706 cells
+        2   AND2X1
+        9   AND3X2
+       58   AND4X1
+       32   AOI21X1
+        6   AOI22X1
+        6   CLKINVX1
+     1024   CLKMX2X2
+     1024   DFFX1
+      256   MX4X1
+       56   NAND2X1
+       76   NAND3X1
+      128   NAND4X1
+       24   NOR2X1
+        1   NOR3X1
+        4   OR2X1
 
 === $paramod\ex_stage\WIDTH=s32'00000000000000000000000000100000 ===
 
         +----------Local Count, excluding submodules.
         | 
-      229 wires
-      485 wire bits
-       21 public wires
-      277 public wire bits
+      183 wires
+      435 wire bits
+       19 public wires
+      271 public wire bits
        18 ports
       267 port bits
-      247 cells
-        8   $_ANDNOT_
-       18   $_AND_
-       39   $_MUX_
-      109   $_NAND_
-        3   $_NOR_
-        3   $_NOT_
-        2   $_ORNOT_
-       19   $_OR_
-       15   $_XNOR_
-       31   $_XOR_
+      203 cells
+       17   AND2X1
+        3   AOI211X1
+        3   AOI21X1
+        1   AOI221X1
+        8   CLKINVX1
+       37   CLKMX2X2
+       48   CLKXOR2X1
+       16   NAND2X1
+        3   NAND3X1
+        3   NOR2X1
+        4   NOR3X1
+        1   NOR4X1
+        1   OAI211X1
+       29   OAI21X1
+        1   OAI22X1
+       16   OR2X1
+        1   OR4X1
+       11   XNOR2X1
         1 submodules
         1   $paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu
+
+=== $paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     6214 wires
+     7511 wire bits
+       21 public wires
+     1318 public wire bits
+       21 ports
+     1318 port bits
+     6309 cells
+       18   AND2X1
+       11   AND3X2
+       27   AOI211X1
+      140   AOI21X1
+       13   AOI221X1
+        5   AOI22X1
+     2519   CLKINVX1
+      894   CLKMX2X2
+        2   CLKXOR2X1
+      944   DFFRX1
+       80   DFFSX1
+      453   MX4X1
+      286   NAND2X1
+       22   NAND3X1
+        1   NAND4X1
+      139   NOR2X1
+       60   NOR3X1
+        2   NOR4X1
+      110   OAI211X1
+      135   OAI21X1
+       20   OAI221X1
+      385   OAI22X1
+       39   OR2X1
+        3   OR3X1
+        1   OR4X1
+
+=== $paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1058 wires
+     2267 wire bits
+       10 public wires
+     1188 public wire bits
+        9 ports
+     1156 port bits
+     1139 cells
+       12   AND2X1
+        3   AND3X2
+        9   AND4X1
+       27   AOI211X1
+       46   AOI21X1
+      270   AOI221X1
+       65   AOI222X1
+       11   AOI22X1
+       86   CLKINVX1
+      105   CLKMX2X2
+       20   CLKXOR2X1
+       32   DFFRX1
+       28   MX4X1
+       62   NAND2X1
+        3   NAND3X1
+       23   NOR2X1
+       19   NOR3X1
+      123   OAI211X1
+       65   OAI21X1
+        9   OAI221X1
+        2   OAI22X1
+      117   OR2X1
+        1   OR3X1
+        1   XNOR2X1
 
 === $paramod\mem_stage\WIDTH=s32'00000000000000000000000000100000 ===
 
@@ -122,8 +183,8 @@
        15 ports
       218 port bits
         2 cells
-        1   $_AND_
-        1   $_OR_
+        1   CLKINVX1
+        1   OAI21X1
         1 submodules
         1   $paramod\data_mem\WIDTH=s32'00000000000000000000000000100000
 
@@ -131,33 +192,35 @@
 
         +----------Local Count, excluding submodules.
         | 
-      108 wires
-      212 wire bits
-        8 public wires
-      112 public wire bits
+       74 wires
+      178 wire bits
+        7 public wires
+      111 public wire bits
         7 ports
       111 port bits
-      132 cells
-       33   $_AND_
-       16   $_MUX_
-       49   $_NAND_
-        1   $_NOR_
-        1   $_NOT_
-       16   $_ORNOT_
-       16   $_OR_
+       99 cells
+       16   AND2X1
+        8   AOI21X1
+        9   CLKINVX1
+        8   CLKMX2X2
+        1   NAND2X1
+       25   NOR2X1
+       16   OAI21X1
+       16   OAI22X1
 
 === top ===
 
         +----------Local Count, excluding submodules.
         | 
-       59 wires
-     2962 wire bits
+      865 wires
+     3768 wire bits
        59 public wires
      2962 public wire bits
        59 ports
      2962 port bits
-      403 cells
-      403   $_DFF_PP0_
+      806 cells
+      403   CLKINVX1
+      403   DFFRX1
         5 submodules
         1   $paramod\ex_stage\WIDTH=s32'00000000000000000000000000100000
         1   $paramod\id_stage\WIDTH=s32'00000000000000000000000000100000
@@ -169,42 +232,57 @@
 
         +----------Count including submodules.
         | 
-    19208 top
-      247 $paramod\ex_stage\WIDTH=s32'00000000000000000000000000100000
-     5099   $paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu
-     7556 $paramod\id_stage\WIDTH=s32'00000000000000000000000000100000
-     2389 $paramod\if_stage\WIDTH=s32'00000000000000000000000000100000
+    15837 top
+      203 $paramod\ex_stage\WIDTH=s32'00000000000000000000000000100000
+     4573   $paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu
+     6309 $paramod\id_stage\WIDTH=s32'00000000000000000000000000100000
+     1139 $paramod\if_stage\WIDTH=s32'00000000000000000000000000100000
         2 $paramod\mem_stage\WIDTH=s32'00000000000000000000000000100000
-     3380   $paramod\data_mem\WIDTH=s32'00000000000000000000000000100000
-      132 $paramod\wb_stage\WIDTH=s32'00000000000000000000000000100000
+     2706   $paramod\data_mem\WIDTH=s32'00000000000000000000000000100000
+       99 $paramod\wb_stage\WIDTH=s32'00000000000000000000000000100000
 
         +----------Count including submodules.
         | 
-    16563 wires
-    23844 wire bits
-      185 public wires
-     7435 public wire bits
+    15668 wires
+    22821 wire bits
+      176 public wires
+     7298 public wire bits
       142 ports
      6238 port bits
         - memories
         - memory bits
         - processes
-    19208 cells
-      219   $_ANDNOT_
-     3410   $_AND_
-      944   $_DFFE_NP0P_
-       80   $_DFFE_NP1P_
-        2   $_DFFE_PP0P_
-     1024   $_DFFE_PP_
-      433   $_DFF_PP0_
-     2231   $_MUX_
-     7365   $_NAND_
-      287   $_NOR_
-       32   $_NOT_
-      982   $_ORNOT_
-      696   $_OR_
-      372   $_XNOR_
-     1131   $_XOR_
+    15837 cells
+      253   AND2X1
+       93   AND3X2
+      115   AND4X1
+       73   AOI211X1
+      566   AOI21X1
+      303   AOI221X1
+       84   AOI222X1
+      123   AOI22X1
+     3210   CLKINVX1
+     2227   CLKMX2X2
+      842   CLKXOR2X1
+     1379   DFFRX1
+       80   DFFSX1
+     1024   DFFX1
+      746   MX4X1
+     1110   NAND2X1
+      260   NAND3X1
+      145   NAND4X1
+      804   NOR2X1
+      164   NOR3X1
+        6   NOR4X1
+      295   OAI211X1
+      537   OAI21X1
+       41   OAI221X1
+        1   OAI222X1
+      452   OAI22X1
+      440   OR2X1
+      106   OR3X1
+       13   OR4X1
+      345   XNOR2X1
         5 submodules
         1   $paramod\ex_stage\WIDTH=s32'00000000000000000000000000100000
         1   $paramod\id_stage\WIDTH=s32'00000000000000000000000000100000

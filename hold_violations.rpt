@@ -1,0 +1,310 @@
+Warning 503: run_sta.tcl line 1, report_checks -group_count is deprecated. Use -group_path_count instead.
+Startpoint: if_top/_2184_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: if_top/_2184_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2184_/CK (DFFRX1)
+   0.71    0.71 v if_top/_2184_/Q (DFFRX1)
+   0.26    0.97 ^ if_top/_1089_/Y (CLKXOR2X1)
+   0.09    1.06 v if_top/_2123_/Y (OAI21X1)
+   0.00    1.06 v if_top/_2184_/D (DFFRX1)
+           1.06   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ if_top/_2184_/CK (DFFRX1)
+   0.24    0.39   library hold time
+           0.39   data required time
+---------------------------------------------------------
+           0.39   data required time
+          -1.06   data arrival time
+---------------------------------------------------------
+           0.66   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4580_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4580_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4580_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4580_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3979_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4580_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4580_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4581_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4581_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4581_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4581_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3978_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4581_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4581_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4582_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4582_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4582_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4582_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3977_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4582_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4582_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4583_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4583_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4583_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4583_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3976_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4583_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4583_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4584_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4584_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4584_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4584_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3975_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4584_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4584_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4585_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4585_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4585_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4585_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3974_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4585_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4585_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4586_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4586_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4586_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4586_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3973_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4586_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4586_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4587_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4587_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4587_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4587_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3972_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4587_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4587_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
+Startpoint: mem_top/dmem_00/_4588_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: mem_top/dmem_00/_4588_
+          (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ mem_top/dmem_00/_4588_/CK (DFFX1)
+   0.70    0.70 v mem_top/dmem_00/_4588_/Q (DFFX1)
+   0.34    1.04 v mem_top/dmem_00/_3971_/Y (CLKMX2X2)
+   0.00    1.04 v mem_top/dmem_00/_4588_/D (DFFX1)
+           1.04   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ mem_top/dmem_00/_4588_/CK (DFFX1)
+   0.21    0.36   library hold time
+           0.36   data required time
+---------------------------------------------------------
+           0.36   data required time
+          -1.04   data arrival time
+---------------------------------------------------------
+           0.69   slack (MET)
+
+
