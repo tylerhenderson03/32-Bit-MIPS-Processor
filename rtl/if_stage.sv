@@ -1,10 +1,10 @@
 `timescale 1ns/1ns
 
 // will contain PC Logic, Instruction Memory reading
-module if_stage #(parameter WIDTH)
+module if_stage #(parameter WIDTH, parameter MAX_INSTRUCTIONS)
                 (input clk, rst,
-                input logic [WIDTH-1:0] instruction_memory [0:31],
-                input logic PCSrc, PCJmp,
+                input logic [WIDTH-1:0] instruction_memory [0:MAX_INSTRUCTIONS-1],
+                input logic PCSrc, PCJmp, PCWrite,
                 input [WIDTH-1:0] pc_br,
                 input [WIDTH-1:0] jump_addr,
                 output reg [WIDTH-1:0] pc_pp,
@@ -18,7 +18,7 @@ module if_stage #(parameter WIDTH)
         if(rst)     pc <= '0; // add else if PCWrite then pc gets current pc to preserve current instruction on a stall
         else if(PCSrc)      pc <= pc_br;    // branch address calculated by ALU
         else if (PCJmp)     pc <= jump_addr;// jump address from instruction
-        //else if (PCWrite) pc <= pc;       // stall pipeline, delay instruction
+        else if (PCWrite) pc <= pc;       // stall pipeline, delay instruction
         else                pc <= pc_pp;    // else continue with PC + 4
     end
 

@@ -15,7 +15,9 @@ report_checks -path_delay max -format full_clock_expanded
 report_wns
 report_tns
 # 7. Dump the worst 10 Setup (Max) violations into a clean text file
-report_checks -path_delay max -format full_clock_expanded -group_count 10 > setup_violations.rpt
+report_checks -path_delay max -format full_clock_expanded -group_count 10 > ./reports/setup_violations.rpt
 
 # 8. Dump the worst 10 Hold (Min) violations into a clean text file
-report_checks -path_delay min -format full_clock_expanded -group_count 10 > hold_violations.rpt
+report_checks -path_delay min -format full_clock_expanded -group_count 10 > ./reports/hold_violations.rpt
+
+write_sdf ./reports/local_delays.sdf

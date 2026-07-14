@@ -81,7 +81,6 @@ parameter [3:0] ALU_DIV, ALU_DIVU, ALU_AND, ALU_OR, ALU_NOR, ALU_SLT, ALU_SLTU, 
                 alu_result = in_a * in_b;
                 overflow_flag = 0;
             end
-            /*
             ALU_DIV: begin // DIV
                 result_extended = 0;
                 alu_result = $signed(in_a) / $signed(in_b);
@@ -92,7 +91,6 @@ parameter [3:0] ALU_DIV, ALU_DIVU, ALU_AND, ALU_OR, ALU_NOR, ALU_SLT, ALU_SLTU, 
                 alu_result = in_a / in_b;
                 overflow_flag = 0;
             end
-            */
             default: begin
                 result_extended = 0;
                 alu_result = '0;

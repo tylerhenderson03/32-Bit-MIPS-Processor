@@ -26265,7 +26265,7 @@ module \$paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu (in_a, in_b, alu_o
     .C(_3475_),
     .Y(_3476_)
   );
-  NAND4X1 _8608_ (
+  NAND4X4 _8608_ (
     .A(_3457_),
     .B(_3460_),
     .C(_3462_),
@@ -29213,7 +29213,7 @@ module \$paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu (in_a, in_b, alu_o
     .C(_4000_),
     .Y(_4001_)
   );
-  OR4X1 _9106_ (
+  OR4X4 _9106_ (
     .A(alu_result[20]),
     .B(alu_result[19]),
     .C(alu_result[18]),
@@ -29246,7 +29246,7 @@ module \$paramod$87b98cda753a2972545ff1054381dfdf8616d20b\alu (in_a, in_b, alu_o
     .B(_4005_),
     .Y(_4006_)
   );
-  NOR4X1 _9111_ (
+  NOR4X8 _9111_ (
     .A(alu_result[30]),
     .B(_3940_),
     .C(_3991_),
@@ -50293,7 +50293,7 @@ module \$paramod\ex_stage\WIDTH=s32'00000000000000000000000000100000 (ex_ctrl, s
     .S0(ex_ctrl[0]),
     .Y(_027_)
   );
-  CLKMX2X2 _353_ (
+  CLKMX2X8 _353_ (
     .A(rd_data_two_in[4]),
     .B(sgn_extend_out[4]),
     .S0(ex_ctrl[0]),
@@ -58188,11 +58188,11 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .A(if_out[28]),
     .Y(_03460_)
   );
-  CLKINVX1 _06583_ (
+  CLKINVX8 _06583_ (
     .A(if_out[23]),
     .Y(_03461_)
   );
-  CLKINVX1 _06584_ (
+  CLKINVX8 _06584_ (
     .A(if_out[21]),
     .Y(_03462_)
   );
@@ -58224,15 +58224,15 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .A(if_out[19]),
     .Y(_03469_)
   );
-  CLKINVX1 _06592_ (
+  CLKINVX8 _06592_ (
     .A(if_out[18]),
     .Y(_03470_)
   );
-  CLKINVX1 _06593_ (
+  CLKINVX8 _06593_ (
     .A(if_out[17]),
     .Y(_03471_)
   );
-  CLKINVX1 _06594_ (
+  CLKINVX8 _06594_ (
     .A(if_out[16]),
     .Y(_03472_)
   );
@@ -58445,7 +58445,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_03519_),
     .Y(_03520_)
   );
-  NOR3X1 _06644_ (
+  NOR3X8 _06644_ (
     .A(_03477_),
     .B(_03478_),
     .C(_03519_),
@@ -58477,12 +58477,12 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_03525_),
     .Y(_03526_)
   );
-  NAND2X1 _06650_ (
+  NAND2X4 _06650_ (
     .A(RegWrite),
     .B(wr_reg[4]),
     .Y(_03527_)
   );
-  NOR3X1 _06651_ (
+  NOR3X8 _06651_ (
     .A(_03477_),
     .B(_03519_),
     .C(_03527_),
@@ -58498,7 +58498,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_03520_),
     .Y(_03530_)
   );
-  NOR2X1 _06654_ (
+  NOR2X8 _06654_ (
     .A(_03528_),
     .B(_03529_),
     .Y(_03531_)
@@ -58581,7 +58581,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_03541_),
     .Y(_03542_)
   );
-  OR2X1 _06669_ (
+  OR2X4 _06669_ (
     .A(_03521_),
     .B(_03541_),
     .Y(_03543_)
@@ -59769,7 +59769,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_03511_),
     .Y(_03627_)
   );
-  NOR3X1 _06873_ (
+  NOR3X4 _06873_ (
     .A(_03477_),
     .B(_03543_),
     .C(_03627_),
@@ -64032,7 +64032,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .S0(_03822_),
     .Y(_02438_)
   );
-  NOR3X1 _07580_ (
+  NOR3X8 _07580_ (
     .A(_03477_),
     .B(_03531_),
     .C(_03627_),
@@ -74381,7 +74381,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_04867_),
     .Y(_04868_)
   );
-  MX4X1 _09110_ (
+  MX4X8 _09110_ (
     .A(register_file[1004]),
     .B(register_file[876]),
     .C(register_file[940]),
@@ -74432,7 +74432,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B0(_04874_),
     .Y(_04875_)
   );
-  AOI211X1 _09117_ (
+  AOI211X8 _09117_ (
     .A0(if_out[20]),
     .A1(_04866_),
     .B0(_04875_),
@@ -75237,7 +75237,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .S1(if_out[18]),
     .Y(_04985_)
   );
-  CLKMX2X2 _09233_ (
+  CLKMX2X8 _09233_ (
     .A(_03199_),
     .B(_03231_),
     .S0(_03472_),
@@ -75354,7 +75354,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B0(_05002_),
     .Y(_05003_)
   );
-  NOR3X1 _09251_ (
+  NOR3X8 _09251_ (
     .A(_03862_),
     .B(_05001_),
     .C(_05003_),
@@ -75632,7 +75632,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_05042_),
     .Y(_05043_)
   );
-  MX4X1 _09293_ (
+  MX4X8 _09293_ (
     .A(register_file[996]),
     .B(register_file[868]),
     .C(register_file[932]),
@@ -76583,7 +76583,7 @@ module \$paramod\id_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B0(_05168_),
     .Y(rd_data_two[31])
   );
-  AND2X1 _09431_ (
+  AND2X8 _09431_ (
     .A(if_out[15]),
     .B(_03861_),
     .Y(sgn_extend_out[16])
@@ -93108,7 +93108,7 @@ module \$paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .A(_0051_),
     .Y(_0033_)
   );
-  NOR2X1 _1068_ (
+  NOR2X8 _1068_ (
     .A(_0035_),
     .B(_0036_),
     .Y(_0052_)
@@ -93425,7 +93425,7 @@ module \$paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_0053_),
     .Y(pc_pp[4])
   );
-  NOR2X1 _1126_ (
+  NOR2X8 _1126_ (
     .A(pc[2]),
     .B(_0036_),
     .Y(_0082_)
@@ -95310,7 +95310,7 @@ module \$paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .S0(pc[2]),
     .Y(_0325_)
   );
-  NAND2X1 _1407_ (
+  NAND2X4 _1407_ (
     .A(instruction_memory[823]),
     .B(_0082_),
     .Y(_0326_)
@@ -96584,7 +96584,7 @@ module \$paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .B(_0082_),
     .Y(_0507_)
   );
-  AOI221X1 _1596_ (
+  AOI221X8 _1596_ (
     .A0(instruction_memory[400]),
     .A1(_0052_),
     .B0(_0506_),
@@ -96600,7 +96600,7 @@ module \$paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .C0(pc[5]),
     .Y(_0509_)
   );
-  OR2X1 _1598_ (
+  OR2X8 _1598_ (
     .A(pc[2]),
     .B(instruction_memory[112]),
     .Y(_0510_)
@@ -100259,7 +100259,7 @@ module \$paramod\if_stage\WIDTH=s32'00000000000000000000000000100000 (clk, rst, 
     .A(rst),
     .Y(_0032_)
   );
-  DFFRX1 _2155_ (
+  DFFRX4 _2155_ (
     .CK(clk),
     .D(_0000_[2]),
     .Q(pc[2]),
@@ -104347,7 +104347,7 @@ module top(clk, rst, if_instruction_memory, if_pc_pp, if_inst, if_id_pcIncr, if_
     .QN(_0507_),
     .RN(_0298_)
   );
-  DFFRX1 _1299_ (
+  DFFRX8 _1299_ (
     .CK(clk),
     .D(ex_aluResult[3]),
     .Q(ex_mem_aluResult[3]),
@@ -106440,7 +106440,7 @@ module top(clk, rst, if_instruction_memory, if_pc_pp, if_inst, if_id_pcIncr, if_
     .QN(_0792_),
     .RN(_0013_)
   );
-  DFFRX1 _1598_ (
+  DFFRX8 _1598_ (
     .CK(clk),
     .D(if_inst[18]),
     .Q(if_id_inst[18]),

@@ -45,7 +45,7 @@ module tb_wb();
 
 // waveform stimulus
     initial begin
-        $dumpfile("tb_wb.vcd");
+        $dumpfile("./vcd/tb_wb.vcd");
         $dumpvars(1, tb_wb);
         $monitor("%t: clk %1b, rst %1b, wb_ctrl %2b, mem_read_data %32b, alu_result_out %32b, wr_reg_dest_in %5b, wr_reg_dest_out %5b, wr_data %32b, RegWrite %1b",
           $time, clk, rst, wb_ctrl, mem_read_data, alu_result_out, wr_reg_dest_in, wr_reg_dest_out, wr_data, RegWrite);

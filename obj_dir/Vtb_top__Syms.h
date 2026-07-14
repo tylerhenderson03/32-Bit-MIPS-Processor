@@ -16,7 +16,6 @@
 
 // INCLUDE MODULE CLASSES
 #include "Vtb_top___024root.h"
-#include "Vtb_top___024unit.h"
 
 // SYMS CLASS (contains all model state)
 class alignas(VL_CACHE_LINE_BYTES) Vtb_top__Syms final : public VerilatedSyms {
@@ -33,7 +32,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top__Syms final : public VerilatedSyms {
 
     // MODULE INSTANCE STATE
     Vtb_top___024root              TOP;
-    Vtb_top___024unit              TOP____024unit;
 
     // CONSTRUCTORS
     Vtb_top__Syms(VerilatedContext* contextp, const char* namep, Vtb_top* modelp);

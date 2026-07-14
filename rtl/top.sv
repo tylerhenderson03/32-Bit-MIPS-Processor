@@ -1,22 +1,22 @@
 `timescale 1ns/1ns
-module top #(parameter WIDTH = 32) (
+module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
     input wire clk, rst,
-    input [WIDTH-1:0] if_instruction_memory[0:31], // for 32 instructions
+    input [WIDTH-1:0] if_instruction_memory[0:MAX_INSTRUCTIONS-1], // for MAX_INSTRUCTIONS instructions
 
 // IF outputs
     output wire [WIDTH-1:0] if_pc_pp, if_inst,
 // IF/ID pipeline registers
     output reg [WIDTH-1:0] if_id_pcIncr, if_id_inst,
 // ID outputs
-    output wire [4:0] id_regT, id_regD, id_shamt_out,
+    output wire [4:0] id_regT, id_regD, id_regS, id_shamt_out,
     output wire [4:0] id_exCtrl,
     output wire [3:0] id_memCtrl,
     output wire [3:0] id_wbCtrl,
     output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo, jump_addr,
     output wire [WIDTH-1:0] reg_file_debug [0:32-1],
-    output logic id_stallIF, id_PCJmp,
+    output logic id_stallIF, id_PCJmp, PCWrite, if_id_write,
 // ID/EX pipeline registers
-    output reg [4:0] id_ex_regT, id_ex_regD, id_ex_shamt_out,
+    output reg [4:0] id_ex_regT, id_ex_regD, id_ex_regS, id_ex_shamt_out,
     output reg [4:0] id_ex_exCtrl,
     output reg [3:0] id_ex_memCtrl,
     output reg [3:0] id_ex_wbCtrl,
@@ -55,10 +55,9 @@ module top #(parameter WIDTH = 32) (
         if(rst) begin
             if_id_pcIncr <= '0;
             if_id_inst   <= 'X;
-        /* end else if(if_id_write) begin // in the event of a stall, preserve previous instruction state in this stage of processor
+        end else if(if_id_write) begin // in the event of a stall, preserve previous instruction state in this stage of processor
             if_id_pcIncr <= if_id_pcIncr;
             if_id_inst   <= if_id_inst;
-        */
         end else begin
             if_id_pcIncr <= if_pc_pp;
             if_id_inst   <= if_inst;
@@ -68,13 +67,13 @@ module top #(parameter WIDTH = 32) (
 // ID/EX pipeline registers
     always_ff @(posedge clk or posedge rst) begin
         if(rst) begin
-            id_ex_regT      <= '0; id_ex_regD      <= '0;
+            id_ex_regT      <= '0; id_ex_regD      <= '0; id_ex_regS <= '0;
             id_ex_exCtrl    <= '0; id_ex_memCtrl   <= '0; id_ex_wbCtrl    <= '0;
             id_ex_pcIncr    <= '0; id_ex_sgnExt    <= '0;
             id_ex_rdDataOne <= '0; id_ex_rdDataTwo <= '0;
             id_ex_shamt_out <= '0;
         end else begin
-            id_ex_regT      <= id_regT;     id_ex_regD      <= id_regD;
+            id_ex_regT      <= id_regT;     id_ex_regD      <= id_regD; id_ex_regS <= id_regS;
             id_ex_exCtrl    <= id_exCtrl;   id_ex_memCtrl   <= id_memCtrl;
             id_ex_wbCtrl    <= id_wbCtrl;   id_ex_pcIncr    <= id_pcIncr;
             id_ex_sgnExt    <= id_sgnExt;   id_ex_rdDataOne <= id_rdDataOne;
@@ -109,7 +108,7 @@ module top #(parameter WIDTH = 32) (
     end
 
 // module instantiations
-    if_stage #(.WIDTH(WIDTH)) if_top (
+    if_stage #(.WIDTH(WIDTH), .MAX_INSTRUCTIONS(MAX_INSTRUCTIONS)) if_top (
         .clk(clk), .rst(rst),
         .instruction_memory(if_instruction_memory),
         .PCSrc(mem_branchFlag),
@@ -117,7 +116,8 @@ module top #(parameter WIDTH = 32) (
         .jump_addr(jump_addr),
         .pc_pp(if_pc_pp),
         .inst_mem_out(if_inst),
-        .PCJmp(id_PCJmp)
+        .PCJmp(id_PCJmp),
+        .PCWrite(PCWrite)
     );
     id_stage #(.WIDTH(WIDTH)) id_top (
         .clk(clk),
@@ -134,11 +134,14 @@ module top #(parameter WIDTH = 32) (
         .sgn_extend_out(id_sgnExt),
         .jump_addr(jump_addr),
         .rd_data_one(id_rdDataOne), .rd_data_two(id_rdDataTwo),
-        .rd_out(id_regD), .rt_out(id_regT),
+        .rd_out(id_regD), .rt_out(id_regT), .rs_out(id_regS),
         .register_file(reg_file_debug),
         .stallIF(id_stallIF),
         .PCJmp(id_PCJmp),
-        .shamt_out(id_shamt_out)
+        .shamt_out(id_shamt_out),
+        .id_ex_MemRead(id_ex_memCtrl[0]),
+        .id_ex_regRt(id_ex_regT),
+        .PCWrite(PCWrite), .if_id_write(if_id_write)
     );
     ex_stage #(.WIDTH(WIDTH)) ex_top (
         .ex_ctrl(id_ex_exCtrl),
@@ -148,7 +151,10 @@ module top #(parameter WIDTH = 32) (
         .sgn_extend_out(id_ex_sgnExt),
         .rd_data_one(id_ex_rdDataOne),
         .rd_data_two_in(id_ex_rdDataTwo),
-        .rd_out(id_ex_regD), .rt_out(id_ex_regT),
+        .rd_out(id_ex_regD), .rt_out(id_ex_regT), .rs_out(id_ex_regS),
+        .ex_mem_RegWrite(ex_mem_wbCtrl[1]), .mem_wb_RegWrite(mem_wb_wbCtrl[1]),
+        .ex_mem_regRd(ex_mem_regDst), .mem_wb_regRd(mem_wb_regDst),
+        .ex_mem_aluResult(ex_mem_aluResult), .wb_regData(wb_regData),
         .mem_ctrl_out(ex_memCtrl),
         .wb_ctrl_out(ex_wbCtrl),
         .pc_slt_add(ex_pcAdd),

@@ -17,9 +17,13 @@ module hazard_detection(
         ) begin
             // stall the instruction
             flushCtrlSignals = 1'b1;
+            PCWrite = 1'b1;
+            if_id_write = 1'b1;
         end
         else begin
             flushCtrlSignals = 1'b0;
+            PCWrite = 1'b0;
+            if_id_write = 1'b0;
         end
     end
 

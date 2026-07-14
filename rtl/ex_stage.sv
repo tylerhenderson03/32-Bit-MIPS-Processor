@@ -6,7 +6,11 @@ module ex_stage #(parameter WIDTH) (
     input reg [3:0] mem_ctrl_in,
     input reg [3:0] wb_ctrl_in,
     input reg [WIDTH-1:0] pc_incr_in, sgn_extend_out, rd_data_one, rd_data_two_in,
-    input reg [4:0] rd_out, rt_out,
+    input reg [4:0] rd_out, rt_out, rs_out,
+    // inputs for forwarding logic
+    input logic ex_mem_RegWrite, mem_wb_RegWrite,
+    input reg [4:0] ex_mem_regRd, mem_wb_regRd,
+    input wire [WIDTH-1:0] ex_mem_aluResult, wb_regData,
 
     output wire [3:0] mem_ctrl_out,
     output wire [3:0] wb_ctrl_out,
@@ -37,6 +41,8 @@ module ex_stage #(parameter WIDTH) (
     localparam ALU_SLL  = 4'b1110;
     localparam ALU_SRL  = 4'b1011;
 
+    logic [1:0] forwardA, forwardB;
+
 
 // branch address arithmetic
     assign pc_slt_add = pc_incr_in + {sgn_extend_out[29:0], 2'b00};
@@ -50,7 +56,12 @@ module ex_stage #(parameter WIDTH) (
     assign wb_ctrl_out = wb_ctrl_in;
 
 // instantiate forwarding unit here
-    //fwd_unit (.WIDTH(WIDTH)) forward_exStage_00 ();
+    fwd_unit fwd_00 (.id_ex_regRs(rs_out), .id_ex_regRt(rt_out),
+        .ex_mem_regRd(ex_mem_regRd), .ex_mem_RegWrite(ex_mem_RegWrite),
+        .mem_wb_regRd(mem_wb_regRd), .mem_wb_RegWrite(mem_wb_RegWrite),
+        
+        .forwardA(forwardA), .forwardB(forwardB)
+    );
 
 /* "ex_ctrl" is 3 bits:
     [0] - ALUSrc
@@ -59,6 +70,46 @@ module ex_stage #(parameter WIDTH) (
     [3] - RegDst
 */
     reg [3:0] alu_ctrl;
+
+// ALU Input Control Logic
+    //input reg [WIDTH-1:0] alu_buffered_a, alu_buffered_b;
+    reg [WIDTH-1:0] alu_in_a, alu_in_b;
+    //assign alu_buffered_a = rd_data_one;
+    //assign alu_buffered_b = ex_ctrl[0] ? sgn_extend_out : rd_data_two_in;
+    always_comb begin // input 'A'
+        case(forwardA)
+            2'b00: begin // input comes from register file (ID/EX)
+                alu_in_a = rd_data_one;
+            end
+            2'b10: begin // input forwarded from prior ALU result (EX/MEM)
+                alu_in_a = ex_mem_aluResult;
+            end
+            2'b01: begin // input forwarded from data memory or previous alu result (MEM/WB)
+                alu_in_a = wb_regData;
+            end
+            default: begin
+                alu_in_a = '0;
+            end
+        endcase
+    end
+
+    always_comb begin // input 'B'
+        case(forwardB)
+            2'b00: begin // input comes from register file (ID/EX)
+                alu_in_b = ex_ctrl[0] ? sgn_extend_out : rd_data_two_in;
+            end
+            2'b10: begin // input forwarded from prior ALU result (EX/MEM)
+                alu_in_b = ex_mem_aluResult;
+            end
+            2'b01: begin // input forwarded from data memory or previous alu result (MEM/WB)
+                alu_in_b = wb_regData;
+            end
+            default: begin
+                alu_in_b = '0;
+            end
+        endcase
+    end
+
 // ALU Control Logic
     always_comb begin
         case({ex_ctrl[4], ex_ctrl[2], ex_ctrl[1]})
@@ -105,7 +156,7 @@ module ex_stage #(parameter WIDTH) (
     end
 
 // ALU declaration
-    alu #(.WIDTH(WIDTH), .ALU_ADD(ALU_ADD) , .ALU_ADDU(ALU_ADDU), .ALU_SUB(ALU_SUB), .ALU_SUBU(ALU_SUBU), .ALU_MULT(ALU_MULT), .ALU_MULTU(ALU_MULTU), .ALU_DIV(ALU_DIV), .ALU_DIVU(ALU_DIVU), .ALU_AND(ALU_AND), .ALU_OR(ALU_OR), .ALU_NOR(ALU_NOR), .ALU_SLT(ALU_SLT), .ALU_SLTU(ALU_SLTU), .ALU_SLL(ALU_SLL), .ALU_SRL(ALU_SRL)) alu_00 (.in_a(rd_data_one), .in_b(ex_ctrl[0] ? sgn_extend_out : rd_data_two_in), .alu_opcode(alu_ctrl), .zero_flag(zero_flag), .overflow_flag(overflow_flag), .alu_result(alu_result), .shamt_out(shamt_out));
+    alu #(.WIDTH(WIDTH), .ALU_ADD(ALU_ADD) , .ALU_ADDU(ALU_ADDU), .ALU_SUB(ALU_SUB), .ALU_SUBU(ALU_SUBU), .ALU_MULT(ALU_MULT), .ALU_MULTU(ALU_MULTU), .ALU_DIV(ALU_DIV), .ALU_DIVU(ALU_DIVU), .ALU_AND(ALU_AND), .ALU_OR(ALU_OR), .ALU_NOR(ALU_NOR), .ALU_SLT(ALU_SLT), .ALU_SLTU(ALU_SLTU), .ALU_SLL(ALU_SLL), .ALU_SRL(ALU_SRL)) alu_00 (.in_a(alu_in_a), .in_b(alu_in_b), .alu_opcode(alu_ctrl), .zero_flag(zero_flag), .overflow_flag(overflow_flag), .alu_result(alu_result), .shamt_out(shamt_out));
 
 
 

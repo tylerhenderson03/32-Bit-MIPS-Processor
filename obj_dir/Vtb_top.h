@@ -13,8 +13,6 @@
 class Vtb_top__Syms;
 class Vtb_top___024root;
 class VerilatedVcdC;
-class Vtb_top___024unit;
-
 
 // This class is the main interface to the Verilated model
 class alignas(VL_CACHE_LINE_BYTES) Vtb_top VL_NOT_FINAL : public VerilatedModel {
@@ -35,7 +33,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top VL_NOT_FINAL : public VerilatedModel 
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
-    Vtb_top___024unit* const __PVT____024unit;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.

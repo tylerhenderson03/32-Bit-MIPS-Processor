@@ -11,17 +11,14 @@ Vtb_top__Syms::Vtb_top__Syms(VerilatedContext* contextp, const char* namep, Vtb_
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(256);
+    Verilated::stackCheck(331);
     // Setup sub module instances
-    TOP____024unit.ctor(this, "$unit");
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-9);
     // Setup each module's pointers to their submodules
-    TOP.__PVT____024unit = &TOP____024unit;
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(true);
-    TOP____024unit.__Vconfigure(true);
     // Setup scopes
 }
 
@@ -29,7 +26,6 @@ Vtb_top__Syms::~Vtb_top__Syms() {
     if (__Vm_dumping) _traceDumpClose();
     // Tear down scopes
     // Tear down sub module instances
-    TOP____024unit.dtor();
 }
 
 void Vtb_top__Syms::_traceDump() {

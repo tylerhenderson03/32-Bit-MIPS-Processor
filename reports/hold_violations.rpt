@@ -1,0 +1,283 @@
+Warning 503: run_sta.tcl line 1, report_checks -group_count is deprecated. Use -group_path_count instead.
+Startpoint: if_top/_2185_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1548_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2185_/CK (DFFRX4)
+   0.88    0.88 v if_top/_2185_/Q (DFFRX4)
+   0.00    0.88 v _1548_/D (DFFRX4)
+           0.88   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1548_/CK (DFFRX4)
+   0.20    0.35   library hold time
+           0.35   data required time
+---------------------------------------------------------
+           0.35   data required time
+          -0.88   data arrival time
+---------------------------------------------------------
+           0.53   slack (MET)
+
+
+Startpoint: if_top/_2186_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1549_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ if_top/_2186_/CK (DFFRX4)
+   0.88    0.88 v if_top/_2186_/Q (DFFRX4)
+   0.00    0.88 v _1549_/D (DFFRX4)
+           0.88   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1549_/CK (DFFRX4)
+   0.20    0.35   library hold time
+           0.35   data required time
+---------------------------------------------------------
+           0.35   data required time
+          -0.88   data arrival time
+---------------------------------------------------------
+           0.53   slack (MET)
+
+
+Startpoint: id_top/_12446_ (rising edge-triggered flip-flop clocked by clk')
+Endpoint: id_top/_12446_ (rising edge-triggered flip-flop clocked by clk')
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+   0.00    5.00 ^ id_top/_12446_/CK (DFFRX4)
+   0.89    5.89 v id_top/_12446_/Q (DFFRX4)
+   0.13    6.01 ^ id_top/_06666_/Y (NOR2X4)
+   0.07    6.08 v id_top/_06675_/Y (NOR2X4)
+   0.00    6.08 v id_top/_12446_/D (DFFRX4)
+           6.08   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+   0.15    5.15   clock uncertainty
+   0.00    5.15   clock reconvergence pessimism
+           5.15 ^ id_top/_12446_/CK (DFFRX4)
+   0.28    5.43   library hold time
+           5.43   data required time
+---------------------------------------------------------
+           5.43   data required time
+          -6.08   data arrival time
+---------------------------------------------------------
+           0.66   slack (MET)
+
+
+Startpoint: _1291_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1209_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1291_/CK (DFFRX4)
+   0.99    0.99 v _1291_/Q (DFFRX4)
+   0.00    0.99 v _1209_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1209_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+
+Startpoint: _1292_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1210_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1292_/CK (DFFRX4)
+   0.99    0.99 v _1292_/Q (DFFRX4)
+   0.00    0.99 v _1210_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1210_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+
+Startpoint: _1293_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1211_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1293_/CK (DFFRX4)
+   0.99    0.99 v _1293_/Q (DFFRX4)
+   0.00    0.99 v _1211_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1211_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+
+Startpoint: _1294_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1212_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1294_/CK (DFFRX4)
+   0.99    0.99 v _1294_/Q (DFFRX4)
+   0.00    0.99 v _1212_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1212_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+
+Startpoint: _1282_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1213_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1282_/CK (DFFRX4)
+   0.99    0.99 v _1282_/Q (DFFRX4)
+   0.00    0.99 v _1213_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1213_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+
+Startpoint: _1283_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1214_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1283_/CK (DFFRX4)
+   0.99    0.99 v _1283_/Q (DFFRX4)
+   0.00    0.99 v _1214_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1214_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+
+Startpoint: _1284_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1215_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _1284_/CK (DFFRX4)
+   0.99    0.99 v _1284_/Q (DFFRX4)
+   0.00    0.99 v _1215_/D (DFFRX4)
+           0.99   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.15    0.15   clock uncertainty
+   0.00    0.15   clock reconvergence pessimism
+           0.15 ^ _1215_/CK (DFFRX4)
+   0.16    0.31   library hold time
+           0.31   data required time
+---------------------------------------------------------
+           0.31   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           0.67   slack (MET)
+
+

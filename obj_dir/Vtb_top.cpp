@@ -10,7 +10,6 @@
 Vtb_top::Vtb_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vtb_top__Syms(contextp(), _vcname__, this)}
-    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
@@ -90,7 +89,9 @@ const char* Vtb_top::name() const {
 void Vtb_top___024root___eval_final(Vtb_top___024root* vlSelf);
 
 VL_ATTR_COLD void Vtb_top::final() {
+    contextp()->executingFinal(true);
     Vtb_top___024root___eval_final(&(vlSymsp->TOP));
+    contextp()->executingFinal(false);
 }
 
 //============================================================
@@ -104,7 +105,7 @@ void Vtb_top::atClone() const {
     contextp()->threadPoolpOnClone();
 }
 std::unique_ptr<VerilatedTraceConfig> Vtb_top::traceConfig() const {
-    return std::unique_ptr<VerilatedTraceConfig>{new VerilatedTraceConfig{false, false, false}};
+    return std::unique_ptr<VerilatedTraceConfig>{new VerilatedTraceConfig{false}};
 };
 
 //============================================================
@@ -139,6 +140,6 @@ VL_ATTR_COLD void Vtb_top::traceBaseModel(VerilatedTraceBaseC* tfp, int levels, 
             " use --trace-fst with VerilatedFst object, and --trace-vcd with VerilatedVcd object");
     }
     stfp->spTrace()->addModel(this);
-    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 301);
+    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 237);
     Vtb_top___024root__trace_register(&(vlSymsp->TOP), stfp->spTrace());
 }

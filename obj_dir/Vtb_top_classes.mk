@@ -21,6 +21,8 @@ VM_TRACE_FST = 0
 VM_TRACE_SAIF = 0
 # Tracing output mode in VCD format?  0/1 (from --trace-vcd)
 VM_TRACE_VCD = 1
+# VPI enabled?  0/1 (from --vpi)
+VM_VPI = 0
 
 ### Object file lists...
 # Generated module classes, fast-path, compile with highest optimization
@@ -31,10 +33,9 @@ VM_CLASSES_FAST += \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
+  Vtb_top__ConstPool__0__Slow \
   Vtb_top___024root__Slow \
   Vtb_top___024root__0__Slow \
-  Vtb_top___024unit__Slow \
-  Vtb_top___024unit__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

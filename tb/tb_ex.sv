@@ -69,7 +69,7 @@ module tb_ex();
 
 // waveform instantiation
     initial begin
-        $dumpfile("tb_ex.vcd");
+        $dumpfile("./vcd/tb_ex.vcd");
         $dumpvars(1, tb_ex);
         $monitor("%t: clk %1b, rst %1b, ex_ctrl %4b, mem_ctrl_in %3b, wb_ctrl_in %2b, pc_incr_in %32b, sgn_extend_out %32b, rd_data_one %32b, rd_data_two_in %32b, rd_out %5b, rt_out %5b, mem_ctrl_out %3b, wb_ctrl_out %2b, pc_slt_add %32b, alu_result %32b, rd_data_two_out %32b, zero_flag %1b, reg_dst_mux %5b", $time, clk, rst, ex_ctrl, mem_ctrl_in, wb_ctrl_in, pc_incr_in, sgn_extend_out, rd_data_one, rd_data_two_in, rd_out, rt_out, mem_ctrl_out, wb_ctrl_out, pc_slt_add, alu_result, rd_data_two_out, zero_flag, reg_dst_mux);
     end

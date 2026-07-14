@@ -68,7 +68,7 @@ module tb_id();
 
 // waveform instantiation
     initial begin
-        $dumpfile("tb_id.vcd");
+        $dumpfile("./vcd/tb_id.vcd");
         $dumpvars(1, tb_id);
         $monitor("%t: clk %1b, rst %1b, if_out %32b, pc_incr_in %32b, wr_reg %32b, wr_data %32b, RegWrite %1b, wb_ctrl %2b, mem_ctrl %3b, ex_ctrl %4b, pc_incr_out %32b, sgn_extend_out %32b, rd_data_one %32b, rd_data_two %32b, rd_out %5b, rt_out %5b", $time, clk, rst, if_out, pc_incr_in, wr_reg, wr_data, RegWrite, wb_ctrl, mem_ctrl, ex_ctrl, pc_incr_out, sgn_extend_out, rd_data_one, rd_data_two, rd_out, rt_out);
     end

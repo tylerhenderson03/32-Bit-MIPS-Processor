@@ -65,7 +65,7 @@ module tb_mem();
 
 // waveform instantiation
     initial begin
-        $dumpfile("tb_mem.vcd");
+        $dumpfile("./vcd/tb_mem.vcd");
         $dumpvars(1, tb_mem);
         $monitor("%t: clk %1b, rst %1b, mem_ctrl %3b, wb_ctrl_in %2b, pc_slt_add %32b, alu_result %32b, rd_data_two_out %32b, wb_ctrl_out %2b, branch_flag %1b, mem_read_data %32b, branch_addr %32b, alu_result_out %32b, wr_reg_dest_out %5b",
           $time, clk, rst, mem_ctrl, wb_ctrl_in, pc_slt_add, alu_result, rd_data_two_out, wb_ctrl_out, branch_flag, mem_read_data, branch_addr, alu_result_out, wr_reg_dest_out);
