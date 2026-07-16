@@ -176,18 +176,19 @@ const logic [5:0] FUNCTS [] = '{
 initial begin
   NUM_INSTRUCTIONS = 0;
     // add instructions below to be executed by the CPU core, include comment for specific instruction
+    write_i_type(.opcode(ADDI_OP), .rs(R0), .rt(R3), .imm(16'h0FFF)); // load first number to multiply
+    write_i_type(.opcode(ADDI_OP), .rs(R0), .rt(R2), .imm(16'h0FFF)); // load second number to multiply
+
     write_i_type(.opcode(ADDI_OP), .rs(R0), .rt(R5), .imm(16'd16));
     write_i_type(.opcode(ADDI_OP), .rs(R0), .rt(R7), .imm(16'd0));
     write_i_type(.opcode(ANDI_OP), .rs(R2), .rt(R6), .imm(16'd1));
-    write_i_type(.opcode(BEQ_OP), .rs(R0), .rt(R6), .imm(16'd4));
+    write_i_type(.opcode(BEQ_OP), .rs(R6), .rt(R0), .imm(16'd1));
     write_r_type(.rs(R3), .rt(R7), .rd(R7), .shamt(5'd0), .funct(ADDU_FUNCT));
     write_r_type(.rs(5'd0), .rt(R3), .rd(R3), .shamt(5'd1), .funct(SLL_FUNCT));
     write_r_type(.rs(5'd0), .rt(R2), .rd(R2), .shamt(5'd1), .funct(SRL_FUNCT));
-    write_i_type(.opcode(ADDI_OP), .rs(R0), .rt(R10), .imm(16'd1)); // this and next instruction replace SUBI R5, R5, 1
-    write_r_type(.rs(R5), .rt(R10), .rd(R5), .shamt(5'd0), .funct(SUB_FUNCT));
-    write_i_type(.opcode(BNE_OP), .rs(R0), .rt(R5), .imm(16'd4));
+    write_i_type(.opcode(ADDI_OP), .rs(R5), .rt(R5), .imm((~16'd1 + 1'b1)));
+    write_i_type(.opcode(BNE_OP), .rs(R0), .rt(R5), .imm((~16'd7 + 1'b1)));
     write_r_type(.rs(R0), .rt(R7), .rd(R4), .shamt(5'd0), .funct(ADDU_FUNCT));
-    write_j_type(.opcode(J_OP), .addr(26'h8));
 
       /*
       for(i = 7; i < MAX_INSTRUCTIONS; i++) begin
@@ -289,11 +290,18 @@ top #(.WIDTH(WIDTH), .MAX_INSTRUCTIONS(MAX_INSTRUCTIONS)) top_00 (
   initial begin
     clk = 0; rst = 1;
     #(CLK_PERIOD) rst = 0;
+    #(10*CLK_PERIOD); // wait until counter value overrwrites current 0 value in register 
+    do begin
+      #(CLK_PERIOD); // check every clock cycle
+    end while (reg_file_debug[5] != 0); // check until
+    #(2*CLK_PERIOD);
+    $display("Expected R7 = 0x%0h, Got R7 = 0x%0h", 
+      32'h00FFE001, reg_file_debug[7]);
+    $finish;
 
     // observe waveform during this period with sample instruction set
     // (instantiate inst. mem. through IF stage)
-    #(MAX_INSTRUCTIONS*CLK_PERIOD);
-    #(20*MAX_INSTRUCTIONS*CLK_PERIOD) $finish; // to allow pipeline to fully flush out previous instructions (assuming no backwards jumping/branches)
+    #(180*CLK_PERIOD); // to allow pipeline to fully flush out previous instructions (assuming no backwards jumping/branches)
   end
 
 

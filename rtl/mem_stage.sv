@@ -21,7 +21,8 @@ module mem_stage #(parameter WIDTH) (
     assign wb_ctrl_out = wb_ctrl_in;
 
     // mem_ctrl[2] signifies a branch instruction, mem_ctrl[3] is for a NE, ~mem_ctrl[3] for EQ
-    assign branch_flag = mem_ctrl[2] && (zero_flag || (mem_ctrl[3] && ~zero_flag)); 
+    assign branch_flag = (!mem_ctrl[3] && mem_ctrl[2] && zero_flag) /* for BREQ */
+                            || (mem_ctrl[3] && mem_ctrl[2] && !zero_flag); /* for BRNE */
 
     assign wr_reg_dest_out = reg_dst_mux;
 

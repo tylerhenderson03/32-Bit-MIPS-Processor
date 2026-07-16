@@ -62,26 +62,22 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     __Vtask_tb_top__DOT__write_i_type__3__rt = 0;
     SData/*15:0*/ __Vtask_tb_top__DOT__write_i_type__3__imm;
     __Vtask_tb_top__DOT__write_i_type__3__imm = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__4__rs;
-    __Vtask_tb_top__DOT__write_r_type__4__rs = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__4__rt;
-    __Vtask_tb_top__DOT__write_r_type__4__rt = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__4__rd;
-    __Vtask_tb_top__DOT__write_r_type__4__rd = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__4__shamt;
-    __Vtask_tb_top__DOT__write_r_type__4__shamt = 0;
-    CData/*5:0*/ __Vtask_tb_top__DOT__write_r_type__4__funct;
-    __Vtask_tb_top__DOT__write_r_type__4__funct = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__5__rs;
-    __Vtask_tb_top__DOT__write_r_type__5__rs = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__5__rt;
-    __Vtask_tb_top__DOT__write_r_type__5__rt = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__5__rd;
-    __Vtask_tb_top__DOT__write_r_type__5__rd = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__5__shamt;
-    __Vtask_tb_top__DOT__write_r_type__5__shamt = 0;
-    CData/*5:0*/ __Vtask_tb_top__DOT__write_r_type__5__funct;
-    __Vtask_tb_top__DOT__write_r_type__5__funct = 0;
+    CData/*5:0*/ __Vtask_tb_top__DOT__write_i_type__4__opcode;
+    __Vtask_tb_top__DOT__write_i_type__4__opcode = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__4__rs;
+    __Vtask_tb_top__DOT__write_i_type__4__rs = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__4__rt;
+    __Vtask_tb_top__DOT__write_i_type__4__rt = 0;
+    SData/*15:0*/ __Vtask_tb_top__DOT__write_i_type__4__imm;
+    __Vtask_tb_top__DOT__write_i_type__4__imm = 0;
+    CData/*5:0*/ __Vtask_tb_top__DOT__write_i_type__5__opcode;
+    __Vtask_tb_top__DOT__write_i_type__5__opcode = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__5__rs;
+    __Vtask_tb_top__DOT__write_i_type__5__rs = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__5__rt;
+    __Vtask_tb_top__DOT__write_i_type__5__rt = 0;
+    SData/*15:0*/ __Vtask_tb_top__DOT__write_i_type__5__imm;
+    __Vtask_tb_top__DOT__write_i_type__5__imm = 0;
     CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__6__rs;
     __Vtask_tb_top__DOT__write_r_type__6__rs = 0;
     CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__6__rt;
@@ -92,14 +88,16 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     __Vtask_tb_top__DOT__write_r_type__6__shamt = 0;
     CData/*5:0*/ __Vtask_tb_top__DOT__write_r_type__6__funct;
     __Vtask_tb_top__DOT__write_r_type__6__funct = 0;
-    CData/*5:0*/ __Vtask_tb_top__DOT__write_i_type__7__opcode;
-    __Vtask_tb_top__DOT__write_i_type__7__opcode = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__7__rs;
-    __Vtask_tb_top__DOT__write_i_type__7__rs = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__7__rt;
-    __Vtask_tb_top__DOT__write_i_type__7__rt = 0;
-    SData/*15:0*/ __Vtask_tb_top__DOT__write_i_type__7__imm;
-    __Vtask_tb_top__DOT__write_i_type__7__imm = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__7__rs;
+    __Vtask_tb_top__DOT__write_r_type__7__rs = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__7__rt;
+    __Vtask_tb_top__DOT__write_r_type__7__rt = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__7__rd;
+    __Vtask_tb_top__DOT__write_r_type__7__rd = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__7__shamt;
+    __Vtask_tb_top__DOT__write_r_type__7__shamt = 0;
+    CData/*5:0*/ __Vtask_tb_top__DOT__write_r_type__7__funct;
+    __Vtask_tb_top__DOT__write_r_type__7__funct = 0;
     CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__8__rs;
     __Vtask_tb_top__DOT__write_r_type__8__rs = 0;
     CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__8__rt;
@@ -118,25 +116,29 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     __Vtask_tb_top__DOT__write_i_type__9__rt = 0;
     SData/*15:0*/ __Vtask_tb_top__DOT__write_i_type__9__imm;
     __Vtask_tb_top__DOT__write_i_type__9__imm = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__10__rs;
-    __Vtask_tb_top__DOT__write_r_type__10__rs = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__10__rt;
-    __Vtask_tb_top__DOT__write_r_type__10__rt = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__10__rd;
-    __Vtask_tb_top__DOT__write_r_type__10__rd = 0;
-    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__10__shamt;
-    __Vtask_tb_top__DOT__write_r_type__10__shamt = 0;
-    CData/*5:0*/ __Vtask_tb_top__DOT__write_r_type__10__funct;
-    __Vtask_tb_top__DOT__write_r_type__10__funct = 0;
-    CData/*5:0*/ __Vtask_tb_top__DOT__write_j_type__11__opcode;
-    __Vtask_tb_top__DOT__write_j_type__11__opcode = 0;
-    IData/*25:0*/ __Vtask_tb_top__DOT__write_j_type__11__addr;
-    __Vtask_tb_top__DOT__write_j_type__11__addr = 0;
+    CData/*5:0*/ __Vtask_tb_top__DOT__write_i_type__10__opcode;
+    __Vtask_tb_top__DOT__write_i_type__10__opcode = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__10__rs;
+    __Vtask_tb_top__DOT__write_i_type__10__rs = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_i_type__10__rt;
+    __Vtask_tb_top__DOT__write_i_type__10__rt = 0;
+    SData/*15:0*/ __Vtask_tb_top__DOT__write_i_type__10__imm;
+    __Vtask_tb_top__DOT__write_i_type__10__imm = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__11__rs;
+    __Vtask_tb_top__DOT__write_r_type__11__rs = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__11__rt;
+    __Vtask_tb_top__DOT__write_r_type__11__rt = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__11__rd;
+    __Vtask_tb_top__DOT__write_r_type__11__rd = 0;
+    CData/*4:0*/ __Vtask_tb_top__DOT__write_r_type__11__shamt;
+    __Vtask_tb_top__DOT__write_r_type__11__shamt = 0;
+    CData/*5:0*/ __Vtask_tb_top__DOT__write_r_type__11__funct;
+    __Vtask_tb_top__DOT__write_r_type__11__funct = 0;
     // Body
-    vlSelfRef.tb_top__DOT__instruction_memory[0U] = 0x20050010U;
+    vlSelfRef.tb_top__DOT__instruction_memory[0U] = 0x20030fffU;
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = 1U;
-    __Vtask_tb_top__DOT__write_i_type__1__imm = 0U;
-    __Vtask_tb_top__DOT__write_i_type__1__rt = 7U;
+    __Vtask_tb_top__DOT__write_i_type__1__imm = 0x0fffU;
+    __Vtask_tb_top__DOT__write_i_type__1__rt = 2U;
     __Vtask_tb_top__DOT__write_i_type__1__rs = 0U;
     __Vtask_tb_top__DOT__write_i_type__1__opcode = 8U;
     vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
@@ -149,10 +151,10 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
                                                    | (IData)(__Vtask_tb_top__DOT__write_i_type__1__imm))));
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_i_type__2__imm = 1U;
-    __Vtask_tb_top__DOT__write_i_type__2__rt = 6U;
-    __Vtask_tb_top__DOT__write_i_type__2__rs = 2U;
-    __Vtask_tb_top__DOT__write_i_type__2__opcode = 0x0cU;
+    __Vtask_tb_top__DOT__write_i_type__2__imm = 0x0010U;
+    __Vtask_tb_top__DOT__write_i_type__2__rt = 5U;
+    __Vtask_tb_top__DOT__write_i_type__2__rs = 0U;
+    __Vtask_tb_top__DOT__write_i_type__2__opcode = 8U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
@@ -165,10 +167,10 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_i_type__3__imm = 4U;
-    __Vtask_tb_top__DOT__write_i_type__3__rt = 6U;
+    __Vtask_tb_top__DOT__write_i_type__3__imm = 0U;
+    __Vtask_tb_top__DOT__write_i_type__3__rt = 7U;
     __Vtask_tb_top__DOT__write_i_type__3__rs = 0U;
-    __Vtask_tb_top__DOT__write_i_type__3__opcode = 4U;
+    __Vtask_tb_top__DOT__write_i_type__3__opcode = 8U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
@@ -181,45 +183,43 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_r_type__4__funct = 0x21U;
-    __Vtask_tb_top__DOT__write_r_type__4__shamt = 0U;
-    __Vtask_tb_top__DOT__write_r_type__4__rd = 7U;
-    __Vtask_tb_top__DOT__write_r_type__4__rt = 7U;
-    __Vtask_tb_top__DOT__write_r_type__4__rs = 3U;
+    __Vtask_tb_top__DOT__write_i_type__4__imm = 1U;
+    __Vtask_tb_top__DOT__write_i_type__4__rt = 6U;
+    __Vtask_tb_top__DOT__write_i_type__4__rs = 2U;
+    __Vtask_tb_top__DOT__write_i_type__4__opcode = 0x0cU;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
-            = ((((IData)(__Vtask_tb_top__DOT__write_r_type__4__rs) 
-                 << 0x00000015U) | ((IData)(__Vtask_tb_top__DOT__write_r_type__4__rt) 
-                                    << 0x00000010U)) 
-               | (((IData)(__Vtask_tb_top__DOT__write_r_type__4__rd) 
-                   << 0x0000000bU) | (((IData)(__Vtask_tb_top__DOT__write_r_type__4__shamt) 
-                                       << 6U) | (IData)(__Vtask_tb_top__DOT__write_r_type__4__funct))));
+            = (((IData)(__Vtask_tb_top__DOT__write_i_type__4__opcode) 
+                << 0x0000001aU) | (((IData)(__Vtask_tb_top__DOT__write_i_type__4__rs) 
+                                    << 0x00000015U) 
+                                   | (((IData)(__Vtask_tb_top__DOT__write_i_type__4__rt) 
+                                       << 0x00000010U) 
+                                      | (IData)(__Vtask_tb_top__DOT__write_i_type__4__imm))));
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_r_type__5__funct = 0U;
-    __Vtask_tb_top__DOT__write_r_type__5__shamt = 1U;
-    __Vtask_tb_top__DOT__write_r_type__5__rd = 3U;
-    __Vtask_tb_top__DOT__write_r_type__5__rt = 3U;
-    __Vtask_tb_top__DOT__write_r_type__5__rs = 0U;
+    __Vtask_tb_top__DOT__write_i_type__5__imm = 1U;
+    __Vtask_tb_top__DOT__write_i_type__5__rt = 0U;
+    __Vtask_tb_top__DOT__write_i_type__5__rs = 6U;
+    __Vtask_tb_top__DOT__write_i_type__5__opcode = 4U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
-            = ((((IData)(__Vtask_tb_top__DOT__write_r_type__5__rs) 
-                 << 0x00000015U) | ((IData)(__Vtask_tb_top__DOT__write_r_type__5__rt) 
-                                    << 0x00000010U)) 
-               | (((IData)(__Vtask_tb_top__DOT__write_r_type__5__rd) 
-                   << 0x0000000bU) | (((IData)(__Vtask_tb_top__DOT__write_r_type__5__shamt) 
-                                       << 6U) | (IData)(__Vtask_tb_top__DOT__write_r_type__5__funct))));
+            = (((IData)(__Vtask_tb_top__DOT__write_i_type__5__opcode) 
+                << 0x0000001aU) | (((IData)(__Vtask_tb_top__DOT__write_i_type__5__rs) 
+                                    << 0x00000015U) 
+                                   | (((IData)(__Vtask_tb_top__DOT__write_i_type__5__rt) 
+                                       << 0x00000010U) 
+                                      | (IData)(__Vtask_tb_top__DOT__write_i_type__5__imm))));
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_r_type__6__funct = 2U;
-    __Vtask_tb_top__DOT__write_r_type__6__shamt = 1U;
-    __Vtask_tb_top__DOT__write_r_type__6__rd = 2U;
-    __Vtask_tb_top__DOT__write_r_type__6__rt = 2U;
-    __Vtask_tb_top__DOT__write_r_type__6__rs = 0U;
+    __Vtask_tb_top__DOT__write_r_type__6__funct = 0x21U;
+    __Vtask_tb_top__DOT__write_r_type__6__shamt = 0U;
+    __Vtask_tb_top__DOT__write_r_type__6__rd = 7U;
+    __Vtask_tb_top__DOT__write_r_type__6__rt = 7U;
+    __Vtask_tb_top__DOT__write_r_type__6__rs = 3U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
@@ -232,27 +232,28 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_i_type__7__imm = 1U;
-    __Vtask_tb_top__DOT__write_i_type__7__rt = 0x0aU;
-    __Vtask_tb_top__DOT__write_i_type__7__rs = 0U;
-    __Vtask_tb_top__DOT__write_i_type__7__opcode = 8U;
+    __Vtask_tb_top__DOT__write_r_type__7__funct = 0U;
+    __Vtask_tb_top__DOT__write_r_type__7__shamt = 1U;
+    __Vtask_tb_top__DOT__write_r_type__7__rd = 3U;
+    __Vtask_tb_top__DOT__write_r_type__7__rt = 3U;
+    __Vtask_tb_top__DOT__write_r_type__7__rs = 0U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
-            = (((IData)(__Vtask_tb_top__DOT__write_i_type__7__opcode) 
-                << 0x0000001aU) | (((IData)(__Vtask_tb_top__DOT__write_i_type__7__rs) 
-                                    << 0x00000015U) 
-                                   | (((IData)(__Vtask_tb_top__DOT__write_i_type__7__rt) 
-                                       << 0x00000010U) 
-                                      | (IData)(__Vtask_tb_top__DOT__write_i_type__7__imm))));
+            = ((((IData)(__Vtask_tb_top__DOT__write_r_type__7__rs) 
+                 << 0x00000015U) | ((IData)(__Vtask_tb_top__DOT__write_r_type__7__rt) 
+                                    << 0x00000010U)) 
+               | (((IData)(__Vtask_tb_top__DOT__write_r_type__7__rd) 
+                   << 0x0000000bU) | (((IData)(__Vtask_tb_top__DOT__write_r_type__7__shamt) 
+                                       << 6U) | (IData)(__Vtask_tb_top__DOT__write_r_type__7__funct))));
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_r_type__8__funct = 0x22U;
-    __Vtask_tb_top__DOT__write_r_type__8__shamt = 0U;
-    __Vtask_tb_top__DOT__write_r_type__8__rd = 5U;
-    __Vtask_tb_top__DOT__write_r_type__8__rt = 0x0aU;
-    __Vtask_tb_top__DOT__write_r_type__8__rs = 5U;
+    __Vtask_tb_top__DOT__write_r_type__8__funct = 2U;
+    __Vtask_tb_top__DOT__write_r_type__8__shamt = 1U;
+    __Vtask_tb_top__DOT__write_r_type__8__rd = 2U;
+    __Vtask_tb_top__DOT__write_r_type__8__rt = 2U;
+    __Vtask_tb_top__DOT__write_r_type__8__rs = 0U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
@@ -265,10 +266,10 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_i_type__9__imm = 4U;
+    __Vtask_tb_top__DOT__write_i_type__9__imm = 0xffffU;
     __Vtask_tb_top__DOT__write_i_type__9__rt = 5U;
-    __Vtask_tb_top__DOT__write_i_type__9__rs = 0U;
-    __Vtask_tb_top__DOT__write_i_type__9__opcode = 5U;
+    __Vtask_tb_top__DOT__write_i_type__9__rs = 5U;
+    __Vtask_tb_top__DOT__write_i_type__9__opcode = 8U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
@@ -281,30 +282,36 @@ VL_ATTR_COLD void Vtb_top___024root___eval_initial__TOP(Vtb_top___024root* vlSel
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_r_type__10__funct = 0x21U;
-    __Vtask_tb_top__DOT__write_r_type__10__shamt = 0U;
-    __Vtask_tb_top__DOT__write_r_type__10__rd = 4U;
-    __Vtask_tb_top__DOT__write_r_type__10__rt = 7U;
-    __Vtask_tb_top__DOT__write_r_type__10__rs = 0U;
+    __Vtask_tb_top__DOT__write_i_type__10__imm = 0xfff9U;
+    __Vtask_tb_top__DOT__write_i_type__10__rt = 5U;
+    __Vtask_tb_top__DOT__write_i_type__10__rs = 0U;
+    __Vtask_tb_top__DOT__write_i_type__10__opcode = 5U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
-            = ((((IData)(__Vtask_tb_top__DOT__write_r_type__10__rs) 
-                 << 0x00000015U) | ((IData)(__Vtask_tb_top__DOT__write_r_type__10__rt) 
-                                    << 0x00000010U)) 
-               | (((IData)(__Vtask_tb_top__DOT__write_r_type__10__rd) 
-                   << 0x0000000bU) | (((IData)(__Vtask_tb_top__DOT__write_r_type__10__shamt) 
-                                       << 6U) | (IData)(__Vtask_tb_top__DOT__write_r_type__10__funct))));
+            = (((IData)(__Vtask_tb_top__DOT__write_i_type__10__opcode) 
+                << 0x0000001aU) | (((IData)(__Vtask_tb_top__DOT__write_i_type__10__rs) 
+                                    << 0x00000015U) 
+                                   | (((IData)(__Vtask_tb_top__DOT__write_i_type__10__rt) 
+                                       << 0x00000010U) 
+                                      | (IData)(__Vtask_tb_top__DOT__write_i_type__10__imm))));
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
-    __Vtask_tb_top__DOT__write_j_type__11__addr = 8U;
-    __Vtask_tb_top__DOT__write_j_type__11__opcode = 2U;
+    __Vtask_tb_top__DOT__write_r_type__11__funct = 0x21U;
+    __Vtask_tb_top__DOT__write_r_type__11__shamt = 0U;
+    __Vtask_tb_top__DOT__write_r_type__11__rd = 4U;
+    __Vtask_tb_top__DOT__write_r_type__11__rt = 7U;
+    __Vtask_tb_top__DOT__write_r_type__11__rs = 0U;
     if (VL_LIKELY(((0x0eU >= (0x0000000fU & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS))))) {
         vlSelfRef.tb_top__DOT__instruction_memory[(0x0000000fU 
                                                    & vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS)] 
-            = (((IData)(__Vtask_tb_top__DOT__write_j_type__11__opcode) 
-                << 0x0000001aU) | __Vtask_tb_top__DOT__write_j_type__11__addr);
+            = ((((IData)(__Vtask_tb_top__DOT__write_r_type__11__rs) 
+                 << 0x00000015U) | ((IData)(__Vtask_tb_top__DOT__write_r_type__11__rt) 
+                                    << 0x00000010U)) 
+               | (((IData)(__Vtask_tb_top__DOT__write_r_type__11__rd) 
+                   << 0x0000000bU) | (((IData)(__Vtask_tb_top__DOT__write_r_type__11__shamt) 
+                                       << 6U) | (IData)(__Vtask_tb_top__DOT__write_r_type__11__funct))));
     }
     vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS = ((IData)(1U) 
                                                + vlSelfRef.tb_top__DOT__NUM_INSTRUCTIONS);
@@ -408,13 +415,20 @@ VL_ATTR_COLD bool Vtb_top___024root___trigger_anySet__stl(const VlUnpacked<QData
     return (0U);
 }
 
-extern const VlWide<64>/*2047:0*/ Vtb_top__ConstPool__CONST_ha4d190a7_0;
+extern const VlWide<64>/*2047:0*/ Vtb_top__ConstPool__CONST_h06e2f2cb_0;
 
 VL_ATTR_COLD void Vtb_top___024root___stl_sequent__TOP__0(Vtb_top___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_top___024root___stl_sequent__TOP__0\n"); );
     Vtb_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.tb_top__DOT__top_00__DOT__if_top__DOT__pc_pp 
+        = ((IData)(4U) + vlSelfRef.tb_top__DOT__top_00__DOT__if_top__DOT__pc);
+    vlSelfRef.tb_top__DOT__top_00__DOT__if_top__DOT__PCSrc 
+        = (((~ (IData)(vlSelfRef.tb_top__DOT__ex_mem_zeroFlag)) 
+            & (0x0cU == (0x0cU & (IData)(vlSelfRef.tb_top__DOT__ex_mem_memCtrl)))) 
+           | ((IData)(vlSelfRef.tb_top__DOT__ex_mem_zeroFlag) 
+              & (4U == (0x0cU & (IData)(vlSelfRef.tb_top__DOT__ex_mem_memCtrl)))));
     vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[0U] 
         = vlSelfRef.tb_top__DOT__instruction_memory[14U];
     vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[1U] 
@@ -445,8 +459,6 @@ VL_ATTR_COLD void Vtb_top___024root___stl_sequent__TOP__0(Vtb_top___024root* vlS
         = vlSelfRef.tb_top__DOT__instruction_memory[1U];
     vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[14U] 
         = vlSelfRef.tb_top__DOT__instruction_memory[0U];
-    vlSelfRef.tb_top__DOT__top_00__DOT__if_top__DOT__pc_pp 
-        = ((IData)(4U) + vlSelfRef.tb_top__DOT__top_00__DOT__if_top__DOT__pc);
     vlSelfRef.tb_top__DOT__top_00__DOT__ex_top__DOT__alu_ctrl 
         = (0x0000000fU & ((0x00000010U & (IData)(vlSelfRef.tb_top__DOT__id_ex_exCtrl))
                            ? ((4U & (IData)(vlSelfRef.tb_top__DOT__id_ex_exCtrl))
@@ -596,6 +608,36 @@ VL_ATTR_COLD void Vtb_top___024root___stl_sequent__TOP__0(Vtb_top___024root* vlS
         = ((1U & (IData)(vlSelfRef.tb_top__DOT__mem_wb_wbCtrl))
             ? vlSelfRef.tb_top__DOT__mem_wb_memReadData
             : vlSelfRef.tb_top__DOT__mem_wb_aluResult);
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[14U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[0U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[13U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[1U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[12U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[2U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[11U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[3U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[10U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[4U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[9U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[5U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[8U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[6U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[7U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[7U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[6U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[8U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[5U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[9U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[4U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[10U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[3U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[11U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[2U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[12U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[1U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[13U];
+    vlSelfRef.tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[0U] 
+        = vlSelfRef.tb_top__DOT____Vcellinp__top_00__if_instruction_memory[14U];
     if (((IData)(vlSelfRef.tb_top__DOT__rst) | (IData)(vlSelfRef.tb_top__DOT__top_00__DOT__if_top__DOT__PCWrite))) {
         vlSelfRef.tb_top__DOT__id_exCtrl = 0U;
         vlSelfRef.tb_top__DOT__id_memCtrl = 0U;
@@ -605,7 +647,7 @@ VL_ATTR_COLD void Vtb_top___024root___stl_sequent__TOP__0(Vtb_top___024root* vlS
         vlSelfRef.tb_top__DOT__id_PCJmp = 0U;
         vlSelfRef.tb_top__DOT__top_00__DOT__id_top__DOT__linkReg = 0U;
     } else {
-        vlSelfRef.__VcaseTableOut0 = (0x0001ffffU & Vtb_top__ConstPool__CONST_ha4d190a7_0
+        vlSelfRef.__VcaseTableOut0 = (0x0001ffffU & Vtb_top__ConstPool__CONST_h06e2f2cb_0
                                       [(vlSelfRef.tb_top__DOT__if_id_inst 
                                         >> 0x0000001aU)]);
         vlSelfRef.tb_top__DOT__top_00__DOT__id_top__DOT__signExtSel 
@@ -893,6 +935,9 @@ VL_ATTR_COLD void Vtb_top___024root___ctor_var_reset(Vtb_top___024root* vlSelf) 
     for (int __Vi0 = 0; __Vi0 < 15; ++__Vi0) {
         vlSelf->tb_top__DOT____Vcellinp__top_00__if_instruction_memory[__Vi0] = 0;
     }
+    for (int __Vi0 = 0; __Vi0 < 15; ++__Vi0) {
+        vlSelf->tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory[__Vi0] = 0;
+    }
     vlSelf->tb_top__DOT__top_00__DOT__ex_top__DOT__forwardA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 12021522746527764344ull);
     vlSelf->tb_top__DOT__top_00__DOT__ex_top__DOT__forwardB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 8252310348921464394ull);
     vlSelf->tb_top__DOT__top_00__DOT__ex_top__DOT__alu_ctrl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 10366605737813535692ull);
@@ -908,15 +953,15 @@ VL_ATTR_COLD void Vtb_top___024root___ctor_var_reset(Vtb_top___024root* vlSelf) 
     vlSelf->tb_top__DOT__top_00__DOT__id_top__DOT__signExtSel = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4444891961529359796ull);
     vlSelf->tb_top__DOT__top_00__DOT__id_top__DOT__i = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4023850717082588353ull);
     vlSelf->tb_top__DOT__top_00__DOT__wb_top__DOT__tempMemData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11353696509405275872ull);
+    vlSelf->tb_top__DOT__top_00__DOT__if_top__DOT__PCSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5699295710524125623ull);
     vlSelf->tb_top__DOT__top_00__DOT__if_top__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3658761744159240864ull);
     vlSelf->tb_top__DOT__top_00__DOT__if_top__DOT__pc_pp = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11134092151205132452ull);
     vlSelf->tb_top__DOT__top_00__DOT__if_top__DOT__pc = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17089727492678903542ull);
     vlSelf->__VcaseTableOut0 = 0;
     vlSelf->__Vdly__tb_top__DOT__if_id_inst = 0;
-    vlSelf->__VdlySet__tb_top__DOT__reg_file_debug__v0 = 0;
-    vlSelf->__VdlyVal__tb_top__DOT__reg_file_debug__v32 = 0;
-    vlSelf->__VdlyDim0__tb_top__DOT__reg_file_debug__v32 = 0;
-    vlSelf->__VdlySet__tb_top__DOT__reg_file_debug__v32 = 0;
+    vlSelf->__VdlyVal__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0 = 0;
+    vlSelf->__VdlyDim0__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0 = 0;
+    vlSelf->__VdlySet__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

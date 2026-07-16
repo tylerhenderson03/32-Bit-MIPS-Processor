@@ -118,7 +118,6 @@ module ex_stage #(parameter WIDTH) (
             end
             3'b001: begin // i-type - branch
                 alu_ctrl = ALU_SUB;
-                // expand this section 
             end
             3'b010: begin // r-type, has funct (function code) in lower 6 bits
                 if(sgn_extend_out[5:0] == 6'b100000) alu_ctrl = ALU_ADD;

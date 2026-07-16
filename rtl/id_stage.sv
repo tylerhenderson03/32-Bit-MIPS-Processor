@@ -44,19 +44,14 @@ module id_stage #(parameter WIDTH) (
                     */
 
 // instruction [15:0] extended based on select bit
-    logic signExtSel; //regular sign extension on FALSE, or default 16'd0 sign extension if TRUE
+    logic signExtSel; //regular sign extension on TRUE, or default 16'd0 sign extension if FALSE
     always_comb sgn_extend_out = signExtSel ? {{16{if_out[15]}}, if_out[15:0]} : {{16{1'b0}}, if_out[15:0]};
 
 // register file reset and write logic
     integer i;
     always_ff @(negedge clk or posedge rst) begin // write on negedge clock (halfway through clk cycle)
         if(rst) begin
-            for(i = 0; i < 2; i++) begin
-                register_file[i] <= '0;
-            end
-            register_file[2] <= 32'd10;
-            register_file[3] <= 32'd10;
-            for(i = 4; i < 32; i++) begin
+            for(i = 0; i < 32; i++) begin
                 register_file[i] <= '0;
             end
         end
@@ -74,7 +69,13 @@ module id_stage #(parameter WIDTH) (
     assign rd_data_one = linkReg ? pc_incr_in : register_file[if_out[25:21]]; // regRs
     assign rd_data_two = linkReg ? 32'd4 : register_file[if_out[20:16]]; // regRt
     assign shamt_out = if_out[10:6];
-    assign jump_addr = (if_out[5:0] == 6'h8) ? rd_data_one : {{6{1'b0}}, if_out[25:0]}; // jump register target reg : j-type instruction contains address in lower 26 bits
+    // Correct detection and address calculation
+    wire is_jr     = (if_out[31:26] == 6'd0) && (if_out[5:0] == 6'h08); // R-type, funct=JR
+    wire is_j_type = (if_out[31:26] == 6'h02) || (if_out[31:26] == 6'h03); // J or JAL
+
+    assign jump_addr = is_jr     ? rd_data_one                          // JR: register value
+                    : is_j_type ? {pc_incr_in[31:28], if_out[25:0], 2'b00} // J/JAL: byte addr
+                    : '0;
 
 /* "ex_ctrl" is 3 bits:
     [0] - ALUSrc // 0 for rd_data_two as in_b to ALU, 1 for signExtImm as in_b
@@ -151,7 +152,7 @@ module id_stage #(parameter WIDTH) (
                     linkReg = 0;
                 end
                 6'h4: begin // branch on equal 
-                    ex_ctrl[4:0] = 5'b0X010; // X is for no destination register, 01 is for sub
+                    ex_ctrl[4:0] = 5'b00000; // X is for no destination register, 0_00 is for ADD w/ two's complement for negative numbers
                     mem_ctrl[3:0] = 4'b0100;
                     wb_ctrl[3:0] = 4'b000X;
                     signExtSel = 1;
@@ -160,7 +161,7 @@ module id_stage #(parameter WIDTH) (
                     linkReg = 0;
                 end
                 6'h5: begin // branch on not equal
-                    ex_ctrl[4:0] = 5'b0X010; // X100 - selects from register, 01 is for sub, X is for no destination register
+                    ex_ctrl[4:0] = 5'b00000; // X100 - selects from register, 0_00 is for ADD, X is for no destination register
                     mem_ctrl[3:0] = 4'b1100; // MSB is set for branch flag calculation in MEM
                     wb_ctrl[3:0] = 4'b0000;
                     signExtSel = 1; // use standard extension

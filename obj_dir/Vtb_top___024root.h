@@ -43,10 +43,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top___024root final {
         CData/*3:0*/ tb_top__DOT__top_00__DOT__ex_top__DOT__alu_ctrl;
         CData/*0:0*/ tb_top__DOT__top_00__DOT__id_top__DOT__linkReg;
         CData/*0:0*/ tb_top__DOT__top_00__DOT__id_top__DOT__signExtSel;
+        CData/*0:0*/ tb_top__DOT__top_00__DOT__if_top__DOT__PCSrc;
         CData/*0:0*/ tb_top__DOT__top_00__DOT__if_top__DOT__PCWrite;
-        CData/*0:0*/ __VdlySet__tb_top__DOT__reg_file_debug__v0;
-        CData/*4:0*/ __VdlyDim0__tb_top__DOT__reg_file_debug__v32;
-        CData/*0:0*/ __VdlySet__tb_top__DOT__reg_file_debug__v32;
+        CData/*4:0*/ __VdlyDim0__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0;
+        CData/*0:0*/ __VdlySet__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0;
         CData/*0:0*/ __VstlFirstIteration;
         CData/*0:0*/ __VstlPhaseResult;
         CData/*0:0*/ __Vtrigprevexpr___TOP__tb_top__DOT__clk__0;
@@ -78,7 +78,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top___024root final {
         IData/*31:0*/ tb_top__DOT__top_00__DOT__if_top__DOT__pc;
         IData/*16:0*/ __VcaseTableOut0;
         IData/*31:0*/ __Vdly__tb_top__DOT__if_id_inst;
-        IData/*31:0*/ __VdlyVal__tb_top__DOT__reg_file_debug__v32;
+        IData/*31:0*/ __VdlyVal__tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory__v0;
         IData/*31:0*/ __VactIterCount;
         IData/*31:0*/ __VinactIterCount;
     };
@@ -88,6 +88,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_top___024root final {
         VlUnpacked<IData/*31:0*/, 15> tb_top__DOT__instruction_memory;
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__reg_file_debug;
         VlUnpacked<IData/*31:0*/, 15> tb_top__DOT____Vcellinp__top_00__if_instruction_memory;
+        VlUnpacked<IData/*31:0*/, 15> tb_top__DOT__top_00__DOT____Vcellinp__if_top__instruction_memory;
         VlUnpacked<IData/*31:0*/, 32> tb_top__DOT__top_00__DOT__mem_top__DOT__dmem_00__DOT__data_memory;
         VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
         VlUnpacked<QData/*63:0*/, 1> __VactTriggered;

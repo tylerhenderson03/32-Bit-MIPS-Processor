@@ -52,9 +52,9 @@ module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
 
 // IF/ID pipeline registers
     always_ff @(posedge clk or posedge rst) begin
-        if(rst) begin
+        if (rst || mem_branchFlag || id_PCJmp) begin
             if_id_pcIncr <= '0;
-            if_id_inst   <= 'X;
+            if_id_inst   <= '0;  
         end else if(if_id_write) begin // in the event of a stall, preserve previous instruction state in this stage of processor
             if_id_pcIncr <= if_id_pcIncr;
             if_id_inst   <= if_id_inst;
@@ -66,7 +66,7 @@ module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
 
 // ID/EX pipeline registers
     always_ff @(posedge clk or posedge rst) begin
-        if(rst) begin
+        if (rst || mem_branchFlag || id_PCJmp) begin  // ← add flush conditions
             id_ex_regT      <= '0; id_ex_regD      <= '0; id_ex_regS <= '0;
             id_ex_exCtrl    <= '0; id_ex_memCtrl   <= '0; id_ex_wbCtrl    <= '0;
             id_ex_pcIncr    <= '0; id_ex_sgnExt    <= '0;
@@ -84,7 +84,7 @@ module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
 
 // EX/MEM pipeline registers
     always_ff @(posedge clk or posedge rst) begin
-        if(rst) begin
+        if(rst || mem_branchFlag || id_PCJmp) begin
             ex_mem_regDst    <= '0; ex_mem_memCtrl   <= '0; ex_mem_wbCtrl   <= '0;
             ex_mem_zeroFlag  <= '0; ex_mem_aluResult <= '0;
             ex_mem_rdDataTwo <= '0; ex_mem_pcAdd     <= '0;
