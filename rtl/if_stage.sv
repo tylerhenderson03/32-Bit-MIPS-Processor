@@ -21,12 +21,13 @@ module if_stage #(parameter WIDTH, parameter MAX_INSTRUCTIONS)
         else if (PCWrite) pc <= pc;       // stall pipeline, delay instruction
         else                pc <= pc_pp;    // else continue with PC + 4
     end
+    /*
     always @(posedge clk) begin
         $display("pc=%0d index=%0d inst=%h",
                 pc,
                 pc >> 2,
                 instruction_memory[pc >> 2]);
-    end
+    end*/
 
     /* condition ? value_if_true : value_if_false */
 

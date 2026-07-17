@@ -91,7 +91,9 @@ class rand_inst;
       addr inside {[0:200-1]};
     }
     constraint funct_valid {
-      funct inside {6'h20, 6'h21, 6'h24, 6'h08, 6'h27, 6'h25, 6'h2a, 6'h2b, 6'h00, 6'h02, 6'h22, 6'h23};
+      funct inside {6'h20, 6'h21, 6'h24, 6'h08,
+        6'h27, 6'h25, 6'h2a, 6'h2b,
+        6'h00, 6'h02, 6'h22, 6'h23};
     }
 endclass
 
@@ -201,7 +203,6 @@ end // END of insruction memory initialization
   wire [3:0] id_wbCtrl;
   wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo;
   wire [WIDTH-1:0] reg_file_debug [0:32-1];
-  wire id_stallIF;
   wire id_PCJmp;
   wire [WIDTH-1:0] id_jump_addr;
   wire [4:0] id_shamt_out;
@@ -250,7 +251,7 @@ end // END of insruction memory initialization
     .id_exCtrl(id_exCtrl), .id_memCtrl(id_memCtrl), .id_wbCtrl(id_wbCtrl),
     .id_pcIncr(id_pcIncr), .id_sgnExt(id_sgnExt), .id_PCJmp(id_PCJmp),
     .id_rdDataOne(id_rdDataOne), .id_rdDataTwo(id_rdDataTwo), .jump_addr(id_jump_addr),
-    .id_stallIF(id_stallIF), .id_shamt_out(id_shamt_out),
+    .id_shamt_out(id_shamt_out),
     .id_ex_regT(id_ex_regT), .id_ex_regD(id_ex_regD), .id_ex_regS(id_ex_regS),
     .id_ex_exCtrl(id_ex_exCtrl), .id_ex_memCtrl(id_ex_memCtrl), .id_ex_wbCtrl(id_ex_wbCtrl),
     .id_ex_pcIncr(id_ex_pcIncr), .id_ex_sgnExt(id_ex_sgnExt),
@@ -274,13 +275,18 @@ end // END of insruction memory initialization
   always #(CLK_PERIOD/2) clk = ~clk;
 
 // stimulus
+
+cover_top cg_inst_0;
+
   initial begin
+    cg_inst_0 = new();
     clk = 0; rst = 1;
     #(CLK_PERIOD) rst = 0;
 
     #(MAX_INSTRUCTIONS*CLK_PERIOD); // cycle through 
     #(7*MAX_INSTRUCTIONS) $finish; // to allow pipeline to fully flush out previous instructions
   end
+
 
 
 // waveform

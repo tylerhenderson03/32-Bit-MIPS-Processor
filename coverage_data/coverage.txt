@@ -1,0 +1,385 @@
+Hierarchy Coverage Summary:
+  $unit::rand_inst__Vclpkg
+    line      : 11.6% ( 5/43)
+  cover_top
+    covergroup : 16.5% ( 18/109)
+  cover_top.ex_ctrl0
+    covergroup : 100.0% (1/1)
+  cover_top.ex_ctrl0.ex_idx_0
+    covergroup : 100.0% (1/1)
+  cover_top.ex_ctrl1
+    covergroup : 0.0% (0/1)
+  cover_top.ex_ctrl1.ex_idx_1
+    covergroup : 0.0% (0/1)
+  cover_top.ex_ctrl2
+    covergroup : 100.0% (1/1)
+  cover_top.ex_ctrl2.ex_idx_2
+    covergroup : 100.0% (1/1)
+  cover_top.ex_ctrl3
+    covergroup : 100.0% (1/1)
+  cover_top.ex_ctrl3.ex_idx_3
+    covergroup : 100.0% (1/1)
+  cover_top.ex_ctrl4
+    covergroup : 0.0% (0/1)
+  cover_top.ex_ctrl4.ex_idx_4
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover
+    covergroup : 25.0% ( 3/12)
+  cover_top.funct_cover.add_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.addu_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.and_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.jr_funct
+    covergroup : 100.0% (1/1)
+  cover_top.funct_cover.nor_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.or_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.sll_funct
+    covergroup : 100.0% (1/1)
+  cover_top.funct_cover.slt_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.sltu_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.srl_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.sub_funct
+    covergroup : 0.0% (0/1)
+  cover_top.funct_cover.subu_funct
+    covergroup : 100.0% (1/1)
+  cover_top.mem_ctrl0
+    covergroup : 0.0% (0/1)
+  cover_top.mem_ctrl0.mem_idx_0
+    covergroup : 0.0% (0/1)
+  cover_top.mem_ctrl1
+    covergroup : 100.0% (1/1)
+  cover_top.mem_ctrl1.mem_idx_1
+    covergroup : 100.0% (1/1)
+  cover_top.mem_ctrl2
+    covergroup : 0.0% (0/1)
+  cover_top.mem_ctrl2.mem_idx_2
+    covergroup : 0.0% (0/1)
+  cover_top.mem_ctrl3
+    covergroup : 0.0% (0/1)
+  cover_top.mem_ctrl3.mem_idx_3
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover
+    covergroup : 30.0% ( 6/20)
+  cover_top.opcode_cover.addi_op
+    covergroup : 100.0% (1/1)
+  cover_top.opcode_cover.addiu_op
+    covergroup : 100.0% (1/1)
+  cover_top.opcode_cover.andi_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.beq_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.bne_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.j_op
+    covergroup : 100.0% (1/1)
+  cover_top.opcode_cover.jal_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.lbu_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.lhu_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.ll_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.lui_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.lw_op
+    covergroup : 100.0% (1/1)
+  cover_top.opcode_cover.ori_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.r_type
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.sb_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.sc_op
+    covergroup : 100.0% (1/1)
+  cover_top.opcode_cover.sh_op
+    covergroup : 100.0% (1/1)
+  cover_top.opcode_cover.slti_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.sltiu_op
+    covergroup : 0.0% (0/1)
+  cover_top.opcode_cover.sw_op
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover
+    covergroup : 3.1% ( 2/64)
+  cover_top.wb_cover.args[0]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.args[1]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.args[2]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.args[3]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.at
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.frame_ptr
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.global_ptr
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.k[0]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.k[1]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[0]
+    covergroup : 100.0% (1/1)
+  cover_top.wb_cover.register_file_usage[10]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[11]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[12]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[13]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[14]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[15]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[16]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[17]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[18]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[19]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[1]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[20]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[21]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[22]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[23]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[24]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[25]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[26]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[27]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[28]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[29]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[2]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[30]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[31]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[3]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[4]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[5]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[6]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[7]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[8]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.register_file_usage[9]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.return_addr
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[0]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[1]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[2]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[3]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[4]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[5]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[6]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.saved_temps[7]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.stack_ptr
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[0]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[1]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[2]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[3]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[4]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[5]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[6]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[7]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[8]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.temps[9]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.vals[0]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.vals[1]
+    covergroup : 0.0% (0/1)
+  cover_top.wb_cover.zero
+    covergroup : 100.0% (1/1)
+  cover_top.wb_ctrl
+    covergroup : 0.0% (0/1)
+  cover_top.wb_ctrl.wb_idx_0
+    covergroup : 0.0% (0/1)
+  cover_top.wb_ctrl1
+    covergroup : 100.0% (1/1)
+  cover_top.wb_ctrl1.wb_idx_1
+    covergroup : 100.0% (1/1)
+  cover_top.wb_ctrl2
+    covergroup : 100.0% (1/1)
+  cover_top.wb_ctrl2.wb_idx_2
+    covergroup : 100.0% (1/1)
+  cover_top.wb_ctrl3
+    covergroup : 100.0% (1/1)
+  cover_top.wb_ctrl3.wb_idx_3
+    covergroup : 100.0% (1/1)
+  std
+    line      : 0.0% (0/1)
+  std::process__Vclpkg
+    line      : 0.0% ( 0/11)
+    expr      : 0.0% ( 0/ 3)
+  std::semaphore__Vclpkg
+    line      : 0.0% (0/7)
+    branch    : 0.0% (0/4)
+    expr      : 0.0% (0/3)
+  tbCover_top
+    line      : 46.0% (  52/ 113)
+    toggle    : 28.8% (1955/6782)
+    branch    : 66.7% (  32/  48)
+    expr      : 57.8% (  52/  90)
+  tbCover_top.top_00
+    line      : 37.1% (  36/  97)
+    toggle    : 28.8% (1418/4932)
+    branch    : 66.7% (  32/  48)
+    expr      : 56.8% (  50/  88)
+  tbCover_top.top_00.ex_top
+    line      : 23.1% (  12/  52)
+    toggle    : 43.3% ( 508/1172)
+    branch    : 50.0% (   8/  16)
+    expr      : 47.4% (  18/  38)
+  tbCover_top.top_00.ex_top.alu_00
+    line      : 17.6% (  3/ 17)
+    toggle    : 63.2% (177/280)
+    branch    : 0.0% (  0/  4)
+    expr      : 16.7% (  2/ 12)
+  tbCover_top.top_00.ex_top.fwd_00
+    line      : 100.0% ( 1/ 1)
+    toggle    : 46.2% (24/52)
+    branch    : 50.0% ( 4/ 8)
+    expr      : 54.5% (12/22)
+  tbCover_top.top_00.id_top
+    line      : 42.3% ( 11/ 26)
+    toggle    : 38.3% (253/660)
+    branch    : 72.2% ( 13/ 18)
+    expr      : 60.9% ( 14/ 23)
+  tbCover_top.top_00.id_top.hzd_00
+    line      : 100.0% ( 1/ 1)
+    toggle    : 78.9% (30/38)
+    branch    : 50.0% ( 1/ 2)
+    expr      : 50.0% ( 2/ 4)
+  tbCover_top.top_00.if_top
+    line      : 66.7% (  4/  6)
+    toggle    : 31.5% (104/330)
+    branch    : 100.0% (  2/  2)
+    expr      : 100.0% (  2/  2)
+  tbCover_top.top_00.mem_top
+    line      : 100.0% (  1/  1)
+    toggle    : 1.9% ( 12/634)
+    branch    : 50.0% (  2/  4)
+    expr      : 54.5% (  6/ 11)
+  tbCover_top.top_00.mem_top.dmem_00
+    line      : 100.0% (  1/  1)
+    toggle    : 1.0% (  2/198)
+    branch    : 50.0% (  2/  4)
+    expr      : 50.0% (  1/  2)
+  tbCover_top.top_00.wb_top
+    line      : 40.0% (  2/  5)
+    toggle    : 1.4% (  4/286)
+    branch    : 50.0% (  1/  2)
+    expr      : 50.0% (  1/  2)
+Design Unit Coverage Summary:
+  alu__pi1
+    line      : 17.6% (  3/ 17)
+    toggle    : 63.2% (177/280)
+    branch    : 0.0% (  0/  4)
+    expr      : 16.7% (  2/ 12)
+  cover_top
+    covergroup : 16.5% ( 18/109)
+  data_mem__W20
+    line      : 100.0% (  1/  1)
+    toggle    : 1.0% (  2/198)
+    branch    : 50.0% (  2/  4)
+    expr      : 50.0% (  1/  2)
+  ex_stage__W20
+    line      : 23.5% (  8/ 34)
+    toggle    : 36.5% (307/840)
+    branch    : 100.0% (  4/  4)
+    expr      : 100.0% (  4/  4)
+  fwd_unit
+    line      : 100.0% ( 1/ 1)
+    toggle    : 46.2% (24/52)
+    branch    : 50.0% ( 4/ 8)
+    expr      : 54.5% (12/22)
+  hazard_detection
+    line      : 100.0% ( 1/ 1)
+    toggle    : 78.9% (30/38)
+    branch    : 50.0% ( 1/ 2)
+    expr      : 50.0% ( 2/ 4)
+  id_stage__W20
+    line      : 40.0% ( 10/ 25)
+    toggle    : 35.9% (223/622)
+    branch    : 75.0% ( 12/ 16)
+    expr      : 63.2% ( 12/ 19)
+  if_stage__W20_Mc8
+    line      : 66.7% (  4/  6)
+    toggle    : 31.5% (104/330)
+    branch    : 100.0% (  2/  2)
+    expr      : 100.0% (  2/  2)
+  mem_stage__W20
+    toggle    : 2.3% ( 10/436)
+    expr      : 55.6% (  5/  9)
+  process
+    line      : 0.0% ( 0/11)
+    expr      : 0.0% ( 0/ 3)
+  rand_inst
+    line      : 11.6% ( 5/43)
+  semaphore
+    line      : 0.0% (0/7)
+    branch    : 0.0% (0/4)
+    expr      : 0.0% (0/3)
+  std
+    line      : 0.0% (0/1)
+  tbCover_top
+    line      : 100.0% (  16/  16)
+    toggle    : 29.0% ( 537/1850)
+    expr      : 100.0% (   2/   2)
+  top__Mc8
+    line      : 85.7% (   6/   7)
+    toggle    : 29.0% ( 537/1850)
+    branch    : 100.0% (   6/   6)
+    expr      : 75.0% (   9/  12)
+  wb_stage__W20
+    line      : 40.0% (  2/  5)
+    toggle    : 1.4% (  4/286)
+    branch    : 50.0% (  1/  2)
+    expr      : 50.0% (  1/  2)

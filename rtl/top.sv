@@ -14,7 +14,7 @@ module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
     output wire [3:0] id_wbCtrl,
     output wire [WIDTH-1:0] id_pcIncr, id_sgnExt, id_rdDataOne, id_rdDataTwo, jump_addr,
     output wire [WIDTH-1:0] reg_file_debug [0:32-1],
-    output logic id_stallIF, id_PCJmp, PCWrite, if_id_write,
+    output logic id_PCJmp, PCWrite, if_id_write,
 // ID/EX pipeline registers
     output reg [4:0] id_ex_regT, id_ex_regD, id_ex_regS, id_ex_shamt_out,
     output reg [4:0] id_ex_exCtrl,
@@ -136,7 +136,6 @@ module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
         .rd_data_one(id_rdDataOne), .rd_data_two(id_rdDataTwo),
         .rd_out(id_regD), .rt_out(id_regT), .rs_out(id_regS),
         .register_file(reg_file_debug),
-        .stallIF(id_stallIF),
         .PCJmp(id_PCJmp),
         .shamt_out(id_shamt_out),
         .id_ex_MemRead(id_ex_memCtrl[0]),

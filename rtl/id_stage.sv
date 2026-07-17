@@ -24,7 +24,7 @@ module id_stage #(parameter WIDTH) (
                 output reg [WIDTH-1:0] rd_data_one, rd_data_two,
                 output wire [5-1:0] rd_out, rt_out, rs_out,
                 output reg [WIDTH-1:0] register_file [0:32-1],
-                output logic stallIF, PCJmp,
+                output logic PCJmp,
                 output wire [4:0] shamt_out,
 
             // outputs from hazard detection
@@ -109,7 +109,6 @@ module id_stage #(parameter WIDTH) (
                 mem_ctrl[3:0] = 4'd0;
                 wb_ctrl[3:0] = 4'd0;
                 signExtSel = 0;
-                stallIF = 0;
                 PCJmp = 0;
                 linkReg = 0;
         end
@@ -120,7 +119,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -129,7 +127,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 1; // 
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -138,7 +135,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -147,7 +143,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 0; // use zero extension 
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -156,7 +151,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0100;
                     wb_ctrl[3:0] = 4'b000X;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -165,7 +159,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b1100; // MSB is set for branch flag calculation in MEM
                     wb_ctrl[3:0] = 4'b0000;
                     signExtSel = 1; // use standard extension
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -174,7 +167,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0000; 
                     signExtSel = 1; // regular sign-extension
-                    stallIF = 1; // stalls pipeline IF/ID register (NOW REDUNDANT)
                     PCJmp = 1; // sets pc to jump address
                     linkReg = 0;
                 end
@@ -183,7 +175,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 1; // regular sign-extension
-                    stallIF = 1;
                     PCJmp = 1;
                     // need to handle writing PC + 8 to R[31]. pass through typical WB path. no ALU needed
                     linkReg = 1; // controls muxes to writeback PC + 8, unique to "jal" instruction datapath
@@ -194,7 +185,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0001;
                     wb_ctrl[3:0] = 4'b0111;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -203,7 +193,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0001;
                     wb_ctrl[3:0] = 4'b1011;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -213,7 +202,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0001;
                     wb_ctrl[3:0] = 4'b0011;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -223,7 +211,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0001;
                     wb_ctrl[3:0] = 4'b1111;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -233,7 +220,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0010;
                     wb_ctrl[3:0] = 4'b1100;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -243,7 +229,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 0;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -254,7 +239,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 0;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -263,7 +247,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0010;
                     signExtSel = 0;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -273,7 +256,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0010;
                     wb_ctrl[3:0] = 4'b0100;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -282,7 +264,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0010;
                     wb_ctrl[3:0] = 4'b0000;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -291,7 +272,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0010;
                     wb_ctrl[3:0] = 4'b1000;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
@@ -300,7 +280,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0010;
                     wb_ctrl[3:0] = 4'b0000;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end 
@@ -309,7 +288,6 @@ module id_stage #(parameter WIDTH) (
                     mem_ctrl[3:0] = 4'b0000;
                     wb_ctrl[3:0] = 4'b0000;
                     signExtSel = 1;
-                    stallIF = 0;
                     PCJmp = 0;
                     linkReg = 0;
                 end
