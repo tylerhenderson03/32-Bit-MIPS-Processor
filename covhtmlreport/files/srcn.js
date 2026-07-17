@@ -1,0 +1,2 @@
+var g_data = ["","./tb/./../rtl/covergroups.sv","./tb/tbCover_top.sv","./rtl/top.sv","./rtl/ex_stage.sv","./rtl/fwd_unit.sv","./rtl/alu.sv","./rtl/mem_stage.sv","./rtl/data_mem.sv","./rtl/wb_stage.sv","./rtl/if_stage.sv","./rtl/id_stage.sv","./rtl/hazard_detection.sv"];
+processSrcNamesData(g_data);

@@ -1,0 +1,2 @@
+var g_data = {"9":["work.alu",21.50,1],"11":["work.data_mem",100.00,1],"7":["work.ex_stage",31.90,1],"8":["work.fwd_unit",30.95,1],"6":["work.hazard_detection",35.71,1],"5":["work.id_stage",75.50,1],"4":["work.if_stage",86.60,1],"10":["work.mem_stage",100.00,1],"2":["work.tbCover_top",90.00,1],"1":["work.tbCover_top_sv_unit",88.55,1],"3":["work.top",95.73,1],"12":["work.wb_stage",85.71,1]};
+processDuLinks(g_data);

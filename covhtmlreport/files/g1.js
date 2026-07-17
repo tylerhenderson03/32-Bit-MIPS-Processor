@@ -1,0 +1,2 @@
+var g_data = {"24":{"pr":"/tbCover_top_sv_unit","ty":2,"dui":1,"dun":"work.tbCover_top_sv_unit","cvgs":[{"h":["\\/tbCover_top/cg_0 ",2,1,42,25],"cov":[109,68,91.96],"opts":{"goal":"100"}},{"h":["\\/tbCover_top/#ublk#213778688#283/cg_0 ",2,1,59,25],"cov":[109,68,91.96],"opts":{"goal":"100"}},{"h":["/tbCover_top_sv_unit/cover_top",1,1,25],"cov":[218,136,91.96],"opts":{"goal":"100"}}]}};
+processCovergroupsData(g_data);

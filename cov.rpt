@@ -1,0 +1,2415 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/if_top
+=== Design Unit: work.if_stage
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         6         1    85.71%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/if_top
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/if_stage.sv
+------------------------------------IF Branch------------------------------------
+    18                                    136002     Count coming in to IF
+    18              1                          2     
+    19              1                          9     
+    20              1                         13     
+    21              1                    ***0***     
+    22              1                     135978     
+Branch totals: 4 hits of 5 branches = 80.00%
+
+------------------------------------IF Branch------------------------------------
+    35                                    136002     Count coming in to IF
+    35              1                          1     
+    35              2                     136001     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       8         7         1    87.50%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/if_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/if_stage.sv
+    17              1                     136002     
+    18              1                          2     
+    19              1                          9     
+    20              1                         13     
+    21              1                    ***0***     
+    22              1                     135978     
+    34              1                     136002     
+    35              1                     136004     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/id_top/hzd_00
+=== Design Unit: work.hazard_detection
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         1         1    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/id_top/hzd_00
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/hazard_detection.sv
+------------------------------------IF Branch------------------------------------
+    14                                       121     Count coming in to IF
+    14              1                    ***0***     
+    23              1                        121     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       3         0         3     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tbCover_top/top_00/id_top/hzd_00 --
+
+  File ./rtl/hazard_detection.sv
+----------------Focused Condition View-------------------
+Line       14 Item    1  (id_ex_MemRead && ((id_ex_regRt == if_id_regRs) || (id_ex_regRt == if_id_regRt)))
+Condition totals: 0 of 3 input terms covered = 0.00%
+
+                    Input Term   Covered  Reason for no coverage   Hint
+                   -----------  --------  -----------------------  --------------
+                 id_ex_MemRead         N  '_1' not hit             Hit '_1'
+  (id_ex_regRt == if_id_regRs)         N  '_1' not hit             Hit '_1'
+  (id_ex_regRt == if_id_regRt)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                      Non-masking condition(s)      
+ ---------  ---------  --------------------            -------------------------     
+  Row   1:          1  id_ex_MemRead_0                 -                             
+  Row   2:    ***0***  id_ex_MemRead_1                 ((id_ex_regRt == if_id_regRs) || (id_ex_regRt == if_id_regRt))
+  Row   3:          1  (id_ex_regRt == if_id_regRs)_0  (id_ex_MemRead && ~(id_ex_regRt == if_id_regRt))
+  Row   4:    ***0***  (id_ex_regRt == if_id_regRs)_1  id_ex_MemRead                 
+  Row   5:          1  (id_ex_regRt == if_id_regRt)_0  (id_ex_MemRead && ~(id_ex_regRt == if_id_regRs))
+  Row   6:    ***0***  (id_ex_regRt == if_id_regRt)_1  (id_ex_MemRead && ~(id_ex_regRt == if_id_regRs))
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       7         4         3    57.14%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/id_top/hzd_00 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/hazard_detection.sv
+    13              1                        121     
+    19              1                    ***0***     
+    20              1                    ***0***     
+    21              1                    ***0***     
+    24              1                        121     
+    25              1                        121     
+    26              1                        121     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/id_top
+=== Design Unit: work.id_stage
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        37        33         4    89.18%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/id_top
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/id_stage.sv
+------------------------------------IF Branch------------------------------------
+    48                                       116     Count coming in to IF
+    48              1                        106     
+    48              2                         10     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                        92     Count coming in to IF
+    53              1                          1     
+    59              1                         32     
+                                              59     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                       120     Count coming in to IF
+    65              1                         10     
+    65              2                        110     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                    136129     Count coming in to IF
+    69              1                         20     
+    69              2                     136109     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                       129     Count coming in to IF
+    70              1                         10     
+    70              2                        119     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    76                                       133     Count coming in to IF
+    76              1                    ***0***     
+    77              1                        133     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       133     Count coming in to IF
+    77              2                         33     
+    78              1                        100     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    107                                      106     Count coming in to IF
+    107             1                          2     
+    115             1                        104     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    116                                      104     Count coming in to CASE
+    117             1                         24     
+    125             1                    ***0***     
+    133             1                          1     
+    141             1                          2     
+    149             1                          9     
+    157             1                         13     
+    165             1                          3     
+    173             1                         10     
+    183             1                          1     
+    191             1                    ***0***     
+    209             1                          2     
+    218             1                         11     
+    227             1                          2     
+    237             1                          2     
+    245             1                          1     
+    254             1                          2     
+    262             1                          9     
+    270             1                    ***0***     
+    278             1                          2     
+    286             1                         10     
+Branch totals: 17 hits of 20 branches = 85.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         1         1    50.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tbCover_top/top_00/id_top --
+
+  File ./rtl/id_stage.sv
+----------------Focused Condition View-------------------
+Line       107 Item    1  (rst || flushCtrlSignals)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+               rst         Y
+  flushCtrlSignals         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  rst_0                 ~flushCtrlSignals             
+  Row   2:          1  rst_1                 -                             
+  Row   3:          1  flushCtrlSignals_0    ~rst                          
+  Row   4:    ***0***  flushCtrlSignals_1    ~rst                          
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     142       124        18    87.32%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/id_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/id_stage.sv
+    48              1                        116     
+    48              2                        116     
+    52              1                         92     
+    54              1                          1     
+    54              2                         32     
+    55              1                         32     
+    60              1                         32     
+    65              1                        121     
+    66              1                        100     
+    67              1                         99     
+    68              1                     136002     
+    69              1                     136130     
+    70              1                        130     
+    71              1                        104     
+    76              1                        152     
+    106             1                        106     
+    108             1                          2     
+    109             1                          2     
+    110             1                          2     
+    111             1                          2     
+    112             1                          2     
+    113             1                          2     
+    118             1                         24     
+    119             1                         24     
+    120             1                         24     
+    121             1                         24     
+    122             1                         24     
+    123             1                         24     
+    126             1                    ***0***     
+    127             1                    ***0***     
+    128             1                    ***0***     
+    129             1                    ***0***     
+    130             1                    ***0***     
+    131             1                    ***0***     
+    134             1                          1     
+    135             1                          1     
+    136             1                          1     
+    137             1                          1     
+    138             1                          1     
+    139             1                          1     
+    142             1                          2     
+    143             1                          2     
+    144             1                          2     
+    145             1                          2     
+    146             1                          2     
+    147             1                          2     
+    150             1                          9     
+    151             1                          9     
+    152             1                          9     
+    153             1                          9     
+    154             1                          9     
+    155             1                          9     
+    158             1                         13     
+    159             1                         13     
+    160             1                         13     
+    161             1                         13     
+    162             1                         13     
+    163             1                         13     
+    166             1                          3     
+    167             1                          3     
+    168             1                          3     
+    169             1                          3     
+    170             1                          3     
+    171             1                          3     
+    174             1                         10     
+    175             1                         10     
+    176             1                         10     
+    177             1                         10     
+    178             1                         10     
+    180             1                         10     
+    184             1                          1     
+    185             1                          1     
+    186             1                          1     
+    187             1                          1     
+    188             1                          1     
+    189             1                          1     
+    192             1                    ***0***     
+    193             1                    ***0***     
+    194             1                    ***0***     
+    195             1                    ***0***     
+    196             1                    ***0***     
+    197             1                    ***0***     
+    210             1                          2     
+    211             1                          2     
+    212             1                          2     
+    213             1                          2     
+    214             1                          2     
+    215             1                          2     
+    219             1                         11     
+    220             1                         11     
+    221             1                         11     
+    222             1                         11     
+    223             1                         11     
+    224             1                         11     
+    228             1                          2     
+    229             1                          2     
+    230             1                          2     
+    231             1                          2     
+    232             1                          2     
+    233             1                          2     
+    238             1                          2     
+    239             1                          2     
+    240             1                          2     
+    241             1                          2     
+    242             1                          2     
+    243             1                          2     
+    246             1                          1     
+    247             1                          1     
+    248             1                          1     
+    249             1                          1     
+    250             1                          1     
+    251             1                          1     
+    255             1                          2     
+    256             1                          2     
+    257             1                          2     
+    258             1                          2     
+    259             1                          2     
+    260             1                          2     
+    263             1                          9     
+    264             1                          9     
+    265             1                          9     
+    266             1                          9     
+    267             1                          9     
+    268             1                          9     
+    271             1                    ***0***     
+    272             1                    ***0***     
+    273             1                    ***0***     
+    274             1                    ***0***     
+    275             1                    ***0***     
+    276             1                    ***0***     
+    279             1                          2     
+    280             1                          2     
+    281             1                          2     
+    282             1                          2     
+    283             1                          2     
+    284             1                          2     
+    287             1                         10     
+    288             1                         10     
+    289             1                         10     
+    290             1                         10     
+    291             1                         10     
+    292             1                         10     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/ex_top/fwd_00
+=== Design Unit: work.fwd_unit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         8         4         4    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/ex_top/fwd_00
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/fwd_unit.sv
+------------------------------------IF Branch------------------------------------
+    15                                       130     Count coming in to IF
+    15              1                    ***0***     
+                                             130     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                       130     Count coming in to IF
+    21              1                    ***0***     
+                                             130     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    41                                       130     Count coming in to IF
+    41              1                    ***0***     
+                                             130     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                       130     Count coming in to IF
+    47              1                    ***0***     
+                                             130     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      18         0        18     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tbCover_top/top_00/ex_top/fwd_00 --
+
+  File ./rtl/fwd_unit.sv
+----------------Focused Condition View-------------------
+Line       15 Item    1  (ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs))
+Condition totals: 0 of 3 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+                ex_mem_RegWrite         N  '_1' not hit             Hit '_1'
+            (ex_mem_regRd != 0)         N  '_1' not hit             Hit '_1'
+  (ex_mem_regRd == id_ex_regRs)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:          1  ex_mem_RegWrite_0                -                             
+  Row   2:    ***0***  ex_mem_RegWrite_1                ((ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs))
+  Row   3:          1  (ex_mem_regRd != 0)_0            ex_mem_RegWrite               
+  Row   4:    ***0***  (ex_mem_regRd != 0)_1            (ex_mem_RegWrite && (ex_mem_regRd == id_ex_regRs))
+  Row   5:          1  (ex_mem_regRd == id_ex_regRs)_0  (ex_mem_RegWrite && (ex_mem_regRd != 0))
+  Row   6:    ***0***  (ex_mem_regRd == id_ex_regRs)_1  (ex_mem_RegWrite && (ex_mem_regRd != 0))
+
+----------------Focused Condition View-------------------
+Line       21 Item    1  (mem_wb_RegWrite && (mem_wb_regRd != 0) && !(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs)) && (mem_wb_regRd == id_ex_regRs))
+Condition totals: 0 of 6 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+                mem_wb_RegWrite         N  '_1' not hit             Hit '_1'
+            (mem_wb_regRd != 0)         N  '_1' not hit             Hit '_1'
+                ex_mem_RegWrite         N  No hits                  Hit '_0' and '_1'
+            (ex_mem_regRd != 0)         N  No hits                  Hit '_0' and '_1'
+  (ex_mem_regRd == id_ex_regRs)         N  No hits                  Hit '_0' and '_1'
+  (mem_wb_regRd == id_ex_regRs)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:          1  mem_wb_RegWrite_0                -                             
+  Row   2:    ***0***  mem_wb_RegWrite_1                ((mem_wb_regRd != 0) && (!(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs)) && (mem_wb_regRd == id_ex_regRs)))
+  Row   3:          1  (mem_wb_regRd != 0)_0            mem_wb_RegWrite               
+  Row   4:    ***0***  (mem_wb_regRd != 0)_1            (mem_wb_RegWrite && (!(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs)) && (mem_wb_regRd == id_ex_regRs)))
+  Row   5:    ***0***  ex_mem_RegWrite_0                (mem_wb_RegWrite && (mem_wb_regRd != 0) && (mem_wb_regRd == id_ex_regRs))
+  Row   6:    ***0***  ex_mem_RegWrite_1                (mem_wb_RegWrite && (mem_wb_regRd != 0) && ((ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs)))
+  Row   7:    ***0***  (ex_mem_regRd != 0)_0            (mem_wb_RegWrite && (mem_wb_regRd != 0) && (mem_wb_regRd == id_ex_regRs) && ex_mem_RegWrite)
+  Row   8:    ***0***  (ex_mem_regRd != 0)_1            (mem_wb_RegWrite && (mem_wb_regRd != 0) && ex_mem_RegWrite && (ex_mem_regRd == id_ex_regRs))
+  Row   9:    ***0***  (ex_mem_regRd == id_ex_regRs)_0  (mem_wb_RegWrite && (mem_wb_regRd != 0) && (mem_wb_regRd == id_ex_regRs) && ex_mem_RegWrite && (ex_mem_regRd != 0))
+ Row   10:    ***0***  (ex_mem_regRd == id_ex_regRs)_1  (mem_wb_RegWrite && (mem_wb_regRd != 0) && ex_mem_RegWrite && (ex_mem_regRd != 0))
+ Row   11:          1  (mem_wb_regRd == id_ex_regRs)_0  (mem_wb_RegWrite && (mem_wb_regRd != 0) && !(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs)))
+ Row   12:    ***0***  (mem_wb_regRd == id_ex_regRs)_1  (mem_wb_RegWrite && (mem_wb_regRd != 0) && !(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRs)))
+
+----------------Focused Condition View-------------------
+Line       41 Item    1  (ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt))
+Condition totals: 0 of 3 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+                ex_mem_RegWrite         N  '_1' not hit             Hit '_1'
+            (ex_mem_regRd != 0)         N  '_1' not hit             Hit '_1'
+  (ex_mem_regRd == id_ex_regRt)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:          1  ex_mem_RegWrite_0                -                             
+  Row   2:    ***0***  ex_mem_RegWrite_1                ((ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt))
+  Row   3:          1  (ex_mem_regRd != 0)_0            ex_mem_RegWrite               
+  Row   4:    ***0***  (ex_mem_regRd != 0)_1            (ex_mem_RegWrite && (ex_mem_regRd == id_ex_regRt))
+  Row   5:          1  (ex_mem_regRd == id_ex_regRt)_0  (ex_mem_RegWrite && (ex_mem_regRd != 0))
+  Row   6:    ***0***  (ex_mem_regRd == id_ex_regRt)_1  (ex_mem_RegWrite && (ex_mem_regRd != 0))
+
+----------------Focused Condition View-------------------
+Line       47 Item    1  (mem_wb_RegWrite && (mem_wb_regRd != 0) && !(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt)) && (mem_wb_regRd == id_ex_regRt))
+Condition totals: 0 of 6 input terms covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+                mem_wb_RegWrite         N  '_1' not hit             Hit '_1'
+            (mem_wb_regRd != 0)         N  '_1' not hit             Hit '_1'
+                ex_mem_RegWrite         N  No hits                  Hit '_0' and '_1'
+            (ex_mem_regRd != 0)         N  No hits                  Hit '_0' and '_1'
+  (ex_mem_regRd == id_ex_regRt)         N  No hits                  Hit '_0' and '_1'
+  (mem_wb_regRd == id_ex_regRt)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:          1  mem_wb_RegWrite_0                -                             
+  Row   2:    ***0***  mem_wb_RegWrite_1                ((mem_wb_regRd != 0) && (!(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt)) && (mem_wb_regRd == id_ex_regRt)))
+  Row   3:          1  (mem_wb_regRd != 0)_0            mem_wb_RegWrite               
+  Row   4:    ***0***  (mem_wb_regRd != 0)_1            (mem_wb_RegWrite && (!(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt)) && (mem_wb_regRd == id_ex_regRt)))
+  Row   5:    ***0***  ex_mem_RegWrite_0                (mem_wb_RegWrite && (mem_wb_regRd != 0) && (mem_wb_regRd == id_ex_regRt))
+  Row   6:    ***0***  ex_mem_RegWrite_1                (mem_wb_RegWrite && (mem_wb_regRd != 0) && ((ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt)))
+  Row   7:    ***0***  (ex_mem_regRd != 0)_0            (mem_wb_RegWrite && (mem_wb_regRd != 0) && (mem_wb_regRd == id_ex_regRt) && ex_mem_RegWrite)
+  Row   8:    ***0***  (ex_mem_regRd != 0)_1            (mem_wb_RegWrite && (mem_wb_regRd != 0) && ex_mem_RegWrite && (ex_mem_regRd == id_ex_regRt))
+  Row   9:    ***0***  (ex_mem_regRd == id_ex_regRt)_0  (mem_wb_RegWrite && (mem_wb_regRd != 0) && (mem_wb_regRd == id_ex_regRt) && ex_mem_RegWrite && (ex_mem_regRd != 0))
+ Row   10:    ***0***  (ex_mem_regRd == id_ex_regRt)_1  (mem_wb_RegWrite && (mem_wb_regRd != 0) && ex_mem_RegWrite && (ex_mem_regRd != 0))
+ Row   11:          1  (mem_wb_regRd == id_ex_regRt)_0  (mem_wb_RegWrite && (mem_wb_regRd != 0) && !(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt)))
+ Row   12:    ***0***  (mem_wb_regRd == id_ex_regRt)_1  (mem_wb_RegWrite && (mem_wb_regRd != 0) && !(ex_mem_RegWrite && (ex_mem_regRd != 0) && (ex_mem_regRd == id_ex_regRt)))
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       7         3         4    42.85%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/ex_top/fwd_00 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/fwd_unit.sv
+    10              1                        130     
+    12              1                        130     
+    13              1                        130     
+    18              1                    ***0***     
+    25              1                    ***0***     
+    44              1                    ***0***     
+    51              1                    ***0***     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/ex_top/alu_00
+=== Design Unit: work.alu
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20         8        12    40.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/ex_top/alu_00
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/alu.sv
+------------------------------------CASE Branch------------------------------------
+    18                                       205     Count coming in to CASE
+    19              1                          6     
+    24              1                          4     
+    29              1                        139     
+    34              1                    ***0***     
+    39              1                    ***0***     
+    44              1                    ***0***     
+    49              1                    ***0***     
+    54              1                          6     
+    59              1                          2     
+    64              1                         47     
+    69              1                    ***0***     
+    74              1                    ***0***     
+    79              1                    ***0***     
+    84              1                    ***0***     
+    89              1                    ***0***     
+    94              1                          1     
+Branch totals: 7 hits of 16 branches = 43.75%
+
+------------------------------------IF Branch------------------------------------
+    56                                         6     Count coming in to IF
+    56              1                          6     
+    56              2                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    61                                   ***0***     Count coming in to IF
+    61              1                    ***0***     
+    61              2                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tbCover_top/top_00/ex_top/alu_00 --
+
+  File ./rtl/alu.sv
+----------------Focused Condition View-------------------
+Line       56 Item    1  (in_a < in_b)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  (in_a < in_b)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (in_a < in_b)_0       -                             
+  Row   2:          1  (in_a < in_b)_1       -                             
+
+----------------Focused Condition View-------------------
+Line       61 Item    1  (in_a < in_b)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  (in_a < in_b)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (in_a < in_b)_0       -                             
+  Row   2:    ***0***  (in_a < in_b)_1       -                             
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      4         0         4     0.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /tbCover_top/top_00/ex_top/alu_00 --
+
+  File ./rtl/alu.sv
+-----------Focused Expression View (Bimodal)------------
+Line       32 Item    1  (result_extended[32] ^ result_extended[31])
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+             Input Term   Covered  Reason for no coverage                  Hint
+            -----------  --------  --------------------------------------  --------------
+    result_extended[32]         N  Both rows hit for same output ->0      Hit either row for output ->1
+    result_extended[31]         N  Both rows hit for same output ->0      Hit either row for output ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target               Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------     -------------------------          
+ Row   1:           1           0  result_extended[32]_0    -                                  
+ Row   2:           1           0  result_extended[32]_1    -                                  
+ Row   3:           1           0  result_extended[31]_0    -                                  
+ Row   4:           1           0  result_extended[31]_1    -                                  
+
+-----------Focused Expression View (Bimodal)------------
+Line       42 Item    1  (result_extended[32] ^ result_extended[31])
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+             Input Term   Covered  Reason for no coverage                  Hint
+            -----------  --------  --------------------------------------  --------------
+    result_extended[32]         N  No hits                                Hit '_0' and '_1' for different outputs
+    result_extended[31]         N  No hits                                Hit '_0' and '_1' for different outputs
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target               Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------     -------------------------          
+ Row   1:           0           0  result_extended[32]_0    -                                  
+ Row   2:           0           0  result_extended[32]_1    -                                  
+ Row   3:           0           0  result_extended[31]_0    -                                  
+ Row   4:           0           0  result_extended[31]_1    -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      50        23        27    46.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/ex_top/alu_00 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/alu.sv
+    15              1                         86     
+    17              1                        205     
+    20              1                          6     
+    21              1                          6     
+    22              1                          6     
+    25              1                          4     
+    26              1                          4     
+    27              1                          4     
+    30              1                        139     
+    31              1                        139     
+    32              1                        139     
+    35              1                    ***0***     
+    36              1                    ***0***     
+    37              1                    ***0***     
+    40              1                    ***0***     
+    41              1                    ***0***     
+    42              1                    ***0***     
+    45              1                    ***0***     
+    46              1                    ***0***     
+    47              1                    ***0***     
+    50              1                    ***0***     
+    51              1                    ***0***     
+    52              1                    ***0***     
+    55              1                          6     
+    56              1                          6     
+    57              1                          6     
+    60              1                          2     
+    61              1                          2     
+    62              1                          2     
+    65              1                         47     
+    66              1                         47     
+    67              1                         47     
+    70              1                    ***0***     
+    71              1                    ***0***     
+    72              1                    ***0***     
+    75              1                    ***0***     
+    76              1                    ***0***     
+    77              1                    ***0***     
+    80              1                    ***0***     
+    81              1                    ***0***     
+    82              1                    ***0***     
+    85              1                    ***0***     
+    86              1                    ***0***     
+    87              1                    ***0***     
+    90              1                    ***0***     
+    91              1                    ***0***     
+    92              1                    ***0***     
+    95              1                          1     
+    96              1                          1     
+    97              1                          1     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/ex_top
+=== Design Unit: work.ex_stage
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        35        16        19    45.71%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/ex_top
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/ex_stage.sv
+------------------------------------IF Branch------------------------------------
+    51                                       114     Count coming in to IF
+    51              1                         28     
+    51              2                         86     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    80                                       153     Count coming in to CASE
+    81              1                        152     
+    84              1                    ***0***     
+    87              1                    ***0***     
+    90              1                          1     
+Branch totals: 2 hits of 4 branches = 50.00%
+
+------------------------------------CASE Branch------------------------------------
+    97                                       164     Count coming in to CASE
+    98              1                        163     
+    101             1                    ***0***     
+    104             1                    ***0***     
+    107             1                          1     
+Branch totals: 2 hits of 4 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    99                                       162     Count coming in to IF
+    99              1                         57     
+    99              2                        105     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    115                                      115     Count coming in to CASE
+    116             1                         82     
+    119             1                    ***0***     
+    122             1                         24     
+    141             1                          2     
+    144             1                          2     
+    147             1                          3     
+    150             1                          1     
+    153             1                          1     
+Branch totals: 7 hits of 8 branches = 87.50%
+
+------------------------------------IF Branch------------------------------------
+    123                                       24     Count coming in to IF
+    123             1                    ***0***     
+    124             1                    ***0***     
+    125             1                    ***0***     
+    126             1                    ***0***     
+    127             1                    ***0***     
+    128             1                    ***0***     
+    129             1                    ***0***     
+    130             1                    ***0***     
+    131             1                    ***0***     
+    132             1                    ***0***     
+    133             1                    ***0***     
+    134             1                         24     
+    135             1                    ***0***     
+    136             1                    ***0***     
+    139             1                    ***0***     
+Branch totals: 1 hit of 15 branches = 6.66%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      14         0        14     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tbCover_top/top_00/ex_top --
+
+  File ./rtl/ex_stage.sv
+----------------Focused Condition View-------------------
+Line       123 Item    1  (id_ex_sgnExt[5:0] == 32)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 32)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 32)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 32)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       124 Item    1  (id_ex_sgnExt[5:0] == 34)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 34)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 34)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 34)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       125 Item    1  (id_ex_sgnExt[5:0] == 36)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 36)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 36)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 36)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       126 Item    1  (id_ex_sgnExt[5:0] == 42)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 42)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 42)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 42)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       127 Item    1  (id_ex_sgnExt[5:0] == 33)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 33)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 33)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 33)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       128 Item    1  (id_ex_sgnExt[5:0] == 35)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 35)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 35)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 35)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       129 Item    1  (id_ex_sgnExt[5:0] == 24)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 24)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 24)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 24)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       130 Item    1  (id_ex_sgnExt[5:0] == 39)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 39)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 39)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 39)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       131 Item    1  (id_ex_sgnExt[5:0] == 37)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 37)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 37)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 37)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       132 Item    1  (id_ex_sgnExt[5:0] == 42)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 42)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 42)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 42)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       133 Item    1  (id_ex_sgnExt[5:0] == 43)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 43)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (id_ex_sgnExt[5:0] == 43)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 43)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       134 Item    1  (id_ex_sgnExt[5:0] == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (id_ex_sgnExt[5:0] == 0)_0  -                             
+  Row   2:          1  (id_ex_sgnExt[5:0] == 0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       135 Item    1  (id_ex_sgnExt[5:0] == 2)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 2)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (id_ex_sgnExt[5:0] == 2)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 2)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       136 Item    1  (id_ex_sgnExt[5:0] == 25)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (id_ex_sgnExt[5:0] == 25)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:    ***0***  (id_ex_sgnExt[5:0] == 25)_0  -                             
+  Row   2:    ***0***  (id_ex_sgnExt[5:0] == 25)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      38        19        19    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/ex_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/ex_stage.sv
+    48              1                     135978     
+    51              1                        115     
+    54              1                         47     
+    55              1                         75     
+    56              1                         91     
+    79              1                        153     
+    82              1                        152     
+    85              1                    ***0***     
+    88              1                    ***0***     
+    91              1                          1     
+    96              1                        164     
+    99              1                        163     
+    102             1                    ***0***     
+    105             1                    ***0***     
+    108             1                          1     
+    114             1                        115     
+    117             1                         82     
+    120             1                    ***0***     
+    123             1                    ***0***     
+    124             1                    ***0***     
+    125             1                    ***0***     
+    126             1                    ***0***     
+    127             1                    ***0***     
+    128             1                    ***0***     
+    129             1                    ***0***     
+    130             1                    ***0***     
+    131             1                    ***0***     
+    132             1                    ***0***     
+    133             1                    ***0***     
+    134             1                         24     
+    135             1                    ***0***     
+    136             1                    ***0***     
+    139             1                    ***0***     
+    142             1                          2     
+    145             1                          2     
+    148             1                          3     
+    151             1                          1     
+    153             1                          1     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/mem_top/dmem_00
+=== Design Unit: work.data_mem
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/mem_top/dmem_00
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/data_mem.sv
+------------------------------------IF Branch------------------------------------
+    20                                        63     Count coming in to IF
+    20              1                         15     
+                                              48     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/mem_top/dmem_00 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/data_mem.sv
+    19              1                         63     
+    20              1                         15     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/mem_top
+=== Design Unit: work.mem_stage
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /tbCover_top/top_00/mem_top --
+
+  File ./rtl/mem_stage.sv
+-----------Focused Expression View (Bimodal)------------
+Line       24 Item    1  ((!ex_mem_memCtrl[3] && ex_mem_memCtrl[2] && zero_flag) || (ex_mem_memCtrl[3] && ex_mem_memCtrl[2] && !zero_flag))
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/mem_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/mem_stage.sv
+    24              1                         89     
+    27              1                         69     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00/wb_top
+=== Design Unit: work.wb_stage
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         6         1    85.71%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00/wb_top
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/wb_stage.sv
+------------------------------------IF Branch------------------------------------
+    30                                        63     Count coming in to IF
+    30              1                          2     
+    30              2                         61     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    32                                        64     Count coming in to CASE
+    33              1                         50     
+    36              1                          2     
+    39              1                    ***0***     
+    42              1                         11     
+                                               1     All False Count
+Branch totals: 4 hits of 5 branches = 80.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       7         6         1    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00/wb_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/wb_stage.sv
+    24              1                         69     
+    30              1                         64     
+    31              1                         64     
+    34              1                         50     
+    37              1                          2     
+    40              1                    ***0***     
+    43              1                         11     
+
+=================================================================================
+=== Instance: /tbCover_top/top_00
+=== Design Unit: work.top
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        11        10         1    90.90%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top/top_00
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/top.sv
+------------------------------------IF Branch------------------------------------
+    55                                    136002     Count coming in to IF
+    55              1                         24     
+    58              1                    ***0***     
+    61              1                     135978     
+Branch totals: 2 hits of 3 branches = 66.66%
+
+------------------------------------IF Branch------------------------------------
+    69                                    136002     Count coming in to IF
+    69              1                         24     
+    75              1                     135978     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    87                                       116     Count coming in to IF
+    87              1                         24     
+    91              1                         92     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    101                                       93     Count coming in to IF
+    101             1                          2     
+    104             1                         91     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+  File ./rtl/data_mem.sv
+------------------------------------IF Branch------------------------------------
+    16                                        63     Count coming in to IF
+    16              1                          2     
+    16              2                         61     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       9         9         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tbCover_top/top_00 --
+
+  File ./rtl/top.sv
+----------------Focused Condition View-------------------
+Line       55 Item    1  (rst || mem_branchFlag || id_PCJmp)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       69 Item    1  (rst || mem_branchFlag || id_PCJmp)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       87 Item    1  (rst || mem_branchFlag || id_PCJmp)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      54        52         2    96.29%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top/top_00 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./rtl/top.sv
+    54              1                     136002     
+    56              1                         24     
+    57              1                         24     
+    59              1                    ***0***     
+    60              1                    ***0***     
+    62              1                     135978     
+    63              1                     135978     
+    68              1                     136002     
+    70              1                         24     
+    70              2                         24     
+    70              3                         24     
+    71              1                         24     
+    71              2                         24     
+    71              3                         24     
+    72              1                         24     
+    72              2                         24     
+    73              1                         24     
+    73              2                         24     
+    74              1                         24     
+    76              1                     135978     
+    76              2                     135978     
+    76              3                     135978     
+    77              1                     135978     
+    77              2                     135978     
+    78              1                     135978     
+    78              2                     135978     
+    79              1                     135978     
+    79              2                     135978     
+    80              1                     135978     
+    81              1                     135978     
+    86              1                        116     
+    88              1                         24     
+    88              2                         24     
+    88              3                         24     
+    89              1                         24     
+    89              2                         24     
+    90              1                         24     
+    90              2                         24     
+    92              1                         92     
+    92              2                         92     
+    93              1                         92     
+    93              2                         92     
+    94              1                         92     
+    94              2                         92     
+    95              1                         92     
+    100             1                         93     
+    102             1                          2     
+    102             2                          2     
+    103             1                          2     
+    103             2                          2     
+    105             1                         91     
+    105             2                         91     
+    106             1                         91     
+    106             2                         91     
+
+=================================================================================
+=== Instance: /tbCover_top
+=== Design Unit: work.tbCover_top
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         8         2    80.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./tb/tbCover_top.sv
+------------------------------------IF Branch------------------------------------
+    156                                    80000     Count coming in to IF
+    156             1                      80000     
+    188             1                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------CASE Branch------------------------------------
+    157                                    80000     Count coming in to CASE
+    158             1                       4279     
+    159             1                       4129     
+    159             2                       4165     
+    160             1                      67427     
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    164                                    80000     Count coming in to CASE
+    165             1                       4279     
+    172             1                      67427     
+    179             1                       8294     
+                                         ***0***     All False Count
+Branch totals: 3 hits of 4 branches = 75.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      31        31         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./tb/tbCover_top.sv
+    123             1                       4279     
+    134             1                      67427     
+    144             1                       8294     
+    148             1                          1     
+    149             1                          1     
+    152             1                          1     
+    154             1                      80000     
+    158             1                       4279     
+    159             1                       8294     
+    160             1                      67427     
+    163             1                      80000     
+    166             1                       4279     
+    167             1                       4279     
+    173             1                      67427     
+    174             1                      67427     
+    180             1                       8294     
+    181             1                       8294     
+    186             1                      80000     
+    192             1                          1     
+    279             1                     272002     
+    279             2                     272001     
+    284             1                          1     
+    285             1                          1     
+    285             2                          1     
+    286             1                          1     
+    286             2                          1     
+    288             1                          1     
+    289             1                          1     
+    289             2                          1     
+    296             1                          1     
+    297             1                          1     
+
+=================================================================================
+=== Instance: /tbCover_top_sv_unit
+=== Design Unit: work.tbCover_top_sv_unit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        38        33         5    86.84%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tbCover_top_sv_unit
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./tb/tbCover_top.sv
+------------------------------------CASE Branch------------------------------------
+    16                                     80000     Count coming in to CASE
+    17              1                       4279     
+    18              1                      67427     
+    19              1                       8294     
+    20              1                    ***0***     
+Branch totals: 3 hits of 4 branches = 75.00%
+
+------------------------------------CASE Branch------------------------------------
+    25                                      8558     Count coming in to CASE
+    26              1                        692     
+    27              1                        718     
+    28              1                        698     
+    29              1                        704     
+    30              1                        716     
+    31              1                        752     
+    32              1                        684     
+    33              1                        734     
+    34              1                        704     
+    35              1                        714     
+    36              1                        720     
+    37              1                        722     
+    38              1                    ***0***     
+Branch totals: 12 hits of 13 branches = 92.30%
+
+------------------------------------CASE Branch------------------------------------
+    43                                    134854     Count coming in to CASE
+    44              1                       8570     
+    45              1                       8440     
+    46              1                       8582     
+    47              1                       8330     
+    48              1                       8300     
+    49              1                       8478     
+    50              1                       8254     
+    51              1                    ***0***     
+    52              1                       8432     
+    53              1                       8546     
+    54              1                       8498     
+    55              1                       8460     
+    56              1                       8340     
+    57              1                       8452     
+    58              1                       8338     
+    59              1                       8368     
+    60              1                       8466     
+    61              1                    ***0***     
+Branch totals: 16 hits of 18 branches = 88.88%
+
+------------------------------------CASE Branch------------------------------------
+    66                                     16588     Count coming in to CASE
+    67              1                       8258     
+    68              1                       8330     
+    69              1                    ***0***     
+Branch totals: 2 hits of 3 branches = 66.66%
+
+
+
+Covergroup Coverage:
+    Covergroups                      1        na        na    91.96%
+        Coverpoints/Crosses         16        na        na        na
+            Covergroup Bins        218       136        82    62.38%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /tbCover_top_sv_unit/cover_top                   91.96%        100          -    Uncovered            
+    covered/total bins:                                   136        218          -                      
+    missing/total bins:                                    82        218          -                      
+    % Hit:                                             62.38%        100          -                      
+    Coverpoint opcode_cover                            85.00%        100          -    Uncovered            
+        covered/total bins:                                34         40          -                      
+        missing/total bins:                                 6         40          -                      
+        % Hit:                                         85.00%        100          -                      
+    Coverpoint funct_cover                             33.33%        100          -    Uncovered            
+        covered/total bins:                                 8         24          -                      
+        missing/total bins:                                16         24          -                      
+        % Hit:                                         33.33%        100          -                      
+    Coverpoint wb_cover                                53.12%        100          -    Uncovered            
+        covered/total bins:                                68        128          -                      
+        missing/total bins:                                60        128          -                      
+        % Hit:                                         53.12%        100          -                      
+    Coverpoint ex_ctrl0                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl4                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl0                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl1                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl2                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl3                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/tbCover_top/cg_0                91.96%        100          -    Uncovered            
+    covered/total bins:                                    68        109          -                      
+    missing/total bins:                                    41        109          -                      
+    % Hit:                                             62.38%        100          -                      
+    Coverpoint opcode_cover                            85.00%        100          -    Uncovered            
+        covered/total bins:                                17         20          -                      
+        missing/total bins:                                 3         20          -                      
+        % Hit:                                         85.00%        100          -                      
+        bin r_type                                          1          1          -    Covered              
+        bin addi_op                                         1          1          -    Covered              
+        bin addiu_op                                        2          1          -    Covered              
+        bin andi_op                                         2          1          -    Covered              
+        bin beq_op                                         18          1          -    Covered              
+        bin bne_op                                         21          1          -    Covered              
+        bin j_op                                            3          1          -    Covered              
+        bin jal_op                                         11          1          -    Covered              
+        bin lbu_op                                          1          1          -    Covered              
+        bin lhu_op                                          0          1          -    ZERO                 
+        bin ll_op                                           0          1          -    ZERO                 
+        bin lui_op                                          2          1          -    Covered              
+        bin lw_op                                          11          1          -    Covered              
+        bin ori_op                                          3          1          -    Covered              
+        bin slti_op                                         3          1          -    Covered              
+        bin sltiu_op                                        1          1          -    Covered              
+        bin sb_op                                           2          1          -    Covered              
+        bin sc_op                                          18          1          -    Covered              
+        bin sh_op                                           0          1          -    ZERO                 
+        bin sw_op                                           3          1          -    Covered              
+    Coverpoint funct_cover                             33.33%        100          -    Uncovered            
+        covered/total bins:                                 4         12          -                      
+        missing/total bins:                                 8         12          -                      
+        % Hit:                                         33.33%        100          -                      
+        bin add_funct                                       0          1          -    ZERO                 
+        bin addu_funct                                      0          1          -    ZERO                 
+        bin and_funct                                       0          1          -    ZERO                 
+        bin jr_funct                                        9          1          -    Covered              
+        bin nor_funct                                       0          1          -    ZERO                 
+        bin or_funct                                        0          1          -    ZERO                 
+        bin slt_funct                                       2          1          -    Covered              
+        bin sltu_funct                                      0          1          -    ZERO                 
+        bin sll_funct                                       1          1          -    Covered              
+        bin srl_funct                                       0          1          -    ZERO                 
+        bin sub_funct                                       1          1          -    Covered              
+        bin subu_funct                                      0          1          -    ZERO                 
+    Coverpoint wb_cover                                53.12%        100          -    Uncovered            
+        covered/total bins:                                34         64          -                      
+        missing/total bins:                                30         64          -                      
+        % Hit:                                         53.12%        100          -                      
+        bin zero                                           69          1          -    Covered              
+        bin at                                              1          1          -    Covered              
+        bin vals[2]                                         1          1          -    Covered              
+        bin vals[3]                                         0          1          -    ZERO                 
+        bin args[4]                                         2          1          -    Covered              
+        bin args[5]                                         1          1          -    Covered              
+        bin args[6]                                         0          1          -    ZERO                 
+        bin args[7]                                         0          1          -    ZERO                 
+        bin temps[8]                                        1          1          -    Covered              
+        bin temps[9]                                        0          1          -    ZERO                 
+        bin temps[10]                                      11          1          -    Covered              
+        bin temps[11]                                       1          1          -    Covered              
+        bin temps[12]                                       0          1          -    ZERO                 
+        bin temps[13]                                       1          1          -    Covered              
+        bin temps[14]                                       0          1          -    ZERO                 
+        bin temps[15]                                       0          1          -    ZERO                 
+        bin temps[24]                                       1          1          -    Covered              
+        bin temps[25]                                       0          1          -    ZERO                 
+        bin saved_temps[16]                                 0          1          -    ZERO                 
+        bin saved_temps[17]                                 0          1          -    ZERO                 
+        bin saved_temps[18]                                 0          1          -    ZERO                 
+        bin saved_temps[19]                                11          1          -    Covered              
+        bin saved_temps[20]                                 1          1          -    Covered              
+        bin saved_temps[21]                                 1          1          -    Covered              
+        bin saved_temps[22]                                 1          1          -    Covered              
+        bin saved_temps[23]                                 1          1          -    Covered              
+        bin k[26]                                           0          1          -    ZERO                 
+        bin k[27]                                           0          1          -    ZERO                 
+        bin global_ptr                                      1          1          -    Covered              
+        bin stack_ptr                                       0          1          -    ZERO                 
+        bin frame_ptr                                       2          1          -    Covered              
+        bin return_addr                                     0          1          -    ZERO                 
+        bin register_file_usage[0]                         69          1          -    Covered              
+        bin register_file_usage[1]                          1          1          -    Covered              
+        bin register_file_usage[2]                          1          1          -    Covered              
+        bin register_file_usage[3]                          0          1          -    ZERO                 
+        bin register_file_usage[4]                          2          1          -    Covered              
+        bin register_file_usage[5]                          1          1          -    Covered              
+        bin register_file_usage[6]                          0          1          -    ZERO                 
+        bin register_file_usage[7]                          0          1          -    ZERO                 
+        bin register_file_usage[8]                          1          1          -    Covered              
+        bin register_file_usage[9]                          0          1          -    ZERO                 
+        bin register_file_usage[10]                        11          1          -    Covered              
+        bin register_file_usage[11]                         1          1          -    Covered              
+        bin register_file_usage[12]                         0          1          -    ZERO                 
+        bin register_file_usage[13]                         1          1          -    Covered              
+        bin register_file_usage[14]                         0          1          -    ZERO                 
+        bin register_file_usage[15]                         0          1          -    ZERO                 
+        bin register_file_usage[16]                         0          1          -    ZERO                 
+        bin register_file_usage[17]                         0          1          -    ZERO                 
+        bin register_file_usage[18]                         0          1          -    ZERO                 
+        bin register_file_usage[19]                        11          1          -    Covered              
+        bin register_file_usage[20]                         1          1          -    Covered              
+        bin register_file_usage[21]                         1          1          -    Covered              
+        bin register_file_usage[22]                         1          1          -    Covered              
+        bin register_file_usage[23]                         1          1          -    Covered              
+        bin register_file_usage[24]                         1          1          -    Covered              
+        bin register_file_usage[25]                         0          1          -    ZERO                 
+        bin register_file_usage[26]                         0          1          -    ZERO                 
+        bin register_file_usage[27]                         0          1          -    ZERO                 
+        bin register_file_usage[28]                         1          1          -    Covered              
+        bin register_file_usage[29]                         0          1          -    ZERO                 
+        bin register_file_usage[30]                         2          1          -    Covered              
+        bin register_file_usage[31]                         0          1          -    ZERO                 
+    Coverpoint ex_ctrl0                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_0                                       45          1          -    Covered              
+    Coverpoint ex_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_1                                        5          1          -    Covered              
+    Coverpoint ex_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_2                                       27          1          -    Covered              
+    Coverpoint ex_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_3                                       28          1          -    Covered              
+    Coverpoint ex_ctrl4                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_4                                        6          1          -    Covered              
+    Coverpoint mem_ctrl0                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_0                                       3          1          -    Covered              
+    Coverpoint mem_ctrl1                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_1                                      33          1          -    Covered              
+    Coverpoint mem_ctrl2                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_2                                      22          1          -    Covered              
+    Coverpoint mem_ctrl3                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_3                                      13          1          -    Covered              
+    Coverpoint wb_ctrl                                100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_0                                        3          1          -    Covered              
+    Coverpoint wb_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_1                                       46          1          -    Covered              
+    Coverpoint wb_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_2                                       16          1          -    Covered              
+    Coverpoint wb_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_3                                       13          1          -    Covered              
+ Covergroup instance \/tbCover_top/#ublk#213778688#283/cg_0  
+                                                       91.96%        100          -    Uncovered            
+    covered/total bins:                                    68        109          -                      
+    missing/total bins:                                    41        109          -                      
+    % Hit:                                             62.38%        100          -                      
+    Coverpoint opcode_cover                            85.00%        100          -    Uncovered            
+        covered/total bins:                                17         20          -                      
+        missing/total bins:                                 3         20          -                      
+        % Hit:                                         85.00%        100          -                      
+        bin r_type                                          1          1          -    Covered              
+        bin addi_op                                         1          1          -    Covered              
+        bin addiu_op                                        2          1          -    Covered              
+        bin andi_op                                         2          1          -    Covered              
+        bin beq_op                                         18          1          -    Covered              
+        bin bne_op                                         21          1          -    Covered              
+        bin j_op                                            3          1          -    Covered              
+        bin jal_op                                         11          1          -    Covered              
+        bin lbu_op                                          1          1          -    Covered              
+        bin lhu_op                                          0          1          -    ZERO                 
+        bin ll_op                                           0          1          -    ZERO                 
+        bin lui_op                                          2          1          -    Covered              
+        bin lw_op                                          11          1          -    Covered              
+        bin ori_op                                          3          1          -    Covered              
+        bin slti_op                                         3          1          -    Covered              
+        bin sltiu_op                                        1          1          -    Covered              
+        bin sb_op                                           2          1          -    Covered              
+        bin sc_op                                          18          1          -    Covered              
+        bin sh_op                                           0          1          -    ZERO                 
+        bin sw_op                                           3          1          -    Covered              
+    Coverpoint funct_cover                             33.33%        100          -    Uncovered            
+        covered/total bins:                                 4         12          -                      
+        missing/total bins:                                 8         12          -                      
+        % Hit:                                         33.33%        100          -                      
+        bin add_funct                                       0          1          -    ZERO                 
+        bin addu_funct                                      0          1          -    ZERO                 
+        bin and_funct                                       0          1          -    ZERO                 
+        bin jr_funct                                        9          1          -    Covered              
+        bin nor_funct                                       0          1          -    ZERO                 
+        bin or_funct                                        0          1          -    ZERO                 
+        bin slt_funct                                       2          1          -    Covered              
+        bin sltu_funct                                      0          1          -    ZERO                 
+        bin sll_funct                                       1          1          -    Covered              
+        bin srl_funct                                       0          1          -    ZERO                 
+        bin sub_funct                                       1          1          -    Covered              
+        bin subu_funct                                      0          1          -    ZERO                 
+    Coverpoint wb_cover                                53.12%        100          -    Uncovered            
+        covered/total bins:                                34         64          -                      
+        missing/total bins:                                30         64          -                      
+        % Hit:                                         53.12%        100          -                      
+        bin zero                                           69          1          -    Covered              
+        bin at                                              1          1          -    Covered              
+        bin vals[2]                                         1          1          -    Covered              
+        bin vals[3]                                         0          1          -    ZERO                 
+        bin args[4]                                         2          1          -    Covered              
+        bin args[5]                                         1          1          -    Covered              
+        bin args[6]                                         0          1          -    ZERO                 
+        bin args[7]                                         0          1          -    ZERO                 
+        bin temps[8]                                        1          1          -    Covered              
+        bin temps[9]                                        0          1          -    ZERO                 
+        bin temps[10]                                      11          1          -    Covered              
+        bin temps[11]                                       1          1          -    Covered              
+        bin temps[12]                                       0          1          -    ZERO                 
+        bin temps[13]                                       1          1          -    Covered              
+        bin temps[14]                                       0          1          -    ZERO                 
+        bin temps[15]                                       0          1          -    ZERO                 
+        bin temps[24]                                       1          1          -    Covered              
+        bin temps[25]                                       0          1          -    ZERO                 
+        bin saved_temps[16]                                 0          1          -    ZERO                 
+        bin saved_temps[17]                                 0          1          -    ZERO                 
+        bin saved_temps[18]                                 0          1          -    ZERO                 
+        bin saved_temps[19]                                11          1          -    Covered              
+        bin saved_temps[20]                                 1          1          -    Covered              
+        bin saved_temps[21]                                 1          1          -    Covered              
+        bin saved_temps[22]                                 1          1          -    Covered              
+        bin saved_temps[23]                                 1          1          -    Covered              
+        bin k[26]                                           0          1          -    ZERO                 
+        bin k[27]                                           0          1          -    ZERO                 
+        bin global_ptr                                      1          1          -    Covered              
+        bin stack_ptr                                       0          1          -    ZERO                 
+        bin frame_ptr                                       2          1          -    Covered              
+        bin return_addr                                     0          1          -    ZERO                 
+        bin register_file_usage[0]                         69          1          -    Covered              
+        bin register_file_usage[1]                          1          1          -    Covered              
+        bin register_file_usage[2]                          1          1          -    Covered              
+        bin register_file_usage[3]                          0          1          -    ZERO                 
+        bin register_file_usage[4]                          2          1          -    Covered              
+        bin register_file_usage[5]                          1          1          -    Covered              
+        bin register_file_usage[6]                          0          1          -    ZERO                 
+        bin register_file_usage[7]                          0          1          -    ZERO                 
+        bin register_file_usage[8]                          1          1          -    Covered              
+        bin register_file_usage[9]                          0          1          -    ZERO                 
+        bin register_file_usage[10]                        11          1          -    Covered              
+        bin register_file_usage[11]                         1          1          -    Covered              
+        bin register_file_usage[12]                         0          1          -    ZERO                 
+        bin register_file_usage[13]                         1          1          -    Covered              
+        bin register_file_usage[14]                         0          1          -    ZERO                 
+        bin register_file_usage[15]                         0          1          -    ZERO                 
+        bin register_file_usage[16]                         0          1          -    ZERO                 
+        bin register_file_usage[17]                         0          1          -    ZERO                 
+        bin register_file_usage[18]                         0          1          -    ZERO                 
+        bin register_file_usage[19]                        11          1          -    Covered              
+        bin register_file_usage[20]                         1          1          -    Covered              
+        bin register_file_usage[21]                         1          1          -    Covered              
+        bin register_file_usage[22]                         1          1          -    Covered              
+        bin register_file_usage[23]                         1          1          -    Covered              
+        bin register_file_usage[24]                         1          1          -    Covered              
+        bin register_file_usage[25]                         0          1          -    ZERO                 
+        bin register_file_usage[26]                         0          1          -    ZERO                 
+        bin register_file_usage[27]                         0          1          -    ZERO                 
+        bin register_file_usage[28]                         1          1          -    Covered              
+        bin register_file_usage[29]                         0          1          -    ZERO                 
+        bin register_file_usage[30]                         2          1          -    Covered              
+        bin register_file_usage[31]                         0          1          -    ZERO                 
+    Coverpoint ex_ctrl0                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_0                                       45          1          -    Covered              
+    Coverpoint ex_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_1                                        5          1          -    Covered              
+    Coverpoint ex_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_2                                       27          1          -    Covered              
+    Coverpoint ex_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_3                                       28          1          -    Covered              
+    Coverpoint ex_ctrl4                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_4                                        6          1          -    Covered              
+    Coverpoint mem_ctrl0                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_0                                       3          1          -    Covered              
+    Coverpoint mem_ctrl1                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_1                                      33          1          -    Covered              
+    Coverpoint mem_ctrl2                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_2                                      22          1          -    Covered              
+    Coverpoint mem_ctrl3                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_3                                      13          1          -    Covered              
+    Coverpoint wb_ctrl                                100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_0                                        3          1          -    Covered              
+    Coverpoint wb_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_1                                       46          1          -    Covered              
+    Coverpoint wb_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_2                                       16          1          -    Covered              
+    Coverpoint wb_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_3                                       13          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      38        33         5    86.84%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tbCover_top_sv_unit --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ./tb/tbCover_top.sv
+    17              1                       4279     
+    18              1                      67427     
+    19              1                       8294     
+    20              1                    ***0***     
+    26              1                        692     
+    27              1                        718     
+    28              1                        698     
+    29              1                        704     
+    30              1                        716     
+    31              1                        752     
+    32              1                        684     
+    33              1                        734     
+    34              1                        704     
+    35              1                        714     
+    36              1                        720     
+    37              1                        722     
+    38              1                    ***0***     
+    44              1                       8570     
+    45              1                       8440     
+    46              1                       8582     
+    47              1                       8330     
+    48              1                       8300     
+    49              1                       8478     
+    50              1                       8254     
+    51              1                    ***0***     
+    52              1                       8432     
+    53              1                       8546     
+    54              1                       8498     
+    55              1                       8460     
+    56              1                       8340     
+    57              1                       8452     
+    58              1                       8338     
+    59              1                       8368     
+    60              1                       8466     
+    61              1                    ***0***     
+    67              1                       8258     
+    68              1                       8330     
+    69              1                    ***0***     
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /tbCover_top_sv_unit/cover_top                   91.96%        100          -    Uncovered            
+    covered/total bins:                                   136        218          -                      
+    missing/total bins:                                    82        218          -                      
+    % Hit:                                             62.38%        100          -                      
+    Coverpoint opcode_cover                            85.00%        100          -    Uncovered            
+        covered/total bins:                                34         40          -                      
+        missing/total bins:                                 6         40          -                      
+        % Hit:                                         85.00%        100          -                      
+    Coverpoint funct_cover                             33.33%        100          -    Uncovered            
+        covered/total bins:                                 8         24          -                      
+        missing/total bins:                                16         24          -                      
+        % Hit:                                         33.33%        100          -                      
+    Coverpoint wb_cover                                53.12%        100          -    Uncovered            
+        covered/total bins:                                68        128          -                      
+        missing/total bins:                                60        128          -                      
+        % Hit:                                         53.12%        100          -                      
+    Coverpoint ex_ctrl0                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ex_ctrl4                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl0                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl1                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl2                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mem_ctrl3                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint wb_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/tbCover_top/cg_0                91.96%        100          -    Uncovered            
+    covered/total bins:                                    68        109          -                      
+    missing/total bins:                                    41        109          -                      
+    % Hit:                                             62.38%        100          -                      
+    Coverpoint opcode_cover                            85.00%        100          -    Uncovered            
+        covered/total bins:                                17         20          -                      
+        missing/total bins:                                 3         20          -                      
+        % Hit:                                         85.00%        100          -                      
+        bin r_type                                          1          1          -    Covered              
+        bin addi_op                                         1          1          -    Covered              
+        bin addiu_op                                        2          1          -    Covered              
+        bin andi_op                                         2          1          -    Covered              
+        bin beq_op                                         18          1          -    Covered              
+        bin bne_op                                         21          1          -    Covered              
+        bin j_op                                            3          1          -    Covered              
+        bin jal_op                                         11          1          -    Covered              
+        bin lbu_op                                          1          1          -    Covered              
+        bin lhu_op                                          0          1          -    ZERO                 
+        bin ll_op                                           0          1          -    ZERO                 
+        bin lui_op                                          2          1          -    Covered              
+        bin lw_op                                          11          1          -    Covered              
+        bin ori_op                                          3          1          -    Covered              
+        bin slti_op                                         3          1          -    Covered              
+        bin sltiu_op                                        1          1          -    Covered              
+        bin sb_op                                           2          1          -    Covered              
+        bin sc_op                                          18          1          -    Covered              
+        bin sh_op                                           0          1          -    ZERO                 
+        bin sw_op                                           3          1          -    Covered              
+    Coverpoint funct_cover                             33.33%        100          -    Uncovered            
+        covered/total bins:                                 4         12          -                      
+        missing/total bins:                                 8         12          -                      
+        % Hit:                                         33.33%        100          -                      
+        bin add_funct                                       0          1          -    ZERO                 
+        bin addu_funct                                      0          1          -    ZERO                 
+        bin and_funct                                       0          1          -    ZERO                 
+        bin jr_funct                                        9          1          -    Covered              
+        bin nor_funct                                       0          1          -    ZERO                 
+        bin or_funct                                        0          1          -    ZERO                 
+        bin slt_funct                                       2          1          -    Covered              
+        bin sltu_funct                                      0          1          -    ZERO                 
+        bin sll_funct                                       1          1          -    Covered              
+        bin srl_funct                                       0          1          -    ZERO                 
+        bin sub_funct                                       1          1          -    Covered              
+        bin subu_funct                                      0          1          -    ZERO                 
+    Coverpoint wb_cover                                53.12%        100          -    Uncovered            
+        covered/total bins:                                34         64          -                      
+        missing/total bins:                                30         64          -                      
+        % Hit:                                         53.12%        100          -                      
+        bin zero                                           69          1          -    Covered              
+        bin at                                              1          1          -    Covered              
+        bin vals[2]                                         1          1          -    Covered              
+        bin vals[3]                                         0          1          -    ZERO                 
+        bin args[4]                                         2          1          -    Covered              
+        bin args[5]                                         1          1          -    Covered              
+        bin args[6]                                         0          1          -    ZERO                 
+        bin args[7]                                         0          1          -    ZERO                 
+        bin temps[8]                                        1          1          -    Covered              
+        bin temps[9]                                        0          1          -    ZERO                 
+        bin temps[10]                                      11          1          -    Covered              
+        bin temps[11]                                       1          1          -    Covered              
+        bin temps[12]                                       0          1          -    ZERO                 
+        bin temps[13]                                       1          1          -    Covered              
+        bin temps[14]                                       0          1          -    ZERO                 
+        bin temps[15]                                       0          1          -    ZERO                 
+        bin temps[24]                                       1          1          -    Covered              
+        bin temps[25]                                       0          1          -    ZERO                 
+        bin saved_temps[16]                                 0          1          -    ZERO                 
+        bin saved_temps[17]                                 0          1          -    ZERO                 
+        bin saved_temps[18]                                 0          1          -    ZERO                 
+        bin saved_temps[19]                                11          1          -    Covered              
+        bin saved_temps[20]                                 1          1          -    Covered              
+        bin saved_temps[21]                                 1          1          -    Covered              
+        bin saved_temps[22]                                 1          1          -    Covered              
+        bin saved_temps[23]                                 1          1          -    Covered              
+        bin k[26]                                           0          1          -    ZERO                 
+        bin k[27]                                           0          1          -    ZERO                 
+        bin global_ptr                                      1          1          -    Covered              
+        bin stack_ptr                                       0          1          -    ZERO                 
+        bin frame_ptr                                       2          1          -    Covered              
+        bin return_addr                                     0          1          -    ZERO                 
+        bin register_file_usage[0]                         69          1          -    Covered              
+        bin register_file_usage[1]                          1          1          -    Covered              
+        bin register_file_usage[2]                          1          1          -    Covered              
+        bin register_file_usage[3]                          0          1          -    ZERO                 
+        bin register_file_usage[4]                          2          1          -    Covered              
+        bin register_file_usage[5]                          1          1          -    Covered              
+        bin register_file_usage[6]                          0          1          -    ZERO                 
+        bin register_file_usage[7]                          0          1          -    ZERO                 
+        bin register_file_usage[8]                          1          1          -    Covered              
+        bin register_file_usage[9]                          0          1          -    ZERO                 
+        bin register_file_usage[10]                        11          1          -    Covered              
+        bin register_file_usage[11]                         1          1          -    Covered              
+        bin register_file_usage[12]                         0          1          -    ZERO                 
+        bin register_file_usage[13]                         1          1          -    Covered              
+        bin register_file_usage[14]                         0          1          -    ZERO                 
+        bin register_file_usage[15]                         0          1          -    ZERO                 
+        bin register_file_usage[16]                         0          1          -    ZERO                 
+        bin register_file_usage[17]                         0          1          -    ZERO                 
+        bin register_file_usage[18]                         0          1          -    ZERO                 
+        bin register_file_usage[19]                        11          1          -    Covered              
+        bin register_file_usage[20]                         1          1          -    Covered              
+        bin register_file_usage[21]                         1          1          -    Covered              
+        bin register_file_usage[22]                         1          1          -    Covered              
+        bin register_file_usage[23]                         1          1          -    Covered              
+        bin register_file_usage[24]                         1          1          -    Covered              
+        bin register_file_usage[25]                         0          1          -    ZERO                 
+        bin register_file_usage[26]                         0          1          -    ZERO                 
+        bin register_file_usage[27]                         0          1          -    ZERO                 
+        bin register_file_usage[28]                         1          1          -    Covered              
+        bin register_file_usage[29]                         0          1          -    ZERO                 
+        bin register_file_usage[30]                         2          1          -    Covered              
+        bin register_file_usage[31]                         0          1          -    ZERO                 
+    Coverpoint ex_ctrl0                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_0                                       45          1          -    Covered              
+    Coverpoint ex_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_1                                        5          1          -    Covered              
+    Coverpoint ex_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_2                                       27          1          -    Covered              
+    Coverpoint ex_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_3                                       28          1          -    Covered              
+    Coverpoint ex_ctrl4                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_4                                        6          1          -    Covered              
+    Coverpoint mem_ctrl0                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_0                                       3          1          -    Covered              
+    Coverpoint mem_ctrl1                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_1                                      33          1          -    Covered              
+    Coverpoint mem_ctrl2                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_2                                      22          1          -    Covered              
+    Coverpoint mem_ctrl3                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_3                                      13          1          -    Covered              
+    Coverpoint wb_ctrl                                100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_0                                        3          1          -    Covered              
+    Coverpoint wb_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_1                                       46          1          -    Covered              
+    Coverpoint wb_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_2                                       16          1          -    Covered              
+    Coverpoint wb_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_3                                       13          1          -    Covered              
+ Covergroup instance \/tbCover_top/#ublk#213778688#283/cg_0  
+                                                       91.96%        100          -    Uncovered            
+    covered/total bins:                                    68        109          -                      
+    missing/total bins:                                    41        109          -                      
+    % Hit:                                             62.38%        100          -                      
+    Coverpoint opcode_cover                            85.00%        100          -    Uncovered            
+        covered/total bins:                                17         20          -                      
+        missing/total bins:                                 3         20          -                      
+        % Hit:                                         85.00%        100          -                      
+        bin r_type                                          1          1          -    Covered              
+        bin addi_op                                         1          1          -    Covered              
+        bin addiu_op                                        2          1          -    Covered              
+        bin andi_op                                         2          1          -    Covered              
+        bin beq_op                                         18          1          -    Covered              
+        bin bne_op                                         21          1          -    Covered              
+        bin j_op                                            3          1          -    Covered              
+        bin jal_op                                         11          1          -    Covered              
+        bin lbu_op                                          1          1          -    Covered              
+        bin lhu_op                                          0          1          -    ZERO                 
+        bin ll_op                                           0          1          -    ZERO                 
+        bin lui_op                                          2          1          -    Covered              
+        bin lw_op                                          11          1          -    Covered              
+        bin ori_op                                          3          1          -    Covered              
+        bin slti_op                                         3          1          -    Covered              
+        bin sltiu_op                                        1          1          -    Covered              
+        bin sb_op                                           2          1          -    Covered              
+        bin sc_op                                          18          1          -    Covered              
+        bin sh_op                                           0          1          -    ZERO                 
+        bin sw_op                                           3          1          -    Covered              
+    Coverpoint funct_cover                             33.33%        100          -    Uncovered            
+        covered/total bins:                                 4         12          -                      
+        missing/total bins:                                 8         12          -                      
+        % Hit:                                         33.33%        100          -                      
+        bin add_funct                                       0          1          -    ZERO                 
+        bin addu_funct                                      0          1          -    ZERO                 
+        bin and_funct                                       0          1          -    ZERO                 
+        bin jr_funct                                        9          1          -    Covered              
+        bin nor_funct                                       0          1          -    ZERO                 
+        bin or_funct                                        0          1          -    ZERO                 
+        bin slt_funct                                       2          1          -    Covered              
+        bin sltu_funct                                      0          1          -    ZERO                 
+        bin sll_funct                                       1          1          -    Covered              
+        bin srl_funct                                       0          1          -    ZERO                 
+        bin sub_funct                                       1          1          -    Covered              
+        bin subu_funct                                      0          1          -    ZERO                 
+    Coverpoint wb_cover                                53.12%        100          -    Uncovered            
+        covered/total bins:                                34         64          -                      
+        missing/total bins:                                30         64          -                      
+        % Hit:                                         53.12%        100          -                      
+        bin zero                                           69          1          -    Covered              
+        bin at                                              1          1          -    Covered              
+        bin vals[2]                                         1          1          -    Covered              
+        bin vals[3]                                         0          1          -    ZERO                 
+        bin args[4]                                         2          1          -    Covered              
+        bin args[5]                                         1          1          -    Covered              
+        bin args[6]                                         0          1          -    ZERO                 
+        bin args[7]                                         0          1          -    ZERO                 
+        bin temps[8]                                        1          1          -    Covered              
+        bin temps[9]                                        0          1          -    ZERO                 
+        bin temps[10]                                      11          1          -    Covered              
+        bin temps[11]                                       1          1          -    Covered              
+        bin temps[12]                                       0          1          -    ZERO                 
+        bin temps[13]                                       1          1          -    Covered              
+        bin temps[14]                                       0          1          -    ZERO                 
+        bin temps[15]                                       0          1          -    ZERO                 
+        bin temps[24]                                       1          1          -    Covered              
+        bin temps[25]                                       0          1          -    ZERO                 
+        bin saved_temps[16]                                 0          1          -    ZERO                 
+        bin saved_temps[17]                                 0          1          -    ZERO                 
+        bin saved_temps[18]                                 0          1          -    ZERO                 
+        bin saved_temps[19]                                11          1          -    Covered              
+        bin saved_temps[20]                                 1          1          -    Covered              
+        bin saved_temps[21]                                 1          1          -    Covered              
+        bin saved_temps[22]                                 1          1          -    Covered              
+        bin saved_temps[23]                                 1          1          -    Covered              
+        bin k[26]                                           0          1          -    ZERO                 
+        bin k[27]                                           0          1          -    ZERO                 
+        bin global_ptr                                      1          1          -    Covered              
+        bin stack_ptr                                       0          1          -    ZERO                 
+        bin frame_ptr                                       2          1          -    Covered              
+        bin return_addr                                     0          1          -    ZERO                 
+        bin register_file_usage[0]                         69          1          -    Covered              
+        bin register_file_usage[1]                          1          1          -    Covered              
+        bin register_file_usage[2]                          1          1          -    Covered              
+        bin register_file_usage[3]                          0          1          -    ZERO                 
+        bin register_file_usage[4]                          2          1          -    Covered              
+        bin register_file_usage[5]                          1          1          -    Covered              
+        bin register_file_usage[6]                          0          1          -    ZERO                 
+        bin register_file_usage[7]                          0          1          -    ZERO                 
+        bin register_file_usage[8]                          1          1          -    Covered              
+        bin register_file_usage[9]                          0          1          -    ZERO                 
+        bin register_file_usage[10]                        11          1          -    Covered              
+        bin register_file_usage[11]                         1          1          -    Covered              
+        bin register_file_usage[12]                         0          1          -    ZERO                 
+        bin register_file_usage[13]                         1          1          -    Covered              
+        bin register_file_usage[14]                         0          1          -    ZERO                 
+        bin register_file_usage[15]                         0          1          -    ZERO                 
+        bin register_file_usage[16]                         0          1          -    ZERO                 
+        bin register_file_usage[17]                         0          1          -    ZERO                 
+        bin register_file_usage[18]                         0          1          -    ZERO                 
+        bin register_file_usage[19]                        11          1          -    Covered              
+        bin register_file_usage[20]                         1          1          -    Covered              
+        bin register_file_usage[21]                         1          1          -    Covered              
+        bin register_file_usage[22]                         1          1          -    Covered              
+        bin register_file_usage[23]                         1          1          -    Covered              
+        bin register_file_usage[24]                         1          1          -    Covered              
+        bin register_file_usage[25]                         0          1          -    ZERO                 
+        bin register_file_usage[26]                         0          1          -    ZERO                 
+        bin register_file_usage[27]                         0          1          -    ZERO                 
+        bin register_file_usage[28]                         1          1          -    Covered              
+        bin register_file_usage[29]                         0          1          -    ZERO                 
+        bin register_file_usage[30]                         2          1          -    Covered              
+        bin register_file_usage[31]                         0          1          -    ZERO                 
+    Coverpoint ex_ctrl0                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_0                                       45          1          -    Covered              
+    Coverpoint ex_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_1                                        5          1          -    Covered              
+    Coverpoint ex_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_2                                       27          1          -    Covered              
+    Coverpoint ex_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_3                                       28          1          -    Covered              
+    Coverpoint ex_ctrl4                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ex_idx_4                                        6          1          -    Covered              
+    Coverpoint mem_ctrl0                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_0                                       3          1          -    Covered              
+    Coverpoint mem_ctrl1                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_1                                      33          1          -    Covered              
+    Coverpoint mem_ctrl2                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_2                                      22          1          -    Covered              
+    Coverpoint mem_ctrl3                              100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mem_idx_3                                      13          1          -    Covered              
+    Coverpoint wb_ctrl                                100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_0                                        3          1          -    Covered              
+    Coverpoint wb_ctrl1                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_1                                       46          1          -    Covered              
+    Coverpoint wb_ctrl2                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_2                                       16          1          -    Covered              
+    Coverpoint wb_ctrl3                               100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin wb_idx_3                                       13          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 91.96%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 61.33%
+

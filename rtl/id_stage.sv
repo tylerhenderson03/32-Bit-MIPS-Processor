@@ -5,19 +5,19 @@
 module id_stage #(parameter WIDTH) (
                 input logic clk,
                 input logic rst,
-                input [WIDTH-1:0] if_out,
-                input [WIDTH-1:0] pc_incr_in,
-                input [5-1:0] wr_reg,
-                input [WIDTH-1:0] wr_data,
+                input logic [WIDTH-1:0] if_out,
+                input logic [WIDTH-1:0] pc_incr_in,
+                input logic [5-1:0] wr_reg,
+                input logic [WIDTH-1:0] wr_data,
                 input logic RegWrite,
             // inputs for hazard detection
                 input logic id_ex_MemRead,
                 input [4:0] id_ex_regRt,
 
 
-                output [4:0] ex_ctrl,
-                output [3:0] mem_ctrl,
-                output [3:0] wb_ctrl,
+                output reg [4:0] ex_ctrl,
+                output reg [3:0] mem_ctrl,
+                output reg [3:0] wb_ctrl,
                 output wire [WIDTH-1:0] pc_incr_out,
                 output reg [WIDTH-1:0] sgn_extend_out, // contains function code in lower 7 bits. passed to ALU
                 output wire [WIDTH-1:0] jump_addr,

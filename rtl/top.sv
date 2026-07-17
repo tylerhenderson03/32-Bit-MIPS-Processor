@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
 module top #(parameter WIDTH = 32, parameter MAX_INSTRUCTIONS) (
     input wire clk, rst,
-    input [WIDTH-1:0] if_instruction_memory[0:MAX_INSTRUCTIONS-1], // for MAX_INSTRUCTIONS instructions
+    input logic [WIDTH-1:0] if_instruction_memory[0:MAX_INSTRUCTIONS-1], // for MAX_INSTRUCTIONS instructions
 
 // IF outputs
     output wire [WIDTH-1:0] if_pc_pp, if_inst,

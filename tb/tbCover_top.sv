@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-
+`include "./../rtl/covergroups.sv"
 // TODO: MODIFY THIS FILE SO THAT IT COLLECTS COVERAGE DATA BASED ON CONSTRAINED RANDOMIZATION
 
 /* verilator lint_off DECLFILENAME */
@@ -98,9 +98,21 @@ class rand_inst;
 endclass
 
 
-
 module tbCover_top();
+// inputs
+  reg clk, rst;
 
+// parameters
+  parameter WIDTH = 32;
+  parameter CLK_PERIOD = 10;
+  parameter MAX_INSTRUCTIONS = 80000;
+  integer NUM_INSTRUCTIONS;
+
+// instruction memory declaration (passed into IF)
+  logic [WIDTH-1:0] instruction_memory [MAX_INSTRUCTIONS-1:0]; 
+  integer i = 0;
+
+  
   // R-type: op=0, rs, rt, rd, shamt, funct
   // write_r_type(.mem_idx(), .rs(), .rt(), .rd(), .shamt(), .funct());
   task automatic write_r_type(
@@ -131,61 +143,51 @@ module tbCover_top();
   );
     instruction_memory[mem_idx] = {opcode, addr};
   endtask
-  
-// inputs
-  reg clk, rst;
 
-// parameters
-  parameter WIDTH = 32;
-  parameter CLK_PERIOD = 10;
-  parameter MAX_INSTRUCTIONS = 200;
-  integer NUM_INSTRUCTIONS;
 
-// instruction memory declaration (passed into IF)
-  logic [WIDTH-1:0] instruction_memory [MAX_INSTRUCTIONS-1:0]; 
-  integer i = 0;
-
-  rand_inst instr;
+  cover_top cg_0 = new;
+  rand_inst instr = new;
 
 initial begin // START of insruction memory initialization
   NUM_INSTRUCTIONS = 0;
-  instr = new();
     
   repeat(MAX_INSTRUCTIONS) begin
     logic [2:0] actual_format;
-    instr.randomize();
-    
+    if(instr.randomize()) begin
+      case (instr.opcode)
+        6'd0: actual_format = 0;  // R-type
+        6'd2, 6'd3: actual_format = 2;  // J-type (J, JAL)
+        default: actual_format = 1;  // I-type (everything else)
+      endcase
 
-    case (instr.opcode)
-      6'd0: actual_format = 0;  // R-type
-      6'd2, 6'd3: actual_format = 2;  // J-type (J, JAL)
-      default: actual_format = 1;  // I-type (everything else)
-    endcase
-
-    $write("[%d] %s \t", NUM_INSTRUCTIONS, instr.get_instruction_name(actual_format[2:0]));
-    case (actual_format)
-      0: begin // R-type
-        $display("R%d = R%d %s R%d (funct=%h)", instr.rd, instr.rs, instr.get_r_type_name(), instr.rt, instr.funct);
-        write_r_type(.mem_idx(NUM_INSTRUCTIONS), 
-          .rs(instr.rs), .rt(instr.rt), 
-          .rd(instr.rd), .shamt(instr.shamt), 
-          .funct(instr.funct));
-      end
-      1: begin // I-type
-        $display("R%d = R%d %s (%h) 0x%h", instr.rt, instr.rs, instr.get_i_type_name(), instr.opcode, instr.immediate);
-        write_i_type(.mem_idx(NUM_INSTRUCTIONS), 
-          .opcode(instr.opcode), 
-          .rs(instr.rs), .rt(instr.rt), 
-          .imm(instr.immediate));
-      end
-      2: begin // J-type
-        $display("PC = 0x%h (%s)", instr.addr, instr.get_j_type_name());
-        write_j_type(.mem_idx(NUM_INSTRUCTIONS), 
-          .opcode(instr.opcode), 
-          .addr(instr.addr));
-      end
-    endcase
-    NUM_INSTRUCTIONS += 1;
+      $write("[%d] %s \t", NUM_INSTRUCTIONS, instr.get_instruction_name(actual_format[2:0]));
+      case (actual_format)
+        0: begin // R-type
+          $display("R%d = R%d %s R%d (funct=%h)", instr.rd, instr.rs, instr.get_r_type_name(), instr.rt, instr.funct);
+          write_r_type(.mem_idx(NUM_INSTRUCTIONS), 
+            .rs(instr.rs), .rt(instr.rt), 
+            .rd(instr.rd), .shamt(instr.shamt), 
+            .funct(instr.funct));
+        end
+        1: begin // I-type
+          $display("R%d = R%d %s (%h) 0x%h", instr.rt, instr.rs, instr.get_i_type_name(), instr.opcode, instr.immediate);
+          write_i_type(.mem_idx(NUM_INSTRUCTIONS), 
+            .opcode(instr.opcode), 
+            .rs(instr.rs), .rt(instr.rt), 
+            .imm(instr.immediate));
+        end
+        2: begin // J-type
+          $display("PC = 0x%h (%s)", instr.addr, instr.get_j_type_name());
+          write_j_type(.mem_idx(NUM_INSTRUCTIONS), 
+            .opcode(instr.opcode), 
+            .addr(instr.addr));
+        end
+      endcase
+      NUM_INSTRUCTIONS += 1;
+    end
+    else begin
+      // randomization failed, do nothing
+    end
   end
   $display("Total instructions written: %d", NUM_INSTRUCTIONS);
 end // END of insruction memory initialization
@@ -271,20 +273,20 @@ end // END of insruction memory initialization
     .wb_regWrite(wb_regWrite), .wb_regDst(wb_regDst), .wb_regData(wb_regData)
   );
 
+  //bind top functional_coverage funct_covg_inst(.clk(clk), .rst(rst), .id_exCtrl(id_exCtrl), .id_memCtrl(id_memCtrl), .id_wbCtrl(id_wbCtrl), .wb_regDst(wb_regDst), .if_inst(if_inst));
+
 // clock 
   always #(CLK_PERIOD/2) clk = ~clk;
 
 // stimulus
 
-cover_top cg_inst_0;
-
   initial begin
-    cg_inst_0 = new();
+    cover_top cg_0 = new();
     clk = 0; rst = 1;
     #(CLK_PERIOD) rst = 0;
 
     #(MAX_INSTRUCTIONS*CLK_PERIOD); // cycle through 
-    #(7*MAX_INSTRUCTIONS) $finish; // to allow pipeline to fully flush out previous instructions
+    #(7*MAX_INSTRUCTIONS) $stop; // to allow pipeline to fully flush out previous instructions
   end
 
 
@@ -293,8 +295,7 @@ cover_top cg_inst_0;
   initial begin
     $dumpfile("./vcd/tbCover_top.vcd");
     $dumpvars(0, tbCover_top);
-    for (i = 0; i < 32; i++)
-      $dumpvars(0, reg_file_debug[i]);
+
   end
 
 endmodule: tbCover_top

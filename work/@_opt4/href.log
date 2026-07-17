@@ -1,0 +1,9 @@
+BEGIN 1:tbCover_top:fast:work
+    id_exCtrl :  1:tbCover_top_sv_unit:fast:work
+    id_wbCtrl :  1:tbCover_top_sv_unit:fast:work
+    if_inst :  1:tbCover_top_sv_unit:fast:work
+    wb_regDst :  1:tbCover_top_sv_unit:fast:work
+    id_memCtrl :  1:tbCover_top_sv_unit:fast:work
+    clk :  1:tbCover_top_sv_unit:fast:work
+    rst :  1:tbCover_top_sv_unit:fast:work
+END 

@@ -21,5 +21,3 @@ verilator_coverage --report hier ./coverage.dat > ./coverage_data/coverage.txt
 
 
 surfer ./vcd/tbCover_top.vcd
-
-echo "Coverage reports generated in coverage_data/"

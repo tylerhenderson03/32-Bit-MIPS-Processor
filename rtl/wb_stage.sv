@@ -7,7 +7,7 @@ module wb_stage #(parameter WIDTH) (
     input reg [4:0] wr_reg_dest_in,
 
     output wire [4:0] wr_reg_dest_out,
-    output wire [WIDTH-1:0] wr_data,
+    output reg [WIDTH-1:0] wr_data,
     output logic RegWrite
     );
 

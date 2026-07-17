@@ -4,7 +4,7 @@ module fwd_unit(
     input [4:0] id_ex_regRs, id_ex_regRt, ex_mem_regRd, mem_wb_regRd,
     input logic ex_mem_RegWrite, mem_wb_RegWrite,
 
-    output [1:0] forwardA, forwardB
+    output reg [1:0] forwardA, forwardB
 );
 
     always_comb begin
